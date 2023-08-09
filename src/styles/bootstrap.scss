@@ -1,6 +1,12 @@
 // custom bootstrap.scss import
 
 @import '~bootstrap/scss/functions';
+
+// Default variables.scss overrides
+
+// 2. Include any default variable overrides here
+$font-family-sans-serif: 'Proxima Nova', sans-serif;
+
 @import '~bootstrap/scss/variables';
 @import '~bootstrap/scss/mixins';
 @import '~bootstrap/scss/root';
