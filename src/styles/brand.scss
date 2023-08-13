@@ -1,4 +1,12 @@
+@use 'conf';
+
 .brand {
-	font-size: 0;
+	color: conf.$mine-shaft;
+	font-size: 56.3667px;
 	line-height: 0;
+
+	&:any-link {
+		color: conf.$mine-shaft;
+		text-decoration: none;
+	}
 }

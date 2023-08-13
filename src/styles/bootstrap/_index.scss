@@ -1,0 +1,16 @@
+@use '../conf';
+@forward 'bootstrap-import' with (
+	$body-color: conf.$body-color,
+	$body-bg: conf.$body-bg,
+	$grid-breakpoints: conf.$grid-breakpoints,
+	$container-max-widths: conf.$container-max-widths,
+	$theme-colors: conf.$theme-colors,
+	$font-family-sans-serif: conf.$font-family-sans-serif,
+	$font-family-base: conf.$font-family-base,
+	$line-height-base: conf.$line-height-base,
+	$line-height-sm: conf.$line-height-sm,
+	$line-height-lg: conf.$line-height-lg,
+	$yiq-contrasted-threshold: conf.$yiq-contrasted-threshold,
+	$yiq-text-dark: conf.$yiq-text-dark,
+	$yiq-text-light: conf.$yiq-text-light
+);

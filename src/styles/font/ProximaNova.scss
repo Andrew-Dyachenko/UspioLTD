@@ -76,11 +76,11 @@
 @font-face {
 	font-family: 'Proxima Nova';
 	src:
-		local('Proxima Nova Bold Italic'),
-		local('ProximaNova-BoldIt'),
-		url('../font/ProximaNova/ProximaNova-BoldIt.woff2') format('woff2');
+		local('Proxima Nova Bold'),
+		local('ProximaNova-Bold'),
+		url('../font/ProximaNova/ProximaNova-Bold.woff2') format('woff2');
 	font-weight: 700;
-	font-style: italic;
+	font-style: normal;
 	font-display: swap;
 }
 

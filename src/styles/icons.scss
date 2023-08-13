@@ -1,0 +1,27 @@
+@use 'sass:math';
+
+.icon {
+	display: inline-block;
+	fill: currentColor;
+	height: 1em;
+	stroke: currentColor;
+	stroke-width: 0;
+	vertical-align: top;
+	width: 1em;
+
+	&--brand-logo {
+		width: math.div(198, 56.3667) + em; // ~198px
+	}
+
+	&--map-pin {
+		width: math.div(13, 16) + em; // ~13px
+	}
+
+	&--heart {
+		width: math.div(28, 24) + em; // ~28px
+	}
+
+	&--shoping-cart {
+		width: math.div(30, 28) + em; // ~28px
+	}
+}

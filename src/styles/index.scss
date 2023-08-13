@@ -1,2 +1,140 @@
-@use "./bootstrap.scss";
-@use './brand.scss';
+@use 'sass:math';
+@use 'sass:color';
+@use 'conf';
+@use 'mix';
+@use 'font';
+@use 'bootstrap';
+@use 'icons';
+@use 'header';
+@import '~bootstrap/scss/functions'; // For color-yiq
+@import '~bootstrap/scss/variables'; // For color-yiq
+
+// :root {
+//line-height: conf.$line-height-base; // Override bootstrap hard-coded line-height
+// --body-color: --var(--limed-spruce, #{conf.$limed-spruce});
+// --body-bg: var(--white, #{conf.$white});
+// }
+
+body {
+	min-width: conf.$xxxs;
+
+	@media (min-width: conf.$xxxs) {
+		overflow-x: hidden;
+	}
+}
+
+.btn {
+	$btn: &;
+
+	&_custom {
+		display: inline-flex;
+		align-items: center;
+		font-weight: 600;
+		color: conf.$body-color;
+		min-height: math.div(54, 16) + rem;
+		padding-inline: 30px;
+
+		#{$btn} {
+			&__text {
+				flex-grow: 1;
+				line-height: 1;
+
+				&-overflow {
+					overflow: hidden;
+					display: -webkit-box;
+					-webkit-line-clamp: 2;
+					-webkit-box-orient: vertical;
+					text-overflow: ellipsis;
+				}
+
+				&:not(:empty) {
+					padding-inline-start: math.div(10, 14) + 0em; // ~10px
+				}
+			}
+		}
+
+		&_rounded {
+			border-radius: 100rem;
+		}
+
+		&_icon {
+			#{$btn} {
+				&__icon {
+					grid-area: btn__icon;
+				}
+				&__text {
+					grid-area: btn__text;
+				}
+			}
+		}
+	}
+}
+
+// $background,
+// $color-contrast-dark: conf.$color-contrast-dark,
+// $color-contrast-light: conf.$color-contrast-light,
+// $property: color,
+// $min-contrast-ratio: conf.$min-contrast-ratio
+
+.badge {
+	$badge: &;
+
+	&_custom {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+		height: math.div(23, 12) + em;
+		min-width: math.div(23, 12) + em;
+		max-width: 100%;
+		background-color: color.invert(conf.$body-bg);
+		line-height: 1;
+		padding: math.div(2, 12) + em; // ~2px
+		#{$badge} {
+			&__overflow {
+				overflow: hidden;
+				display: -webkit-box;
+				-webkit-line-clamp: 1;
+				-webkit-box-orient: vertical;
+				text-overflow: ellipsis;
+				word-break: break-all;
+				max-width: 100%;
+			}
+		}
+
+		@include mix.isomorphic-color-contrast(
+			// $background
+			color.invert(conf.$body-bg),
+			// $color-contrast-dark
+			conf.$body-color,
+			// $color-contrast-light
+			color.invert(conf.$body-color),
+			// $property
+			color
+		);
+
+		&_circled {
+			max-width: math.div(23, 12) + em;
+			border-radius: 100rem;
+		}
+
+		&_atlantis {
+			$-bgc: conf.$atlantis;
+			background-color: $-bgc;
+
+			// @include mix.isomorphic-color-contrast(
+			// 	// $background
+			// 	$-bgc,
+			// 	// $color-contrast-dark
+			// 	conf.$black,
+			// 	// $color-contrast-light
+			// 	conf.$white,
+			// 	// $property
+			// 	color
+			// );
+
+			color: color-yiq($-bgc, conf.$black, conf.$white);
+		}
+	}
+}

@@ -1,0 +1,289 @@
+@use 'sass:math';
+@use 'sass:color';
+@use 'conf';
+@use 'conf/fibonacci';
+@use 'deliveryTo';
+@use 'brand';
+@use 'sivcev';
+
+.header {
+	&__container {
+		display: grid;
+		grid-auto-flow: column;
+		align-items: center;
+		grid-template-columns:
+			math.div(43, 16) + rem // ~43px
+			auto // header__brand
+			math.div(14, 16) + rem // ~14px
+			math.div(1, 16) + rem // header__hr--first ~1px
+			math.div(30, 16) + rem // ~30px
+			auto // header__deliveryTo
+			math.div(16, 16) + rem // ~32px
+			6fr
+			minmax(math.div(214, 16) + rem, auto) // header__target
+			1fr
+			math.div(16, 16) + rem // ~32px
+			auto // header__hr--last ~ 1px
+			math.div(16, 16) + rem // ~32px
+			4fr
+			auto // header__address
+			2fr
+			math.div(16, 16) + rem // ~43px
+			auto; // header__actions
+		grid-template-rows:
+			math.div(18, 16) + rem // ~18px
+			auto
+			math.div(16, 16) + rem; // ~16px
+		grid-template-areas:
+			'. .             . header__hr--first . .                  . . .              . . header__hr--last . . header__address . . header__actions'
+			'. header__brand . header__hr--first . header__deliveryTo . . header__target . . header__hr--last . . header__address . . header__actions'
+			'. .             . header__hr--first . .                  . . .              . . header__hr--last . . header__address . . header__actions';
+	}
+
+	&__brand {
+		grid-area: header__brand;
+		transform: translateY(#{math.div(4, 56.3667) * -1em}); // 4px
+	}
+
+	&__hr {
+		background-color: conf.$wild-sand;
+		border: 0;
+		width: 1px;
+		box-sizing: border-box;
+		margin: 0;
+
+		&:first-of-type {
+			grid-area: header__hr--first;
+		}
+
+		&:last-of-type {
+			grid-area: header__hr--last;
+		}
+
+		&[aria-orientation='vertical'] {
+			height: 100%;
+		}
+	}
+
+	&__deliveryTo {
+		grid-area: header__deliveryTo;
+	}
+
+	&__target {
+		$target: &;
+		text-align: start;
+		grid-area: header__target;
+		font-size: math.div(14, 16) + rem;
+
+		@media (min-width: conf.$l) {
+			max-width: math.div(214, 16) + rem; // ~214px
+		}
+
+		&.btn {
+			&_custom {
+				min-height: math.div(52, 16) + rem;
+			}
+		}
+
+		&-icon {
+			color: conf.$atlantis;
+		}
+
+		&:hover,
+		&:active {
+			#{$target} {
+				&-icon {
+					color: conf.$body-bg;
+				}
+			}
+		}
+
+		&:any-link {
+			text-decoration: none;
+
+			&:hover,
+			&:active {
+				text-decoration: none;
+			}
+
+			&:visited {
+				color: conf.$atlantis;
+			}
+		}
+	}
+
+	&__address {
+		grid-area: header__address;
+		display: flex;
+		flex-direction: column;
+		align-items: end;
+		margin: 0;
+		row-gap: math.div(1, 16) + rem; // ~1px
+		padding-top: math.div(1, 16) + rem; // ~1px
+
+		&-phone {
+			text-align: end;
+			color: conf.$body-color;
+			font-weight: 700;
+			font-size: math.div(18, 16) + rem; // ~18px
+			overflow: hidden;
+			display: -webkit-box;
+			-webkit-line-clamp: 1;
+			-webkit-box-orient: vertical;
+			text-overflow: ellipsis;
+			word-break: break-all;
+
+			&:hover,
+			&:active {
+				text-decoration: none;
+				color: conf.$body-color;
+			}
+		}
+
+		&-callback {
+			text-align: end;
+			font-size: math.div(14, 16) + rem; // ~14px
+			color: conf.$atlantis;
+			text-decoration: underline dashed conf.$atlantis;
+			text-underline-offset: math.div(5, 14) + em; // ~5px
+			text-decoration-thickness: math.div(1, 14) + em; // ~1px
+			padding: 0;
+			line-height: 1;
+
+			&:hover,
+			&:active {
+				color: conf.$atlantis;
+				text-decoration: none;
+				border-bottom-color: transparent;
+			}
+		}
+	}
+
+	&__actions {
+		grid-area: header__actions;
+		padding-top: math.div(15, 16) + em;
+
+		&-row {
+			display: flex;
+			align-items: center;
+
+			&:not(:empty) {
+				// margin: math.div(conf.$grid-gutter-width, -2);
+				margin: math.div(19, 16) * -1rem;
+			}
+		}
+
+		&-col {
+			// padding: math.div(conf.$grid-gutter-width, 2);
+			padding: math.div(19, 16) * 1rem;
+		}
+	}
+
+	&__action {
+		$action: &;
+		position: relative;
+		display: flex;
+		padding: 0;
+		align-items: center;
+		font-size: 0;
+		line-height: 0;
+		border: 0;
+		background: none;
+
+		&:any-link {
+			text-decoration: none;
+
+			&:hover,
+			&:focus {
+				text-decoration: none;
+			}
+		}
+
+		&-icon {
+			font-size: 1rem;
+			pointer-events: none; // Preserve svg title show on hover
+		}
+
+		&-badge {
+			font-size: math.div(12, 16) + rem; // ~12px
+			position: absolute;
+			top: math.div(-12, 12) + em; // 1em ~ 12px
+
+			// Left-To-Right
+			@at-root :root:not([dir='rtl']) & {
+				right: -1em;
+			}
+
+			// Right-To-Left
+			@at-root :root[dir='rtl'] & {
+				left: -1em;
+			}
+		}
+
+		&--heart {
+			color: conf.$mandy;
+
+			#{$action} {
+				&-icon {
+					font-size: math.div(24, 16) + rem;
+				}
+
+				&-badge {
+					top: math.div(-14, 12) + em; // ~ -14px
+
+					// Left-To-Right
+					@at-root :root:not([dir='rtl']) & {
+						right: math.div(-18, 12) + em; // ~ -18px;
+					}
+
+					// Right-To-Left
+					@at-root :root[dir='rtl'] & {
+						left: math.div(-18, 12) + em; // ~ -18px;
+					}
+				}
+			}
+
+			&:hover,
+			&:focus {
+				color: darken(conf.$mandy, fibonacci.$asymp-l-percentage);
+			}
+
+			&:visited {
+				color: conf.$mandy;
+			}
+		}
+
+		&--shoping-cart {
+			color: conf.$body-color;
+
+			#{$action} {
+				&-icon {
+					font-size: math.div(28, 16) + rem;
+				}
+
+				&-badge {
+					top: math.div(-12, 12) + em; // ~ -14px
+
+					// Left-To-Right
+					@at-root :root:not([dir='rtl']) & {
+						right: math.div(-14, 12) + em; // ~ -14px;
+					}
+
+					// Right-To-Left
+					@at-root :root[dir='rtl'] & {
+						left: math.div(-14, 12) + em; // ~ -14px;
+					}
+				}
+			}
+
+			&:hover,
+			&:focus {
+				color: darken(conf.$body-color, fibonacci.$asymp-l-percentage);
+			}
+
+			&:visited {
+				color: conf.$body-color;
+			}
+		}
+	}
+}
