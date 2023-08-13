@@ -1,5 +1,6 @@
 @use '../conf';
 @forward 'bootstrap-import' with (
+	$grid-gutter-width: conf.$grid-gutter-width,
 	$body-color: conf.$body-color,
 	$body-bg: conf.$body-bg,
 	$grid-breakpoints: conf.$grid-breakpoints,
