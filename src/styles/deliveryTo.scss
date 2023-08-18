@@ -1,16 +1,21 @@
-@use 'sass:math';
+@use '@sass-fairy/math/math.sass'; // contains additional unitless function
 @use 'sass:color';
 @use 'conf';
 
 .deliveryTo {
 	display: flex;
 	flex-direction: column;
-	row-gap: math.div(2, 16) + 0rem; // ~2px
+	row-gap: math.div(2, 16) + rem; // ~2px
+
+	@media (min-width: conf.$m) and (max-width: #{conf.$l - 1}) {
+		column-gap: math.div(conf.$grid-gutter-width, 2); // ~16px
+		flex-direction: row;
+		justify-content: center;
+	}
 
 	&__title {
 		// letter-spacing: math.div(1, 16) * -1em;
 		min-height: conf.$line-height-sm;
-		width: 100%;
 		margin: 0;
 		font-weight: 700;
 		font-size: 1rem;
@@ -22,11 +27,24 @@
 		text-overflow: ellipsis;
 		word-break: break-all;
 
+		@media (max-width: #{conf.$m - 1}) {
+			width: 100%;
+		}
+
 		&:empty {
-			font-weight: 300;
 			&::before {
-				content: 'Не указан город  доставки';
+				font-style: italic;
+				font-weight: 300;
+				content: 'Delivery city not seted';
+
+				@at-root :root[lang='ru'] & {
+					content: 'Город доставки не задан';
+				}
 			}
+		}
+
+		@media (max-width: #{conf.$m - 1}) {
+			text-align: center;
 		}
 	}
 
@@ -34,46 +52,80 @@
 		$info: &;
 		display: grid;
 
-		@media (max-width: #{conf.$l - 1}) {
+		@media (max-width: #{conf.$m - 1}) {
 			grid-template-columns: auto;
 			grid-template-rows:
 				auto
-				math.div(2, 16) + 0rem
+				math.div(2, 16) + rem
 				auto
-				math.div(2, 16) + 0rem
+				math.div(2, 16) + rem
 				auto;
 			grid-template-areas:
 				'address'
 				'.      '
-				'divider'
+				'hr     '
 				'.      '
 				'time   ';
 		}
 
-		@media (min-width: conf.$l) {
+		@media (min-width: conf.$m) and (max-width: #{conf.$l - 1}) {
 			align-items: center;
 			grid-template-columns: auto 13px auto 10px auto 1fr;
 			grid-template-areas:
-				'.       . divider . .    .'
-				'address . divider . time .'
-				'.       . divider . .    .';
+				'.       . hr . .    .'
+				'address . hr . time .'
+				'.       . hr . .    .';
+			grid-template-rows: 1fr auto 1fr;
+		}
+
+		@media (min-width: conf.$l) and (max-width: #{conf.$xl - 1}) {
+			grid-template-columns: auto;
+			grid-template-rows:
+				auto
+				math.div(2, 16) + rem
+				auto
+				math.div(2, 16) + rem
+				auto;
+			grid-template-areas:
+				'address'
+				'.      '
+				'hr     '
+				'.      '
+				'time   ';
+		}
+
+		@media (min-width: conf.$xl) {
+			align-items: center;
+			grid-template-columns: auto 13px auto 10px auto 1fr;
+			grid-template-areas:
+				'.       . hr . .    .'
+				'address . hr . time .'
+				'.       . hr . .    .';
 			grid-template-rows: 1fr auto 1fr;
 		}
 	}
 
 	&__address {
 		display: flex;
-		column-gap: math.div(6, 16) + 0em; // ~6px
+		column-gap: math.div(6, 16) + em; // ~6px
 		grid-area: address;
 		color: conf.$atlantis;
 		margin: 0;
 		line-height: conf.$line-height-sm;
 		font-weight: 700;
 
+		@media (max-width: #{conf.$m - 1}) {
+			justify-content: center;
+		}
+
+		// @media (min-width: conf.$l) and (max-width: #{conf.$xl - 1}) {
+		// 	flex-direction: column;
+		// }
+
 		&-icon {
 			flex-shrink: 0;
-			transform: translateY(#{math.div(3, 16) + 0em});
-			margin-inline-end: math.div(6, 16) + 0em;
+			transform: translateY(#{math.div(3, 16) + em});
+			margin-inline-end: math.div(6, 16) + em;
 			color: conf.$atlantis;
 		}
 
@@ -88,9 +140,14 @@
 			// letter-spacing: math.div(1, 16) * -1em;
 
 			&:empty {
+				font-style: italic;
 				font-weight: 300;
 				&::before {
-					content: 'Не указан адрес доставки';
+					content: 'Delivery address not seted';
+
+					@at-root :root[lang='ru'] & {
+						content: 'Адрес доставки не задан';
+					}
 				}
 			}
 		}
@@ -113,38 +170,53 @@
 			min-height: conf.$line-height-sm;
 
 			&:empty {
+				font-style: italic;
 				font-weight: 300;
 				&::before {
-					content: '0';
+					content: '?';
 				}
 			}
 		}
 	}
 
-	&__divider {
-		grid-area: divider;
+	&__hr {
+		grid-area: hr;
 		background-color: conf.$alto;
 		border: 0;
 		box-sizing: border-box;
-		margin: 0 math.div(1, 10) + 0rem 0 math.div(1, 13) + 0rem;
-		width: 100%;
-		height: math.div(1, 16) + 0rem;
+		margin: 0 math.div(1, 10) + rem 0 math.div(1, 13) + rem; // ~1 - 3px
 
-		&[aria-orientation='vertical'] {
-			@media (min-width: conf.$l) {
-				height: 100%;
-				width: math.div(1, 16) + 0rem;
-			}
+		@media (max-width: #{conf.$m - 1}) {
+			width: 100%;
+			height: clamp(1px, #{math.div(1, 16) + rem}, 3px); // ~1 - 3px
+		}
+
+		@media (min-width: conf.$m) and (max-width: #{conf.$l - 1}) {
+			height: 100%;
+			width: clamp(1px, #{math.div(1, 16) + rem}, 3px); // ~1 - 3px
+		}
+
+		@media (min-width: conf.$l) and (max-width: #{conf.$xl - 1}) {
+			width: 100%;
+			height: clamp(1px, #{math.div(1, 16) + rem}, 3px); // ~1 - 3px
+		}
+
+		@media (min-width: conf.$xl) {
+			height: 100%;
+			width: clamp(1px, #{math.div(1, 16) + rem}, 3px); // ~1 - 3px
 		}
 	}
 
 	&__time {
 		display: flex;
-		column-gap: math.div(4, 16) + 0em;
+		column-gap: math.div(4, 16) + em;
 		grid-area: time;
 		color: conf.$oslo-gray;
 		line-height: conf.$line-height-sm;
-		// color: color.change(conf.$limed-spruce, $alpha: 0.6); // #878F92
+
+		@media (max-width: #{conf.$m - 1}) {
+			justify-content: center;
+		}
 
 		&-text {
 			display: -webkit-box;
@@ -156,9 +228,14 @@
 			min-height: conf.$line-height-sm;
 
 			&:empty {
+				font-style: italic;
 				font-weight: 300;
 				&::before {
-					content: 'Не указана дата доставки';
+					content: 'Delivery date not seted';
+
+					@at-root :root[lang='ru'] & {
+						content: 'Дата доставки не задана';
+					}
 				}
 			}
 		}
@@ -184,8 +261,9 @@
 
 			&:empty {
 				font-weight: 300;
+				font-style: italic;
 				&::before {
-					content: '0';
+					content: '?';
 				}
 			}
 		}

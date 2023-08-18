@@ -321,6 +321,12 @@ $font-family-sans-serif: 'Proxima Nova', sans-serif;
 $font-family-base: $font-family-sans-serif;
 // stylelint-enable value-keyword-case
 
+// $font-size-root affects the value of `rem`, which is used for as well font sizes, paddings, and margins
+// $font-size-base affects the font size of the body text
+// custom :root font-size START
+$font-size-root: 16px;
+// custom :root font-size END
+
 // $font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
 // $font-size-lg:                $font-size-base * 1.25 !default;
 // $font-size-sm:                $font-size-base * .875 !default;

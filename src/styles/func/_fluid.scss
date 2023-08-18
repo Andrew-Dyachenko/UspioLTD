@@ -1,0 +1,7 @@
+@use '@sass-fairy/math/math.sass'; // contains additional unitless function
+
+// Smooth css property change from $min to  $max value according to the $wmin and $wmax window sizes
+// Linear dependency
+@function fluid($min, $max, $wmin, $wmax) {
+	@return calc(#{$max} + (#{math.unitless($max - $min)}) * (100vw - #{$wmax}) / #{math.unitless($wmax - $wmin)});
+}

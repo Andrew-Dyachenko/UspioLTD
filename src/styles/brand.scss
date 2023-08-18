@@ -8,5 +8,17 @@
 	&:any-link {
 		color: conf.$mine-shaft;
 		text-decoration: none;
+
+		&:hover,
+		&:active,
+		&:focus {
+			text-decoration: none;
+		}
+
+		&:hover,
+		&:active,
+		&:visited {
+			color: conf.$mine-shaft;
+		}
 	}
 }

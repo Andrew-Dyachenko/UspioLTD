@@ -5,23 +5,26 @@ html(lang='ru')
 		meta(name='viewport' content='width=device-width, initial-scale=1.0')
 		title Uspio LTD
 		link(rel='stylesheet' href='src/styles/index.scss')
+		script(src='src/js/index.js' type='module')
 	body
 		// Header
 		header.header
 			.container.header__container
 				// Brand logo
-				a.brand.header__brand(href='/')
+				a.brand.header__brand(href='/' title='На главную страницу')
 					svg.icon.icon--brand-logo.brand__icon(xmlns:xlink='http://www.w3.org/1999/xlink')
 						use(xlink:href='#brand-logo')
 
-				// Header divider
+				// Header hr
 				hr.header__hr(aria-orientation='vertical')
 
 				// Delivery
 				.deliveryTo.header__deliveryTo
 					// Delivery title
-					//- h5.deliveryTo__title(title='Город доставки: Москва') Москва
-					h5.deliveryTo__title(title='Город доставки: Москва') ТЕКСТ ТЕКСТ
+					//- h5.deliveryTo__title(title='Город доставки: Москва')
+					//- h5.deliveryTo__title(title='Город доставки: Москва') ТЕКСТ ТЕКСТ
+					//- h5.deliveryTo__title(title='Город доставки: Москва') Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur id nam nemo nesciunt eligendi suscipit earum officiis, facilis porro nisi sapiente reiciendis eius impedit deleniti nulla beatae ullam assumenda ratione.
+					h5.deliveryTo__title(title='Город доставки: Москва') МОСКВА
 
 					// Delivery info
 					.deliveryTo__info
@@ -32,27 +35,35 @@ html(lang='ru')
 
 							// Delivery address
 							span.deliveryTo__address-text-wrapper(title='Адрес доставки: ул. Большой Козловский Переулок 10с1')
-								//- span.deliveryTo__address-text ул. Большой Козловский Переулок 10с1
-								span.deliveryTo__address-text Тексттт
+								//- span.deliveryTo__address-text
+								//- span.deliveryTo__address-text Тексттт
+								//- span.deliveryTo__address-text Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero soluta distinctio velit! Numquam ex fugiat exercitationem quo sunt repellendus necessitatibus dicta consequatur officia minima. Rem praesentium quia accusamus deleniti dolorem!
+								span.deliveryTo__address-text ул. Большой Козловский Переулок 10с1
 
 							// Delivery quantity
 							abbr.deliveryTo__address-quantity(title='Общее количество ожидаемых доставок - (10шт.)')
 								span.deliveryTo__address-bracket (
 								span.deliveryTo__address-value-wrapper
+									//- span.deliveryTo__address-value
+									//- span.deliveryTo__address-value Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius illum voluptate, sed nemo harum nulla veritatis ratione molestiae quos quod totam quas a atque ullam, recusandae doloremque aliquam officiis temporibus.
 									span.deliveryTo__address-value 10
 								span.deliveryTo__address-bracket )
 
-						// Delivery divider
-						hr.deliveryTo__divider(aria-orientation='vertical')
+						// Delivery hr
+						hr.deliveryTo__hr(aria-orientation='vertical')
 
 						// Delivery time and date: 14th of September 2023, at 18:00 Moscow time (UTC+3)
 						time.deliveryTo__time(datetime='2023-08-14T18:00:00+03:00')
 							span.deliveryTo__time-text-wrapper(title='Ориентироочная дата и время доставки: 14-го Сентября, 18:00 (МСК)')
-								//- span.span.deliveryTo__time-text 14-го Сентября, 18:00 (МСК)
-								span.span.deliveryTo__time-text текст
+								//- span.span.deliveryTo__time-text
+								//- span.span.deliveryTo__time-text текст
+								//- span.span.deliveryTo__time-text Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias harum omnis animi eveniet mollitia. Praesentium qui dolorum quae repudiandae sit laboriosam dolores alias eligendi. Iusto blanditiis non beatae labore sint?
+								span.span.deliveryTo__time-text 14-го Сентября, 18:00 (МСК)
 							abbr.deliveryTo__time-quantity(title='Количество ближайших доставок - (10шт.)')
 								span.deliveryTo__time-bracket (
 								span.deliveryTo__time-value-wrapper
+									//- span.deliveryTo__time-value
+									//- span.deliveryTo__time-value Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos, magni? Vero voluptatibus quisquam aperiam commodi odit, magnam quam, eveniet est deserunt cumque ipsum ea eius blanditiis velit, officiis enim praesentium.
 									span.deliveryTo__time-value 10
 								span.deliveryTo__time-bracket )
 
@@ -70,17 +81,23 @@ html(lang='ru')
 									td.sivcev__char Н
 									td.sivcev__char М
 									td.sivcev__char К
-					//- span.btn__text Запишитесь на<br> проверку
-					span.btn__text
-						span.btn__text-overflow Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil modi tempore minima dignissimos, qui laborum tenetur incidunt beatae et, consectetur enim perspiciatis aut vitae eveniet, debitis optio voluptates id rem!
+					span.btn__text.header__target-text
+						//- span.btn__text-overflow.header__target-overflow
+						//- span.btn__text-overflow.header__target-overflow Lorem, ipsum dolor sit amet consectetur adipisicing elit. A illum culpa sequi labore. Ea quibusdam corrupti id cum impedit? Dolores, earum quia facilis optio minus sunt error fugit at molestiae?
+						span.btn__text-overflow.header__target-overflow  Запишитесь на<br class='d-none d-xl-inline'> проверку
 
-				// Header divider
+				// Header hr
 				hr.header__hr(aria-orientation='vertical')
 
 				// Address
 				address.header__address
-					a.header__address-phone(href='tel:+78001111111' title='Позвонить через приложение установленное по умолчанию, на номер: +78001111111') +7 (800) 111-111-1
-					button.btn.btn-link.header__address-callback(title='Кнопка \"Перезвоните мне\": Откроет модальное окно с формой обратной связи') Перезвоните мне
+					//- a.header__address-phone(href='tel:+78001111111' title='Позвонить на номер: +78001111111')
+					//- a.header__address-phone(href='tel:+78001111111' title='Позвонить на номер: +78001111111') Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui sit voluptatem inventore ducimus, repellat cum. Laborum, perspiciatis veritatis officia praesentium, iste illo vitae eum nobis quibusdam fugit accusantium modi error.
+					a.header__address-phone(href='tel:+78001111111' title='Позвонить на номер: +78001111111') +7 (800) 111-111-1
+					button.btn.btn-link.header__address-callback(title='Откроет модальное окно с формой обратной связи')
+						//- span
+						//- span Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus magni dolores at quaerat quisquam? Voluptatibus officiis optio architecto repellat. Facilis, nam! Rem excepturi autem deleniti odio odit reprehenderit ullam distinctio.
+						span Перезвоните мне
 
 				// Header actions: Favorites & Basket buttons
 				.header__actions
@@ -90,6 +107,8 @@ html(lang='ru')
 								svg.icon.icon--heart.header__action-icon(xmlns:xlink='http://www.w3.org/1999/xlink')
 									use(xlink:href='#heart')
 								span.badge.badge_custom.badge_custom_atlantis.badge_custom_circled.header__action-badge(title='В избранном: 99 товаров')
+									//- span.badge__overflow
+									//- span.badge__overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut optio ut dignissimos perferendis quidem et natus enim in ab vel ipsum, laudantium laborum temporibus placeat, eos aliquam odit autem quibusdam?
 									span.badge__overflow 99
 
 						.header__actions-col
@@ -97,6 +116,8 @@ html(lang='ru')
 								svg.icon.icon--shoping-cart.header__action-icon(xmlns:xlink='http://www.w3.org/1999/xlink')
 									use(xlink:href='#shoping-cart')
 								span.badge.badge_custom.badge_custom_atlantis.badge_custom_circled.header__action-badge(title='В корзине: 3 товара')
+									//- span.badge__overflow
+									//- span.badge__overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut optio ut dignissimos perferendis quidem et natus enim in ab vel ipsum, laudantium laborum temporibus placeat, eos aliquam odit autem quibusdam?
 									span.badge__overflow 3
 
 

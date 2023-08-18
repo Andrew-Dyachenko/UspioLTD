@@ -9,6 +9,8 @@
 		"rome": "12.1.3"
 	},
 	"dependencies": {
-		"bootstrap": "^4.6.2"
+		"@sass-fairy/math": "^1.0.3",
+		"bootstrap": "^4.6.2",
+		"jquery": "^3.7.0"
 	}
 }
