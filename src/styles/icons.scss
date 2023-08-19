@@ -24,4 +24,12 @@
 	&--shoping-cart {
 		width: math.div(30, 28) + em; // ~28px
 	}
+
+	&--vk {
+		height: math.div(12, 20) + em; // ~12px
+	}
+
+	&--facebook {
+		width: math.div(10, 20) + em; // ~10px
+	}
 }

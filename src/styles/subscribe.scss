@@ -1,0 +1,130 @@
+@use 'sass:math';
+@use 'conf';
+
+.subscribe {
+	display: flex;
+	align-items: center;
+	gap: math.div(15, 16) + rem;
+
+	@media (max-width: #{conf.$xs - 1}) {
+		flex-direction: column;
+	}
+
+	@media (min-width: conf.$xs) and (max-width: #{conf.$s - 1}) {
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	@media (min-width: conf.$s) and (max-width: #{conf.$m - 1}) {
+		flex-direction: column;
+	}
+
+	@media (min-width: conf.$m) and (max-width: #{conf.$xl - 1}) {
+		flex-wrap: wrap;
+	}
+
+	&__title {
+		grid-area: belt__title;
+		font-weight: 700;
+		font-size: math.div(18, 16) + rem;
+		margin: 0;
+		line-height: math.div(22, 18);
+		min-height: math.div(22, 18) + em;
+
+		@media (min-width: conf.$xs) and (max-width: #{conf.$xl - 1}) {
+			text-align: center;
+			width: 100%;
+		}
+
+		@media (min-width: conf.$xl) {
+			padding-inline-end: math.div(24, 16) + rem;
+			min-width: math.div(240, 18) + em;
+			flex-grow: 1;
+		}
+
+		&-overflow {
+			overflow: hidden;
+			display: -webkit-box;
+			-webkit-line-clamp: 2;
+			-webkit-box-orient: vertical;
+			text-overflow: ellipsis;
+			word-break: break-all;
+
+			&:empty {
+				&::before {
+					font-style: italic;
+					font-weight: 300;
+					word-break: normal;
+					content: 'Title text not seted';
+
+					@at-root :root[lang='ru'] & {
+						content: 'Текст заголовка не задан';
+					}
+				}
+			}
+		}
+	}
+
+	&__email {
+		text-align: center;
+		font-size: 1rem;
+		font-weight: 600;
+		color: conf.$body-color;
+
+		@media (max-width: #{conf.$xs - 1}) {
+			flex-grow: 1;
+		}
+
+		@media (min-width: conf.$xs) and (max-width: #{conf.$s - 1}) {
+			max-width: math.div(210, 16) + rem;
+		}
+
+		@media (min-width: conf.$m) and (max-width: #{conf.$xl}) {
+			flex-grow: 1;
+			width: auto;
+		}
+
+		@media (min-width: conf.$xl) {
+			width: math.div(210, 16) + rem;
+		}
+	}
+
+	&__submit {
+		text-align: center;
+		justify-content: center;
+
+		@media (max-width: #{conf.$xs - 1}) {
+			width: 100%;
+		}
+
+		@media (min-width: conf.$s) and (max-width: #{conf.$l}) {
+			width: 100%;
+		}
+
+		@media (min-width: conf.$xl) {
+			min-width: math.div(157, 16) + rem;
+		}
+
+		&-overflow {
+			overflow: hidden;
+			display: -webkit-box;
+			-webkit-line-clamp: 2;
+			-webkit-box-orient: vertical;
+			text-overflow: ellipsis;
+			word-break: break-all;
+
+			&:empty {
+				&::before {
+					font-style: italic;
+					font-weight: 300;
+					word-break: normal;
+					content: 'Button text not seted';
+
+					@at-root :root[lang='ru'] & {
+						content: 'Текст кнопки не задан';
+					}
+				}
+			}
+		}
+	}
+}

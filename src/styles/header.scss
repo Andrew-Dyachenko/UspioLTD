@@ -304,6 +304,7 @@
 		grid-area: header__target;
 		font-size: math.div(14, 16) + rem;
 		min-height: math.div(52, 16) + rem;
+		color: conf.$body-color;
 
 		@media (min-width: conf.$l) {
 			max-width: math.div(214, 16) + rem; // ~214px
@@ -477,6 +478,12 @@
 		line-height: 0;
 		border: 0;
 		background: none;
+
+		@media (prefers-reduced-motion: no-preference) {
+			transition-property: color;
+			transition-duration: var(--animation-duration);
+			transition-timing-function: var(--animation-timing-function);
+		}
 
 		&:any-link {
 			text-decoration: none;

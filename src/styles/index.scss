@@ -6,10 +6,13 @@
 @use 'bootstrap';
 @use 'icons';
 @use 'header';
+@use 'footer';
 @import '~bootstrap/scss/functions'; // For color-yiq
 @import '~bootstrap/scss/variables'; // For color-yiq
 
 :root {
+	--animation-timing-function: ease-in-out;
+	--animation-duration: 0.15s;
 	font-size: conf.$font-size-root;
 }
 
@@ -21,6 +24,20 @@ body {
 	}
 }
 
+.app {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+
+	&__main {
+		flex-grow: 1;
+	}
+
+	&__footer {
+		margin-top: auto;
+	}
+}
+
 .btn {
 	$btn: &;
 
@@ -28,9 +45,8 @@ body {
 		display: inline-flex;
 		align-items: center;
 		font-weight: 600;
-		color: conf.$body-color;
-		min-height: math.div(54, 16) + rem;
-		padding-inline: 30px;
+		min-height: math.div(52, 16) + rem; /* ~52px */
+		padding-inline: math.div(20, 16) + rem;
 
 		#{$btn} {
 			&__text {
@@ -64,6 +80,22 @@ body {
 					grid-area: btn__text;
 				}
 			}
+		}
+	}
+}
+
+.form-control {
+	&_custom {
+		min-height: math.div(52, 16) + rem; /* ~52px */
+		padding-inline: math.div(15, 16) + rem; /* ~15px */
+		color: conf.$body-color;
+
+		&::placeholder {
+			color: conf.$body-color;
+		}
+
+		&_rounded {
+			border-radius: 100rem;
 		}
 	}
 }

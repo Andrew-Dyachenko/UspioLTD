@@ -1,0 +1,17 @@
+@use 'conf';
+@use 'conf/fibonacci';
+@use 'social';
+@use 'belt';
+@use 'subscribe';
+
+.footer {
+	&__container {
+		display: grid;
+	}
+
+	&__belt {
+		position: relative;
+		background-color: conf.$body-bg;
+		box-shadow: 0 0 5px 0 rgba(conf.$black, fibonacci.$asymp-xl);
+	}
+}

@@ -1,0 +1,101 @@
+@use '@sass-fairy/math/math.sass';
+@use 'conf';
+@use 'conf/fibonacci';
+@use 'func';
+
+.belt {
+	&__container {
+		display: grid;
+		grid-auto-flow: column;
+		grid-template-columns: 1fr;
+		grid-template-rows:
+			math.div(conf.$grid-gutter-width, 2) /* ~16px || ~1rem */
+			auto /* belt__subscribe */
+			math.div(conf.$grid-gutter-width, 2) /* ~16px || ~1rem */
+			auto /* belt__hr */
+			math.div(conf.$grid-gutter-width, 2) /* ~16px || ~1rem */
+			auto /* belt__social */
+			math.div(conf.$grid-gutter-width, 2); /* ~16px || ~1rem */
+		grid-template-areas:
+			'.              '
+			'belt__subscribe'
+			'.              '
+			'belt__hr       '
+			'.              '
+			'belt__social   '
+			'.              ';
+
+		@media (min-width: conf.$s) {
+			grid-template-areas:
+				'.               . belt__hr . .           '
+				'belt__subscribe . belt__hr . belt__social'
+				'.               . belt__hr . .           ';
+			grid-template-columns:
+				1fr /* belt__subscribe */
+				math.div(conf.$grid-gutter-width, 2) /* ~16px || ~1rem */
+				auto /* belt__hr */
+				math.div(conf.$grid-gutter-width, 2) /* ~16px || ~1rem */
+				1fr; /* belt__social */
+			grid-template-rows:
+				math.div(25, 16) + rem /* ~25px */
+				auto /* belt__subscribe + belt__hr + belt__social */
+				math.div(25, 16) + rem; /* ~25px */
+		}
+
+		@media (min-width: conf.$s) and (max-width: #{conf.$xl - 1}) {
+			align-items: center;
+			grid-template-columns:
+				/* belt__subscribe */
+				1fr
+				/* ~16px || ~1rem */
+				/* from ~16px to ~50px */
+				func.fluid(
+					math.unitless(math.div(conf.$grid-gutter-width, 2)) * conf.$font-size-root,
+					math.div(50, 16) * conf.$font-size-root,
+					conf.$s,
+					conf.$xl
+				)
+				/* belt__hr */
+				auto
+				/* ~16px || ~1rem */
+				math.div(conf.$grid-gutter-width, 2)
+				/* belt__social */
+				1fr;
+		}
+
+		@media (min-width: conf.$xl) {
+			align-items: center;
+			grid-template-columns:
+				13fr /* belt__subscribe */
+				math.div(50, 16) + rem /* ~50px || ~3,125rem */
+				auto /* belt__hr */
+				math.div(50, 16) + rem /* ~50px || ~3,125rem */
+				6fr; /* belt__social */
+		}
+	}
+
+	&__subscribe {
+		grid-area: belt__subscribe;
+	}
+
+	&__hr {
+		grid-area: belt__hr;
+		background-color: conf.$wild-sand;
+		border: 0;
+		box-sizing: border-box;
+		margin: 0;
+
+		@media (max-width: #{conf.$s - 1}) {
+			height: clamp(1px, #{math.div(1, 16) + rem}, 3px); /* ~1-3px */
+		}
+
+		@media (min-width: conf.$s) {
+			height: 100%;
+			width: clamp(1px, #{math.div(1, 16) + rem}, 3px); /* ~1-3px */
+		}
+	}
+
+	&__social {
+		grid-area: belt__social;
+	}
+}

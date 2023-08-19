@@ -1,5 +1,5 @@
 doctype html
-html(lang='ru')
+html(lang='ru' dir='ltr')
 	head
 		meta(charset='UTF-8')
 		meta(name='viewport' content='width=device-width, initial-scale=1.0')
@@ -7,119 +7,190 @@ html(lang='ru')
 		link(rel='stylesheet' href='src/styles/index.scss')
 		script(src='src/js/index.js' type='module')
 	body
-		// Header
-		header.header
-			.container.header__container
-				// Brand logo
-				a.brand.header__brand(href='/' title='На главную страницу')
-					svg.icon.icon--brand-logo.brand__icon(xmlns:xlink='http://www.w3.org/1999/xlink')
-						use(xlink:href='#brand-logo')
+		// App
+		.app
+			// Header
+			header.header.app__header
+				.container.header__container
+					// Brand logo
+					a.brand.header__brand(href='/' title='На главную страницу')
+						svg.icon.icon--brand-logo.brand__icon(xmlns:xlink='http://www.w3.org/1999/xlink')
+							use(xlink:href='#brand-logo')
 
-				// Header hr
-				hr.header__hr(aria-orientation='vertical')
+					// Header hr
+					hr.header__hr(aria-orientation='vertical')
 
-				// Delivery
-				.deliveryTo.header__deliveryTo
-					// Delivery title
-					//- h5.deliveryTo__title(title='Город доставки: Москва')
-					//- h5.deliveryTo__title(title='Город доставки: Москва') ТЕКСТ ТЕКСТ
-					//- h5.deliveryTo__title(title='Город доставки: Москва') Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur id nam nemo nesciunt eligendi suscipit earum officiis, facilis porro nisi sapiente reiciendis eius impedit deleniti nulla beatae ullam assumenda ratione.
-					h5.deliveryTo__title(title='Город доставки: Москва') МОСКВА
-
-					// Delivery info
-					.deliveryTo__info
-						.deliveryTo__address
-							// Delivery icon
-							svg.icon.icon--map-pin.deliveryTo__address-icon(xmlns:xlink='http://www.w3.org/1999/xlink')
-								use(xlink:href='#map-pin')
-
-							// Delivery address
-							span.deliveryTo__address-text-wrapper(title='Адрес доставки: ул. Большой Козловский Переулок 10с1')
-								//- span.deliveryTo__address-text
-								//- span.deliveryTo__address-text Тексттт
-								//- span.deliveryTo__address-text Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero soluta distinctio velit! Numquam ex fugiat exercitationem quo sunt repellendus necessitatibus dicta consequatur officia minima. Rem praesentium quia accusamus deleniti dolorem!
-								span.deliveryTo__address-text ул. Большой Козловский Переулок 10с1
-
-							// Delivery quantity
-							abbr.deliveryTo__address-quantity(title='Общее количество ожидаемых доставок - (10шт.)')
-								span.deliveryTo__address-bracket (
-								span.deliveryTo__address-value-wrapper
-									//- span.deliveryTo__address-value
-									//- span.deliveryTo__address-value Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius illum voluptate, sed nemo harum nulla veritatis ratione molestiae quos quod totam quas a atque ullam, recusandae doloremque aliquam officiis temporibus.
-									span.deliveryTo__address-value 10
-								span.deliveryTo__address-bracket )
-
-						// Delivery hr
-						hr.deliveryTo__hr(aria-orientation='vertical')
-
-						// Delivery time and date: 14th of September 2023, at 18:00 Moscow time (UTC+3)
-						time.deliveryTo__time(datetime='2023-08-14T18:00:00+03:00')
-							span.deliveryTo__time-text-wrapper(title='Ориентироочная дата и время доставки: 14-го Сентября, 18:00 (МСК)')
-								//- span.span.deliveryTo__time-text
-								//- span.span.deliveryTo__time-text текст
-								//- span.span.deliveryTo__time-text Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias harum omnis animi eveniet mollitia. Praesentium qui dolorum quae repudiandae sit laboriosam dolores alias eligendi. Iusto blanditiis non beatae labore sint?
-								span.span.deliveryTo__time-text 14-го Сентября, 18:00 (МСК)
-							abbr.deliveryTo__time-quantity(title='Количество ближайших доставок - (10шт.)')
-								span.deliveryTo__time-bracket (
-								span.deliveryTo__time-value-wrapper
-									//- span.deliveryTo__time-value
-									//- span.deliveryTo__time-value Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos, magni? Vero voluptatibus quisquam aperiam commodi odit, magnam quam, eveniet est deserunt cumque ipsum ea eius blanditiis velit, officiis enim praesentium.
-									span.deliveryTo__time-value 10
-								span.deliveryTo__time-bracket )
-
-				// Fast header target
-				a.btn.btn-outline-atlantis.btn_custom.btn_custom_rounded.header__target(href='javascript: void(0);' role='button')
-					// Fast header target icon
-					.header__target-icon
-						// Sivcev table
-						table.sivcev(aria-description='Эта таблица представляет собой миниатюру таблицы Сивцева - таблицы, которая, в свою очередь представляет собой стандартный набор печатных знаков для определения остроты зрения человека')
-							tbody
-								tr
-									td.sivcev__char Ш
-									td.sivcev__char(colspan='2') Б
-								tr
-									td.sivcev__char Н
-									td.sivcev__char М
-									td.sivcev__char К
-					span.btn__text.header__target-text
-						//- span.btn__text-overflow.header__target-overflow
-						//- span.btn__text-overflow.header__target-overflow Lorem, ipsum dolor sit amet consectetur adipisicing elit. A illum culpa sequi labore. Ea quibusdam corrupti id cum impedit? Dolores, earum quia facilis optio minus sunt error fugit at molestiae?
-						span.btn__text-overflow.header__target-overflow  Запишитесь на<br class='d-none d-xl-inline'> проверку
-
-				// Header hr
-				hr.header__hr(aria-orientation='vertical')
-
-				// Address
-				address.header__address
-					//- a.header__address-phone(href='tel:+78001111111' title='Позвонить на номер: +78001111111')
-					//- a.header__address-phone(href='tel:+78001111111' title='Позвонить на номер: +78001111111') Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui sit voluptatem inventore ducimus, repellat cum. Laborum, perspiciatis veritatis officia praesentium, iste illo vitae eum nobis quibusdam fugit accusantium modi error.
-					a.header__address-phone(href='tel:+78001111111' title='Позвонить на номер: +78001111111') +7 (800) 111-111-1
-					button.btn.btn-link.header__address-callback(title='Откроет модальное окно с формой обратной связи')
-						//- span
-						//- span Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus magni dolores at quaerat quisquam? Voluptatibus officiis optio architecto repellat. Facilis, nam! Rem excepturi autem deleniti odio odit reprehenderit ullam distinctio.
-						span Перезвоните мне
-
-				// Header actions: Favorites & Basket buttons
-				.header__actions
-					.header__actions-row
-						.header__actions-col
-							a.header__action.header__action--heart(href='/favourites' title='Избранные товары') Избранные товары
-								svg.icon.icon--heart.header__action-icon(xmlns:xlink='http://www.w3.org/1999/xlink')
-									use(xlink:href='#heart')
-								span.badge.badge_custom.badge_custom_atlantis.badge_custom_circled.header__action-badge(title='В избранном: 99 товаров')
-									//- span.badge__overflow
-									//- span.badge__overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut optio ut dignissimos perferendis quidem et natus enim in ab vel ipsum, laudantium laborum temporibus placeat, eos aliquam odit autem quibusdam?
-									span.badge__overflow 99
-
-						.header__actions-col
-							a.header__action.header__action--shoping-cart(href='/favourites' title='Корзина') Корзина
-								svg.icon.icon--shoping-cart.header__action-icon(xmlns:xlink='http://www.w3.org/1999/xlink')
-									use(xlink:href='#shoping-cart')
-								span.badge.badge_custom.badge_custom_atlantis.badge_custom_circled.header__action-badge(title='В корзине: 3 товара')
-									//- span.badge__overflow
-									//- span.badge__overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut optio ut dignissimos perferendis quidem et natus enim in ab vel ipsum, laudantium laborum temporibus placeat, eos aliquam odit autem quibusdam?
-									span.badge__overflow 3
+					// Delivery
+					.deliveryTo.header__deliveryTo
+						// Delivery title
+						//- Empty delivery title [test]
+						//- Layout delivery title [test]
+						//- Overflowing delivery title [test]
+						//- Meaningful delivery title [test]
 
 
-		// SVG sprite
-		include ./src/pug/blocks/sprite-defs
+						//- Empty delivery title [test]
+						//- h5.deliveryTo__title(title='Город доставки: Москва')
+
+						//- Layout delivery title [test]
+						//- h5.deliveryTo__title(title='Город доставки: Москва') ТЕКСТ ТЕКСТ
+
+						//- Overflowing delivery title [test]
+						//- h5.deliveryTo__title(title='Город доставки: Москва') Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur id nam nemo nesciunt eligendi suscipit earum officiis, facilis porro nisi sapiente reiciendis eius impedit deleniti nulla beatae ullam assumenda ratione.
+
+						//- Meaningful delivery title [test]
+						h5.deliveryTo__title(title='Город доставки: Москва') МОСКВА
+
+						// Delivery info
+						.deliveryTo__info
+							.deliveryTo__address
+								// Delivery icon
+								svg.icon.icon--map-pin.deliveryTo__address-icon(xmlns:xlink='http://www.w3.org/1999/xlink')
+									use(xlink:href='#map-pin')
+
+								// Delivery address
+								span.deliveryTo__address-text-wrapper(title='Адрес доставки: ул. Большой Козловский Переулок 10с1')
+									//- span.deliveryTo__address-text
+									//- span.deliveryTo__address-text Тексттт
+									//- span.deliveryTo__address-text Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero soluta distinctio velit! Numquam ex fugiat exercitationem quo sunt repellendus necessitatibus dicta consequatur officia minima. Rem praesentium quia accusamus deleniti dolorem!
+									span.deliveryTo__address-text ул. Большой Козловский Переулок 10с1
+
+								// Delivery quantity
+								abbr.deliveryTo__address-quantity(title='Общее количество ожидаемых доставок - (10шт.)')
+									span.deliveryTo__address-bracket (
+									span.deliveryTo__address-value-wrapper
+										//- span.deliveryTo__address-value
+										//- span.deliveryTo__address-value Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius illum voluptate, sed nemo harum nulla veritatis ratione molestiae quos quod totam quas a atque ullam, recusandae doloremque aliquam officiis temporibus.
+										span.deliveryTo__address-value 10
+									span.deliveryTo__address-bracket )
+
+							// Delivery hr
+							hr.deliveryTo__hr(aria-orientation='vertical')
+
+							// Delivery time and date: 14th of September 2023, at 18:00 Moscow time (UTC+3)
+							time.deliveryTo__time(datetime='2023-08-14T18:00:00+03:00')
+								span.deliveryTo__time-text-wrapper(title='Ориентироочная дата и время доставки: 14-го Сентября, 18:00 (МСК)')
+									//- span.span.deliveryTo__time-text
+									//- span.span.deliveryTo__time-text текст
+									//- span.span.deliveryTo__time-text Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias harum omnis animi eveniet mollitia. Praesentium qui dolorum quae repudiandae sit laboriosam dolores alias eligendi. Iusto blanditiis non beatae labore sint?
+									span.span.deliveryTo__time-text 14-го Сентября, 18:00 (МСК)
+								abbr.deliveryTo__time-quantity(title='Количество ближайших доставок - (10шт.)')
+									span.deliveryTo__time-bracket (
+									span.deliveryTo__time-value-wrapper
+										//- span.deliveryTo__time-value
+										//- span.deliveryTo__time-value Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos, magni? Vero voluptatibus quisquam aperiam commodi odit, magnam quam, eveniet est deserunt cumque ipsum ea eius blanditiis velit, officiis enim praesentium.
+										span.deliveryTo__time-value 10
+									span.deliveryTo__time-bracket )
+
+					// Fast header target
+					a.btn.btn-outline-atlantis.btn_custom.btn_custom_rounded.header__target(href='javascript: void(0);' role='button')
+						// Fast header target icon
+						.header__target-icon
+							// Sivcev table
+							table.sivcev(aria-description='Эта таблица представляет собой миниатюру таблицы Сивцева - таблицы, которая, в свою очередь представляет собой стандартный набор печатных знаков для определения остроты зрения человека')
+								tbody
+									tr
+										td.sivcev__char Ш
+										td.sivcev__char(colspan='2') Б
+									tr
+										td.sivcev__char Н
+										td.sivcev__char М
+										td.sivcev__char К
+						span.btn__text.header__target-text
+							//- span.btn__text-overflow.header__target-overflow
+							//- span.btn__text-overflow.header__target-overflow Lorem, ipsum dolor sit amet consectetur adipisicing elit. A illum culpa sequi labore. Ea quibusdam corrupti id cum impedit? Dolores, earum quia facilis optio minus sunt error fugit at molestiae?
+							span.btn__text-overflow.header__target-overflow  Запишитесь на<br class='d-none d-xl-inline'> проверку
+
+					// Header hr
+					hr.header__hr(aria-orientation='vertical')
+
+					// Address
+					address.header__address
+						//- a.header__address-phone(href='tel:+78001111111' title='Позвонить на номер: +78001111111')
+						//- a.header__address-phone(href='tel:+78001111111' title='Позвонить на номер: +78001111111') Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui sit voluptatem inventore ducimus, repellat cum. Laborum, perspiciatis veritatis officia praesentium, iste illo vitae eum nobis quibusdam fugit accusantium modi error.
+						a.header__address-phone(href='tel:+78001111111' title='Позвонить на номер: +78001111111') +7 (800) 111-111-1
+						button.btn.btn-link.header__address-callback(title='Откроет модальное окно с формой обратной связи')
+							//- span
+							//- span Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus magni dolores at quaerat quisquam? Voluptatibus officiis optio architecto repellat. Facilis, nam! Rem excepturi autem deleniti odio odit reprehenderit ullam distinctio.
+							span Перезвоните мне
+
+					// Header actions: Favorites & Basket buttons
+					.header__actions
+						.header__actions-row
+							.header__actions-col
+								a.header__action.header__action--heart(href='/favourites' title='Избранные товары') Избранные товары
+									svg.icon.icon--heart.header__action-icon(xmlns:xlink='http://www.w3.org/1999/xlink')
+										use(xlink:href='#heart')
+									span.badge.badge_custom.badge_custom_atlantis.badge_custom_circled.header__action-badge(title='В избранном: 99 товаров')
+										//- span.badge__overflow
+										//- span.badge__overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut optio ut dignissimos perferendis quidem et natus enim in ab vel ipsum, laudantium laborum temporibus placeat, eos aliquam odit autem quibusdam?
+										span.badge__overflow 99
+
+							.header__actions-col
+								a.header__action.header__action--shoping-cart(href='/favourites' title='Корзина') Корзина
+									svg.icon.icon--shoping-cart.header__action-icon(xmlns:xlink='http://www.w3.org/1999/xlink')
+										use(xlink:href='#shoping-cart')
+									span.badge.badge_custom.badge_custom_atlantis.badge_custom_circled.header__action-badge(title='В корзине: 3 товара')
+										//- span.badge__overflow
+										//- span.badge__overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut optio ut dignissimos perferendis quidem et natus enim in ab vel ipsum, laudantium laborum temporibus placeat, eos aliquam odit autem quibusdam?
+										span.badge__overflow 3
+
+			// Main
+			main.main.app__main
+
+			// Footer
+			footer.footer.app__footer
+				//- .container.footer__container
+
+				// Footer belt
+				.belt.footer__belt
+					.container.belt__container
+
+						// Subscribe form
+						form.subscribe.belt__subscribe
+							// Belt title
+							h4.subscribe__title
+								//- span.subscribe__title-overflow
+								//- span.subscribe__title-overflow Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis, rerum culpa nam corrupti et officiis odit adipisci id dolor temporibus nesciunt sed alias illum! Doloribus accusantium odio quisquam id voluptates.
+								span.subscribe__title-overflow Подпишитесь на нашу<br class='d-none d-xl-inline'> рассылку
+							input.form-control.form-control_custom.form-control_custom_rounded.form-control-atlantis.subscribe__email(type='email' placeholder='Введите свой e-mail' required)
+							button.btn.btn-atlantis.btn_custom.btn_custom_rounded.subscribe__submit(type='submit')
+								//- span.subscribe__submit-overflow
+								//- span.subscribe__submit-overflow Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae quasi natus quae, soluta in laboriosam labore fugit numquam. Neque consequuntur quasi hic dolorem quibusdam repellendus. Nihil perferendis ipsam saepe quod!
+								span.subscribe__submit-overflow Подписаться
+
+						// Belt hr
+						hr.belt__hr(aria-orientation='vertical')
+
+						// social block
+						section.social.belt__social
+							h5.social__title
+								//- span.social__title-overflow
+								//- span.social__title-overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi optio, maiores a repudiandae ipsum autem asperiores ullam repellat reiciendis. Mollitia minus ad provident explicabo accusamus officiis inventore non cupiditate minima?
+								span.social__title-overflow МЫ В СОЦ.<br class='d-none d-xl-inline'> СЕТЯХ:
+
+							.social__row
+
+								// Vkontakte
+								.social__col
+									a.social__item(href='https://vk.com' target='_blank' rel='noopener noreferrer' title='VKontakte link') VKontakte
+										.social__overflow
+											svg.icon.icon--vk.social__icon(xmlns:xlink='http://www.w3.org/1999/xlink')
+												use(xlink:href='#vk')
+
+								// Facebook
+								.social__col
+									a.social__item(href='https://facebook.com' target='_blank' rel='noopener noreferrer' title='Facebook link') Facebook
+										.social__overflow
+											svg.icon.icon--facebook.social__icon(xmlns:xlink='http://www.w3.org/1999/xlink')
+												use(xlink:href='#facebook')
+
+								// Instagram
+								.social__col
+									a.social__item(href='https://instagram.com' target='_blank' rel='noopener noreferrer' title='Instagram link') Instagram
+										.social__overflow
+											svg.icon.icon--instagram.social__icon(xmlns:xlink='http://www.w3.org/1999/xlink')
+												use(xlink:href='#instagram')
+
+			// SVG sprite
+			include ./src/pug/blocks/sprite-defs

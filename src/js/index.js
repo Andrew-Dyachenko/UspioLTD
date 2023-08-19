@@ -14,7 +14,7 @@ function ariaOrientation(elements) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-	let elements = document.querySelectorAll('[aria-orientation]');
+	let elements = document.querySelectorAll('hr[aria-orientation]');
 	let ariaOrientationTimeout;
 
 	ariaOrientation(elements);
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	window.addEventListener('resize', () => {
 		clearTimeout(ariaOrientationTimeout); // Resizing may be still in process, wait until the end
 		ariaOrientationTimeout = setTimeout(() => {
-			elements = document.querySelectorAll('[aria-orientation]');
+			elements = document.querySelectorAll('hr[aria-orientation]');
 			ariaOrientation(elements);
 		}, 1000);
 	});
