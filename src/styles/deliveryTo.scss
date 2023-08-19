@@ -26,6 +26,7 @@
 		overflow: hidden;
 		text-overflow: ellipsis;
 		word-break: break-all;
+		text-align: start;
 
 		@media (max-width: #{conf.$m - 1}) {
 			width: 100%;

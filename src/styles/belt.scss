@@ -37,30 +37,25 @@
 				math.div(conf.$grid-gutter-width, 2) /* ~16px || ~1rem */
 				1fr; /* belt__social */
 			grid-template-rows:
-				math.div(25, 16) + rem /* ~25px */
+				math.div(21, 16) + rem /* ~25px */
 				auto /* belt__subscribe + belt__hr + belt__social */
-				math.div(25, 16) + rem; /* ~25px */
+				math.div(21, 16) + rem; /* ~25px */
 		}
 
 		@media (min-width: conf.$s) and (max-width: #{conf.$xl - 1}) {
 			align-items: center;
 			grid-template-columns:
-				/* belt__subscribe */
-				1fr
-				/* ~16px || ~1rem */
-				/* from ~16px to ~50px */
+				1fr /* belt__subscribe */
 				func.fluid(
 					math.unitless(math.div(conf.$grid-gutter-width, 2)) * conf.$font-size-root,
 					math.div(50, 16) * conf.$font-size-root,
 					conf.$s,
 					conf.$xl
 				)
-				/* belt__hr */
-				auto
-				/* ~16px || ~1rem */
-				math.div(conf.$grid-gutter-width, 2)
-				/* belt__social */
-				1fr;
+				/* from ~16px to ~50px */
+				auto /* belt__hr */
+				math.div(conf.$grid-gutter-width, 2) /* ~16px || ~1rem */
+				1fr; /* belt__social */
 		}
 
 		@media (min-width: conf.$xl) {

@@ -30,6 +30,7 @@
 		margin: 0;
 		line-height: math.div(22, 18);
 		min-height: math.div(22, 18) + em;
+		text-align: start;
 
 		@media (min-width: conf.$xs) and (max-width: #{conf.$xl - 1}) {
 			text-align: center;

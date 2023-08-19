@@ -140,7 +140,6 @@ html(lang='ru' dir='ltr')
 
 			// Footer
 			footer.footer.app__footer
-				//- .container.footer__container
 
 				// Footer belt
 				.belt.footer__belt
@@ -191,6 +190,191 @@ html(lang='ru' dir='ltr')
 										.social__overflow
 											svg.icon.icon--instagram.social__icon(xmlns:xlink='http://www.w3.org/1999/xlink')
 												use(xlink:href='#instagram')
+
+				// Footer container
+				.container.footer__container
+					// Brand logo
+					a.brand.footer__brand(href='/' title='На главную страницу')
+						svg.icon.icon--brand-logo.brand__icon(xmlns:xlink='http://www.w3.org/1999/xlink')
+							use(xlink:href='#brand-logo')
+
+					// Footer address
+					address.address.footer__address
+						ul.address__row
+							// Phone
+							li.address__col
+								.address__item
+									a.address__link.address__link--phone(href='tel:+78001111111' title='Позвонить на номер: +78001111111')
+										svg.icon.icon--phone-call.address__icon(xmlns:xlink='http://www.w3.org/1999/xlink')
+											use(xlink:href='#phone-call')
+										//- span.address__link-overflow
+										//- span.address__link-overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque beatae sit ducimus cum ullam porro rem architecto consequatur distinctio tempore, labore nobis, commodi minima suscipit? Vero soluta minima modi praesentium.
+										span.address__link-overflow +7 (800) 111-111-1
+
+							// Email
+							li.address__col
+								.address__item
+									a.address__link.address__link--email(href='mailto:info@vimeo.ru' title='Написать письмо на адрес: info@vimeo.ru')
+										svg.icon.icon--at.address__icon(xmlns:xlink='http://www.w3.org/1999/xlink')
+											use(xlink:href='#at')
+										//- span.address__link-overflow
+										//- span.address__link-overflow Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat quod ea repudiandae, facilis cum rem perspiciatis aperiam ratione provident voluptatum rerum libero, aliquam assumenda quas quaerat! Quae, aliquam sed. Amet.
+										span.address__link-overflow info@vimeo.ru
+
+							// Question
+							li.address__col
+								.address__item
+									a.address__link.address__link--question(href='javascript: void(0);')
+										svg.icon.icon--circled-question.address__icon(xmlns:xlink='http://www.w3.org/1999/xlink')
+											use(xlink:href='#circled-question')
+										//- span.address__link-overflow
+										//- span.address__link-overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic iusto voluptates laudantium quibusdam corrupti, at aliquam iure facere fuga totam eveniet fugiat neque quis libero inventore assumenda quia quas incidunt?
+										span.address__link-overflow Задать вопрос
+
+							// Feedback
+							li.address__col
+								.address__item
+									a.address__link.address__link--feedback(href='javascript: void(0);')
+										svg.icon.icon--speech-bubble.address__icon(xmlns:xlink='http://www.w3.org/1999/xlink')
+											use(xlink:href='#speech-bubble')
+										//- span.address__link-overflow
+										//- span.address__link-overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo nemo ipsum sequi dicta impedit dolorum ratione tenetur, temporibus porro asperiores. Odit officiis dolores voluptate, officia provident est ducimus alias voluptatum?
+										span.address__link-overflow Оставить отзыв
+
+					// Footer hr (first)
+					hr.footer__hr.footer__hr--first(aria-orientation='horizontal')
+
+					// Footer title
+					h5.footer__title
+						span.footer__title-overflow Не стесняйтесь задавать интересующие вас вопросы, мы будем рады вас слышать!
+
+					// Footer hr (last)
+					hr.footer__hr.footer__hr--last(aria-orientation='vertical')
+
+					// Links
+					.links.footer__links
+						// First links column
+						.links__group
+							h6.links__title
+								//- span.links__overflow
+								//- span.links__overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, quisquam quod itaque repellendus reprehenderit est laudantium fuga facilis exercitationem voluptatum necessitatibus incidunt natus, culpa minima debitis delectus nam. In, magnam.
+								span.links__overflow Покупателям
+							ul.links__row
+								li.links__item
+									a.links__link(href='javascript: void(0);')
+										//- span.links__overflow
+										//- span.links__overflow Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo amet non quaerat nobis, libero enim dolor molestias provident sint est, repudiandae corrupti reiciendis illo ea maiores ipsum itaque sequi dignissimos?
+										span.links__overflow Как сделать заказ
+								li.links__item
+									a.links__link(href='javascript: void(0);')
+										span.links__overflow Способы оплаты
+								li.links__item
+									a.links__link(href='javascript: void(0);')
+										span.links__overflow Доставка
+								li.links__item
+									a.links__link(href='javascript: void(0);')
+										span.links__overflow Возврат товара
+								li.links__item
+									a.links__link(href='javascript: void(0);')
+										span.links__overflow Возврат денежных средств
+								li.links__item
+									a.links__link(href='javascript: void(0);')
+										span.links__overflow Правила продажи
+								li.links__item
+									a.links__link(href='javascript: void(0);')
+										span.links__overflow Правила пользования торговой площадкой
+								li.links__item
+									a.links__link(href='javascript: void(0);')
+										span.links__overflow Вопросы и ответы
+
+						// Second links column
+						.links__group
+							h6.links__title
+								span.links__overflow Партнерам
+							ul.links__row
+								li.links__item
+									a.links__link(href='javascript: void(0);')
+										span.links__overflow Продавайте на Vimeo
+								li.links__item
+									a.links__link(href='javascript: void(0);')
+										span.links__overflow Курьерам
+								li.links__item
+									a.links__link(href='javascript: void(0);')
+										span.links__overflow Перевозчикам
+								li.links__item
+									a.links__link(href='javascript: void(0);')
+										span.links__overflow Партнерский пункт выдачи
+								li.links__item
+									a.links__link(href='javascript: void(0);')
+										span.links__overflow Франшизный пункт выдачи
+
+						// Third links column
+						.links__group
+							h6.links__title
+								span.links__overflow Компания
+							ul.links__row
+								li.links__item
+									a.links__link(href='javascript: void(0);')
+										span.links__overflow О нас
+								li.links__item
+									a.links__link(href='javascript: void(0);')
+										span.links__overflow Реквизиты
+								li.links__item
+									a.links__link(href='javascript: void(0);')
+										span.links__overflow Пресс-центр
+								li.links__item
+									a.links__link(href='javascript: void(0);')
+										span.links__overflow Контакты
+								li.links__item
+									a.links__link(href='javascript: void(0);')
+										span.links__overflow Bug Bounty
+								li.links__item
+									a.links__link(href='javascript: void(0);')
+										span.links__overflow Vimeo.Tech
+
+						// Fourth links column
+						//- .links__group
+						//- 	h6.links__title
+						//- 		span.links__overflow Мы в соцсетях
+						//- 	ul.links__row
+						//- 		li.links__item
+						//- 			a.links__link(href='javascript: void(0);')
+						//- 				span.links__overflow ВКонтакте
+						//- 		li.links__item
+						//- 			a.links__link(href='javascript: void(0);')
+						//- 				span.links__overflow Одноклассники
+						//- 		li.links__item
+						//- 			a.links__link(href='javascript: void(0);')
+						//- 				span.links__overflow YouTube
+						//- 		li.links__item
+						//- 			a.links__link(href='javascript: void(0);')
+						//- 				span.links__overflow Телеграм
+
+						// Fifth links column
+						.links__group
+							h6.links__title
+								span.links__overflow Наши проекты
+							ul.links__row
+								li.links__item
+									a.links__link(href='javascript: void(0);')
+										span.links__overflow Vimeo Guru
+								li.links__item
+									a.links__link(href='javascript: void(0);')
+										span.links__overflow Трудоустройство
+								li.links__item
+									a.links__link(href='javascript: void(0);')
+										span.links__overflow Цифровые товары
+
+				// Footer boot
+				.boot.footer__boot
+					.container.boot__container
+						.copyrights
+							//- a.copyrights__link(href='javascript: void(0);')
+							//- a.copyrights__link(href='javascript: void(0);') Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, sit doloremque non qui, magni ex cum iure reiciendis aut repudiandae, nihil sunt? Totam odit, aut at ducimus numquam amet officiis?
+							a.copyrights__link(href='javascript: void(0);') Политика конфиденциальности
+							//- .copyrights__note
+							//- .copyrights__note Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam doloremque neque laudantium nemo ex labore ducimus autem voluptate laborum corporis. Asperiores delectus consequuntur illum dolor officiis eius consequatur beatae aspernatur.
+							.copyrights__note © Все права защищены авторским правом
 
 			// SVG sprite
 			include ./src/pug/blocks/sprite-defs

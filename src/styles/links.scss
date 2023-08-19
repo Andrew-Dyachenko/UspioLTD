@@ -1,0 +1,106 @@
+@use 'sass:math';
+@use 'conf';
+@use 'func';
+
+.links {
+	display: flex;
+	gap: math.div(20, 16) + rem /* ~20px */;
+
+	@media (max-width: #{conf.$xs - 1}) {
+		flex-direction: column;
+	}
+
+	@media (min-width: conf.$xs) {
+		flex-wrap: wrap;
+	}
+
+	@media (min-width: conf.$xs) and (max-width: #{conf.$s - 1}) {
+		justify-content: space-evenly;
+	}
+
+	@media (min-width: conf.$s) and (max-width: #{conf.$m - 1}) {
+		justify-content: center;
+	}
+
+	@media (min-width: conf.$m) {
+		justify-content: space-between;
+	}
+
+	@media (min-width: conf.$xl) {
+		gap: math.div(30, 16) + rem /* ~20px */;
+	}
+
+	&__group {
+		display: flex;
+		flex-direction: column;
+		row-gap: math.div(12, 16) + rem; /* ~13px */
+
+		@media (min-width: conf.$xs) and (max-width: #{conf.$s - 1}) {
+			max-width: calc(100% / 2 - #{math.div(math.div(20, 16), 2) + em});
+		}
+
+		@media (min-width: conf.$s) and (max-width: #{conf.$m - 1}) {
+			min-width: 21%;
+			max-width: calc(100% / 3 - #{math.div(math.div(40, 16), 3) + em});
+		}
+
+		@media (min-width: conf.$m) and (max-width: #{conf.$xl - 1}) {
+			max-width: calc(100% / 4 - #{math.div(math.div(60, 16), 4) + em});
+		}
+
+		@media (min-width: conf.$xl) {
+			max-width: calc(100% / 4 - #{math.div(math.div(90, 16), 4) + em});
+		}
+
+		// @media (min-width: conf.$l) {
+		// 	width: calc(100% / 5 - #{math.div(math.div(80, 16), 5) + em});
+		// }
+	}
+
+	&__row {
+		display: flex;
+		flex-direction: column;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		row-gap: math.div(3, 16) + rem;
+		align-items: start;
+	}
+
+	&__item {
+		font-size: math.div(14, 16) + rem;
+		line-height: math.div(22, 14);
+	}
+
+	&__title {
+		font-size: 1rem;
+		line-height: math.div(22, 16) + em;
+		font-weight: 700;
+		margin: 0;
+		text-align: start;
+	}
+
+	&__link {
+		text-underline-offset: math.div(4, 16) + em; // ~4px
+	}
+
+	&__overflow {
+		overflow: hidden;
+		display: -webkit-box;
+		-webkit-line-clamp: 1;
+		-webkit-box-orient: vertical;
+		text-overflow: ellipsis;
+
+		&:empty {
+			&::before {
+				font-weight: 300;
+				font-style: italic;
+				content: 'Text not seted';
+
+				@at-root :root[lang='ru'] & {
+					content: 'Текст не задан';
+				}
+			}
+		}
+	}
+}

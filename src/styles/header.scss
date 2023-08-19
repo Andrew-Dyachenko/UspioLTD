@@ -222,7 +222,6 @@
 		grid-area: header__brand;
 		display: flex;
 		justify-content: center;
-		transform: translateY(#{math.div(4, 56.3667) * -1em}); // ~-4px, 56.3667 height in the layout
 
 		.icon {
 			pointer-events: none;

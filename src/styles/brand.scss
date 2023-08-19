@@ -1,9 +1,11 @@
+@use 'sass:math';
 @use 'conf';
 
 .brand {
 	color: conf.$mine-shaft;
 	font-size: 56.3667px;
 	line-height: 0;
+	transform: translateY(#{math.div(4, 56.3667) * -1em}); // ~ -4px, 56.3667 height in the layout
 
 	&:any-link {
 		color: conf.$mine-shaft;
