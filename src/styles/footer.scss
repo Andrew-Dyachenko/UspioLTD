@@ -147,6 +147,7 @@
 		line-height: math.div(22, 14);
 		color: conf.$oslo-gray-2;
 		text-align: start;
+		min-height: math.div(22, 14) + em;
 
 		@media (max-width: #{conf.$m - 1}) {
 			text-align: center;
@@ -158,6 +159,18 @@
 			-webkit-line-clamp: 2;
 			-webkit-box-orient: vertical;
 			text-overflow: ellipsis;
+
+			&:empty {
+				&::before {
+					font-weight: 300;
+					font-style: italic;
+					content: 'Title not seted';
+
+					@at-root :root[lang='ru'] & {
+						content: 'Текст заголовка не задан';
+					}
+				}
+			}
 		}
 	}
 
