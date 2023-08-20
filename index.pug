@@ -175,6 +175,57 @@ html(lang='ru' dir='ltr')
 			// Main
 			main.main.app__main
 
+				// Hero
+				section.hero.hero__main
+
+					// Hero container
+					.container.hero__container
+						// Breadcrumbs wrapper
+						nav.breadcrumbs-wrapper.hero__breadcrumbs(aria-label='breadcrumbs')
+							// Breadcrumbs
+							ol.breadcrumbs
+								li.breadcrumbs__item
+									a.breadcrumbs__link(href='/')
+										svg.icon.icon--home.breadcrumbs__icon(xmlns:xlink='http://www.w3.org/1999/xlink')
+											use(xlink:href='#home')
+										.breadcrumbs__text Домой
+								//- li.breadcrumbs__item
+								//- 	a.breadcrumbs__link(href='javascript: void(0);')
+								//- 		.breadcrumbs__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia dolorum laborum nobis culpa harum quasi illo laudantium, voluptate, vitae aperiam voluptatibus itaque iusto sed mollitia possimus consequuntur tempore excepturi illum!
+								//- li.breadcrumbs__item
+								//- 	a.breadcrumbs__link(href='javascript: void(0);')
+								//- 		.breadcrumbs__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia dolorum laborum nobis culpa harum quasi illo laudantium, voluptate, vitae aperiam voluptatibus itaque iusto sed mollitia possimus consequuntur tempore excepturi illum!
+								li.breadcrumbs__item.breadcrumbs__item--active(aria-current='page' title='Вы находитесь на: Главная страница')
+									span.breadcrumbs__text Главная страница
+
+						// Hero infoblock
+						.hero__infoblock
+
+							// Hero title
+							h2.hero__title
+								span.hero__title-overflow Центр <mark class='hero__title-mark'>эстетической</mark> стоматологии на Чистых Прудах
+
+							// Hero text
+							.hero__text
+								// Hero secondary text
+								p.hero__paragraph Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias nobis magnam rem neque a qui? Cum, iste provident repudiandae similique quos animi suscipit excepturi qui hic iusto omnis eaque magnam sequi debitis
+
+								// Hero lead text
+								blockquote.hero__blockquote "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur delectus aut ab, sed placeat reprehenderit, quidem sapiente, error veritatis ullam recusandae facere quisquam? Laborum hic eos rem sunt voluptates optio ratione, corporis consequuntur autem, porro animi ea ullam vero veritatis. Saepe qui vitae porro, itaque deleniti repellat ratione fugit voluptate."
+
+							// Hero actions
+							.hero__actions
+								a.btn.btn-outline-atlantis.btn_custom.btn_custom_rounded.hero__action(href='javascript: void(0);')
+									//- span.hero__action-overflow
+									//- span.hero__action-overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque quidem expedita repellendus. Tempore, natus quibusdam quod odit ratione eaque, voluptates culpa fugiat iusto vel quaerat, fugit saepe voluptate ab sequi!
+									span.hero__action-overflow Записаться на проверку
+
+						// Hero media
+						picture.hero__media
+							source(srcset='./src/img/hero-doctor.avif' type='image/avif')
+							source(srcset='./src/img/hero-doctor.webp' type='image/webp')
+							img.hero__media-img(src='./src/img/hero-doctor.jpg' height='509' width='400' alt='Smiling women-doctor dentist with glasses in hands' loading='lazy')
+
 			// Footer
 			footer.footer.app__footer
 
@@ -413,5 +464,5 @@ html(lang='ru' dir='ltr')
 							//- .copyrights__note Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam doloremque neque laudantium nemo ex labore ducimus autem voluptate laborum corporis. Asperiores delectus consequuntur illum dolor officiis eius consequatur beatae aspernatur.
 							.copyrights__note © Все права защищены авторским правом
 
-			// SVG sprite
-			include ./src/pug/blocks/sprite-defs
+		// SVG sprite
+		include ./src/pug/blocks/sprite-defs

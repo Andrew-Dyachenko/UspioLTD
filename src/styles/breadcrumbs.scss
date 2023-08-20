@@ -1,0 +1,85 @@
+@use 'sass:math';
+@use 'conf';
+
+.breadcrumbs {
+	list-style: none;
+	display: flex;
+	margin: 0;
+	padding: 0;
+	font-size: 1rem;
+	line-height: math.div(22, 16);
+	column-gap: math.div(22.25, 16) + em;
+	font-weight: 400;
+	// row-gap: 0.25em;
+
+	&__icon {
+		// transform: translateY(math.div(1, -16) + em);
+		color: conf.$atlantis;
+	}
+
+	&__item {
+		display: inline-flex;
+		align-items: center;
+		gap: math.div(conf.$grid-gutter-width, 4);
+
+		& + & {
+			position: relative;
+
+			&::before {
+				pointer-events: none;
+				content: url('../img/icons/arrow--right.svg');
+				position: absolute;
+				top: 50%;
+				aspect-ratio: 6.25 / 10;
+				width: math.div(10, 16) + em;
+				height: 1em;
+				font-size: math.div(10, 16) + em;
+				transform: translate(#{math.div(14, -10) + em}, -50%);
+
+				@at-root :root:not([dir='rtl']) & {
+					left: 0;
+				}
+
+				@at-root :root[dir='rtl'] & {
+					transform: translate(#{math.div(14, 10) + em}, -50%) rotate(180deg);
+					right: 0;
+				}
+			}
+		}
+	}
+
+	&__link {
+		display: inline-flex;
+		align-items: center;
+		gap: math.div(conf.$grid-gutter-width, 4);
+		color: conf.$oslo-gray-2;
+		text-underline-offset: math.div(4, 16) + em;
+
+		&:hover,
+		&:visited {
+			color: conf.$oslo-gray-2;
+		}
+	}
+
+	&__text {
+		color: conf.$oslo-gray-2;
+		overflow: hidden;
+		display: -webkit-box;
+		-webkit-line-clamp: 1;
+		-webkit-box-orient: vertical;
+		text-overflow: ellipsis;
+		min-height: math.div(22, 16) + em;
+
+		&:empty {
+			&::before {
+				font-weight: 300;
+				font-style: italic;
+				content: 'Text not seted';
+
+				@at-root :root[lang='ru'] & {
+					content: 'Текст не задан';
+				}
+			}
+		}
+	}
+}

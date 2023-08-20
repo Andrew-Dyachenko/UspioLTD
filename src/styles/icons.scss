@@ -32,4 +32,10 @@
 	&--facebook {
 		width: math.div(10, 20) + em; // ~10px
 	}
+
+	&--home {
+		fill: transparent;
+		stroke: currentColor;
+		stroke-width: 1;
+	}
 }
