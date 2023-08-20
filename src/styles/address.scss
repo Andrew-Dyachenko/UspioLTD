@@ -20,7 +20,7 @@
 
 	&__link {
 		$link: &;
-		display: flex;
+		display: inline-flex;
 		align-items: center;
 		font-size: 1rem;
 		font-weight: 400;
