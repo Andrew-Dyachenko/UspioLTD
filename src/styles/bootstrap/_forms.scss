@@ -347,16 +347,16 @@ textarea.form-control {
 // Alternate form-controls
 //
 
-// Custom buttons colors START
+// Custom form-controls colors START
 @each $color, $value in conf.$form-colors {
 	.form-control-#{$color} {
 		@include form-variant($value, $value);
 	}
 }
 
-// @each $color, $value in conf.$button-colors {
-// 	.form-outline-#{$color} {
-// 		@include form-outline-variant($value);
-// 	}
-// }
-// Custom buttons colors END
+@each $color, $value in conf.$form-colors {
+	.form-control-outline-#{$color} {
+		@include form-outline-variant($value);
+	}
+}
+// Custom form-controls colors END
