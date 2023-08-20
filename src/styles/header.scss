@@ -181,6 +181,7 @@
 		}
 
 		@media (min-width: conf.$l) {
+			min-height: math.div(92, 16) + rem;
 			grid-template-areas:
 				'. .             . header__hr--first . .                  . . .              . . header__hr--last . . header__address . . header__actions'
 				'. header__brand . header__hr--first . header__deliveryTo . . header__target . . header__hr--last . . header__address . . header__actions'
