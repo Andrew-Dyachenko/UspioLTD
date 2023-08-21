@@ -1,0 +1,137 @@
+@use '@sass-fairy/math/math.sass';
+@use 'conf';
+@use 'func';
+@use 'custom-card';
+
+.carousel {
+	background-color: conf.$wild-sand;
+	padding-block: math.div(50, 16) + rem math.div(60, 16) + rem;
+
+	&__container {
+		padding-inline: 0;
+		max-width: calc(#{conf.$xl} + 16px);
+
+		@media (min-width: conf.$xl) {
+			padding-inline: math.div(conf.$container-padding-x, 2);
+		}
+
+		@media (min-width: #{conf.$xl + func.strip-unit(conf.$container-padding-x) * conf.$font-size-root}) and (max-width: #{conf.$xl + func.strip-unit(conf.$container-padding-x) * conf.$font-size-root * 2 - 1}) {
+			padding-inline: func.fluid(
+				func.strip-unit(math.div(conf.$container-padding-x, 2)) * conf.$font-size-root,
+				0px,
+				conf.$xl + func.strip-unit(conf.$container-padding-x) * conf.$font-size-root,
+				conf.$xl + func.strip-unit(conf.$container-padding-x) * conf.$font-size-root * 2
+			);
+		}
+
+		@media (min-width: #{conf.$xl + func.strip-unit(conf.$container-padding-x) * conf.$font-size-root * 2}) {
+			padding-inline: 0;
+		}
+	}
+
+	&__custom-card {
+		border-radius: 0.5rem;
+	}
+
+	&__item {
+		padding: 0.25rem 1rem 0.75rem;
+		border-radius: 0.5rem;
+
+		@media (min-width: conf.$xl) {
+			padding-inline: 0.5rem;
+		}
+	}
+
+	&__title {
+		font-size: math.div(28, 16) + rem;
+		font-weight: 700;
+		line-height: math.div(36, 28);
+		margin: 0;
+		padding-inline: 0.5rem;
+
+		@media (max-width: #{conf.$m -  1}) {
+			text-align: center;
+		}
+
+		@media (min-width: conf.$m) {
+			text-align: start;
+		}
+
+		&:not(:last-child) {
+			margin-block-end: math.div(30, 28) + em;
+		}
+
+		&-overflow {
+			display: -webkit-box;
+			-webkit-line-clamp: 2;
+			-webkit-box-orient: vertical;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			min-height: math.div(28, 16) + em;
+
+			&:empty {
+				&::before {
+					font-weight: 300;
+					font-style: italic;
+					content: 'Title not seted';
+
+					@at-root :root[lang='ru'] & {
+						content: 'Заголовок не задан';
+					}
+				}
+			}
+		}
+	}
+
+	&__caption {
+		font-size: 1rem;
+		margin: 0;
+		line-height: math.div(22, 16);
+		color: conf.$oslo-gray-2;
+		padding-inline: 0.5rem;
+
+		@media (max-width: #{conf.$m -  1}) {
+			text-align: center;
+		}
+
+		@media (min-width: conf.$m) {
+			text-align: start;
+		}
+
+		&:not(:first-child) {
+			margin-block-start: math.div(20, 16) + em;
+		}
+
+		&-overflow {
+			display: -webkit-box;
+			-webkit-line-clamp: 2;
+			-webkit-box-orient: vertical;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			min-height: math.div(22, 16) + em;
+
+			&:empty {
+				&::before {
+					font-weight: 300;
+					font-style: italic;
+					content: 'Title not seted';
+
+					@at-root :root[lang='ru'] & {
+						content: 'Заголовок не задан';
+					}
+				}
+			}
+		}
+	}
+
+	.owl-stage-outer {
+		direction: ltr;
+		// @at-root :root:not([dir='rtl']) & {
+		// 	direction: ltr;
+		// }
+
+		// @at-root :root[dir='rtl'] & {
+		// 	direction: rtl;
+		// }
+	}
+}

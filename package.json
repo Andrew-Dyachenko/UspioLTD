@@ -11,6 +11,7 @@
 	"dependencies": {
 		"@sass-fairy/math": "^1.0.3",
 		"bootstrap": "^4.6.2",
-		"jquery": "^3.7.0"
+		"jquery": "^3.7.0",
+		"owl.carousel": "^2.3.4"
 	}
 }

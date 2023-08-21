@@ -1,0 +1,86 @@
+@use 'sass:math';
+@use 'conf';
+
+.custom-card {
+	box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.1);
+
+	&__picture {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		overflow: hidden;
+		background-color: conf.$athens-gray;
+		aspect-ratio: 370 / 180;
+		border-radius: 0.5rem 0.5rem 0 0;
+	}
+
+	&___img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	&__infoblock {
+		display: flex;
+		flex-direction: column;
+		row-gap: math.div(15, 16) + rem;
+		padding: math.div(25, 16) + rem;
+		aspect-ratio: 331 / 151;
+	}
+
+	&__title {
+		margin: 0;
+		line-height: 1;
+		font-weight: 700;
+		font-size: math.div(20, 16) + rem;
+
+		&-overflow {
+			display: -webkit-box;
+			-webkit-line-clamp: 1;
+			-webkit-box-orient: vertical;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			min-height: 1em;
+
+			&:empty {
+				&::before {
+					font-weight: 300;
+					font-style: italic;
+					content: 'Title not seted';
+
+					@at-root :root[lang='ru'] & {
+						content: 'Заголовок не задан';
+					}
+				}
+			}
+		}
+	}
+
+	&__text {
+		font-size: 1rem;
+		line-height: math.div(22, 16);
+		margin: 0;
+
+		&-overflow {
+			display: -webkit-box;
+			-webkit-line-clamp: 3;
+			-webkit-box-orient: vertical;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			min-height: math.div(22, 16) + em;
+
+			&:empty {
+				&::before {
+					font-weight: 300;
+					font-style: italic;
+					content: 'Text not seted';
+
+					@at-root :root[lang='ru'] & {
+						content: 'Текст не задан';
+					}
+				}
+			}
+		}
+	}
+}

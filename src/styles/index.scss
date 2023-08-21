@@ -13,6 +13,7 @@
 @use 'hero';
 @use 'custom-media';
 @use 'features';
+@use 'carousel';
 @use 'footer';
 @import '~bootstrap/scss/functions'; // For color-yiq
 @import '~bootstrap/scss/variables'; // For color-yiq
@@ -205,3 +206,9 @@ body {
 		}
 	}
 }
+
+// .custom-card___img {
+// 	width: 100%;
+// 	height: 100%;
+// 	object-fit: cover;
+// }
