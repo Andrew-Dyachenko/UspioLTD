@@ -231,11 +231,11 @@
 				+ #{$search} {
 					&-label {
 						@at-root :root:not([dir='rtl']) & {
-							transform: translate(-100%, -50%);
+							transform: translate(-50%, -50%);
 						}
 
 						@at-root :root[dir='rtl'] & {
-							transform: translate(100%, -50%);
+							transform: translate(50%, -50%);
 						}
 					}
 				}

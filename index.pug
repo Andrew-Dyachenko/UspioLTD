@@ -176,7 +176,7 @@ html(lang='ru' dir='ltr')
 			main.main.app__main
 
 				// Hero
-				section.hero.hero__main
+				section.hero.main__hero
 
 					// Hero container
 					.container.hero__container
@@ -211,7 +211,7 @@ html(lang='ru' dir='ltr')
 								p.hero__paragraph Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias nobis magnam rem neque a qui? Cum, iste provident repudiandae similique quos animi suscipit excepturi qui hic iusto omnis eaque magnam sequi debitis
 
 								// Hero lead text
-								blockquote.hero__blockquote "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur delectus aut ab, sed placeat reprehenderit, quidem sapiente, error veritatis ullam recusandae facere quisquam? Laborum hic eos rem sunt voluptates optio ratione, corporis consequuntur autem, porro animi ea ullam vero veritatis. Saepe qui vitae porro, itaque deleniti repellat ratione fugit voluptate."
+								blockquote.hero__blockquote "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae aperiam sed dolores ad quaerat corrupti repudiandae laudantium facere nobis deserunt?"
 
 							// Hero actions
 							.hero__actions
@@ -225,6 +225,152 @@ html(lang='ru' dir='ltr')
 							source(srcset='./src/img/hero-doctor.avif' type='image/avif')
 							source(srcset='./src/img/hero-doctor.webp' type='image/webp')
 							img.hero__media-img(src='./src/img/hero-doctor.jpg' height='509' width='400' alt='Smiling women-doctor dentist with glasses in hands' loading='lazy')
+
+				// Features
+				section.features.main__features
+
+					// Features container
+					.container.features__container
+
+						// Features title
+						h2.features__title
+							span.features__title-overflow Заголовок заголовок заголовок
+
+						// Features row + bootstrap grid style
+						.row.justify-content-center.features__row
+							// #1 Feature
+							.col-m-6.col-xl-4.d-flex.justify-content-center.justify-content-m-end.justify-content-xl-center.features__col
+								.d-flex.flex-grow-1.align-items-center.flex-column.justify-content-center.features__item.features__item--toy
+									// Feature media
+									.features__media
+										svg.icon.icon--toy.features__media__icon(xmlns:xlink='http://www.w3.org/1999/xlink')
+											use(xlink:href='#toy')
+
+									// Feature subtitle
+									h3.features__subtitle
+										span.features__subtitle-overflow LOREM <mark class='features__mark'>IPSUM DOLOR</mark> SIT AMET CONSECTETUR.
+
+							// #2 Feature
+							.col-m-6.col-xl-4.d-flex.justify-content-center.justify-content-m-start.justify-content-xl-center.features__col
+								.d-flex.flex-grow-1.align-items-center.flex-column.justify-content-center.features__item.features__item--shucks
+									// Feature media
+									.features__media
+										svg.icon.icon--shucks.features__media__icon(xmlns:xlink='http://www.w3.org/1999/xlink')
+											use(xlink:href='#shucks')
+
+									// Feature subtitle
+									h3.features__subtitle
+										span.features__subtitle-overflow LOREM IPSUM DOLOR SIT AMET CONSECTETUR ADIPISICING ELIT. ARCHITECTO ASPERNATUR
+
+							// #3 Feature
+							.col-m-6.col-xl-4.d-flex.justify-content-center.justify-content-m-end.justify-content-xl-center.features__col
+								.d-flex.flex-grow-1.align-items-center.flex-column.justify-content-center.justify-content-center.features__item.features__item--eye
+									// Feature media
+									.features__media
+										svg.icon.icon--eye.features__media__icon(xmlns:xlink='http://www.w3.org/1999/xlink')
+											use(xlink:href='#eye')
+
+									// Feature subtitle
+									h3.features__subtitle
+										span.features__subtitle-overflow LOREM IPSUM DOLOR<br> SIT
+
+							// #4 Feature
+							.col-m-6.col-xl-4.d-flex.justify-content-center.justify-content-m-start.justify-content-xl-center.features__col
+								.d-flex.flex-grow-1.align-items-center.flex-column.justify-content-center.features__item.features__item--human-with-glasses
+									// Feature media
+									.features__media
+										svg.icon.icon--human-with-glasses.features__media__icon(xmlns:xlink='http://www.w3.org/1999/xlink')
+											use(xlink:href='#human-with-glasses')
+
+									// Feature subtitle
+									h3.features__subtitle
+										span.features__subtitle-overflow LOREM IPSUM DOLOR SIT<br> AMET CONSECTETUR ADIPISICING ELIT
+
+							// #5 Feature
+							.col-m-6.col-xl-4.d-flex.justify-content-center.justify-content-m-end.justify-content-xl-center.features__col
+								.d-flex.flex-grow-1.align-items-center.flex-column.justify-content-center.features__item.features__item--glasses
+									// Feature media
+									.features__media
+										svg.icon.icon--glasses.features__media__icon(xmlns:xlink='http://www.w3.org/1999/xlink')
+											use(xlink:href='#glasses')
+
+									// Feature subtitle
+									h3.features__subtitle
+										span.features__subtitle-overflow <mark class='features__mark'>LOREM IPSUM DOLOR</mark><br> SIT AMET CONSECTETUR ADIPISICING ELIT.
+
+							// #6 Feature
+							.col-m-6.col-xl-4.d-flex.justify-content-center.justify-content-m-start.justify-content-xl-center.features__col
+								.d-flex.flex-grow-1.align-items-center.flex-column.justify-content-center.justify-content-center.features__item.features__item--doctor
+									// Feature media
+									.features__media
+										svg.icon.icon--doctor.features__media__icon(xmlns:xlink='http://www.w3.org/1999/xlink')
+											use(xlink:href='#doctor')
+
+									// Feature subtitle
+									h3.features__subtitle
+										span.features__subtitle-overflow LOREM<br> IPSUM DOLOR SIT AMET CONSECTETUR
+
+						// Features actions
+						.features__actions
+							button.btn.btn_custom.btn_custom_l.btn_custom_tag.btn_custom_rounded.btn-atlantis.features__action
+								span.btn__tag-overflow.features__action-overflow ЗАПИСАТЬСЯ НА ПРОВЕРКУ
+								span.btn__tag-circle
+									svg.icon.icon--arrow-to-right-2.features__media__icon(xmlns:xlink='http://www.w3.org/1999/xlink')
+										use(xlink:href='#arrow-to-right-2')
+
+				// Custom media (eyesight check)
+				.custom-media.custom-media--eyesight-check.main__custom-media
+					.container.custom-media__container
+						.custom-media__row
+
+							// Custom media infoblock
+							.custom-media__col.custom-media__col--infoblock
+								h3.custom-media__title Текст текст:
+								ul.custom-media__list
+									li.custom-media__list-item текст текст
+									li.custom-media__list-item текст текст текст текст
+									li.custom-media__list-item текст
+									li.custom-media__list-item текст текст текст текст текст текст текст текст текст текст текст текст
+									li.custom-media__list-item текст текст текст текст текст текст текст текст текст текст
+									li.custom-media__list-item текст текст текст текст текст текст текст текст текст текст текст текст текст текст
+
+							// Custom media media
+							.custom-media__col.custom-media__col--media
+								picture.custom-media__picture
+									source(srcset='./src/img/eyesight-check.avif' type='image/avif')
+									source(srcset='./src/img/eyesight-check.webp' type='image/webp')
+									img.custom-media__picture-img(src='./src/img/eyesight-check.jpg' height='2734' width='4096' alt='Проверка зрения пацианта врачом окулистом на специальном приборе' loading='lazy')
+
+				// Custom media (eyesight check 2)
+				.custom-media.custom-media--eyesight-check-2.main__custom-media
+					.container.custom-media__container
+						.custom-media__tile
+							.custom-media__infoblock
+								h2.custom-media__title
+									span.custom-media__title-overflow Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus earum ipsa quam exercitationem facere magni dolor a suscipit, repellat, voluptas cupiditate atque quidem, alias et? Alias adipisci magni mollitia similique?
+
+								.custom-media__text
+									ol.custom-media__list
+										li.custom-media__list-item Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст
+										li.custom-media__list-item Текст Текст Текст Текст Текст Текст Текст
+										li.custom-media__list-item Текст Текст Текст Текст Текст Текст Текст Текст
+										li.custom-media__list-item Текст Текст Текст Текст Текст Текст Текст Текст Текст
+										li.custom-media__list-item Текст Текст Текст Текст Текст Текст
+
+									p.custom-media__paragraph Текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст.
+
+							picture.custom-media__picture
+								source(srcset='./src/img/eyesight-check--2.avif' type='image/avif')
+								source(srcset='./src/img/eyesight-check--2.webp' type='image/webp')
+								img.custom-media__picture-img(src='./src/img/eyesight-check--2.jpg' height='2735' width='4096' alt='Проверка зрения пацианта врачом окулистом ручным прибором' loading='lazy')
+
+						// Features actions
+						.custom-media__actions
+							button.btn.btn_custom.btn_custom_l.btn_custom_tag.btn_custom_rounded.btn-atlantis.custom-media__action
+								span.btn__tag-overflow.custom-media__action-overflow ЗАПИСАТЬСЯ НА ПРОВЕРКУ
+								span.btn__tag-circle
+									svg.icon.icon--arrow-to-right-2.custom-media__media__icon(xmlns:xlink='http://www.w3.org/1999/xlink')
+										use(xlink:href='#arrow-to-right-2')
 
 			// Footer
 			footer.footer.app__footer

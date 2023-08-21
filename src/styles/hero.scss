@@ -10,8 +10,6 @@
 		display: grid;
 
 		@media (max-width: #{conf.$m - 1}) {
-			// display: flex;
-			// flex-direction: column;
 			grid-template-columns: 1fr;
 			grid-template-rows:
 				math.div(20, 16) + rem
@@ -20,7 +18,7 @@
 				auto
 				math.div(20, 16) + rem
 				auto
-				math.div(20, 16) + rem;
+				math.div(40, 16) + rem;
 			grid-template-areas:
 				'.                '
 				'hero__breadcrumbs'
@@ -38,16 +36,6 @@
 				'.                 . hero__media'
 				'hero__infoblock   . hero__media'
 				'.                 . hero__media';
-			// grid-template-columns:
-			// 	1fr
-			// 	math.div(20, 16) + rem
-			// 	1fr;
-			// grid-template-rows:
-			// 	math.div(20, 16) + rem
-			// 	auto
-			// 	math.div(20, 16) + rem
-			// 	1fr
-			// 	math.div(20, 16) + rem;
 		}
 
 		@media (min-width: conf.$m) and (max-width: #{conf.$xl - 1}) {
@@ -103,7 +91,7 @@
 					conf.$xl
 				)
 				1fr
-				math.div(20, 16) + rem;
+				math.div(60, 16) + rem;
 		}
 
 		@media (min-width: conf.$xl) {
@@ -116,7 +104,7 @@
 				auto
 				math.div(30, 16) + rem
 				1fr
-				math.div(20, 16) + rem;
+				math.div(60, 16) + rem;
 		}
 	}
 
@@ -146,6 +134,7 @@
 		font-weight: 700;
 		line-height: math.div(50, 42);
 		font-size: $-fs-min;
+		text-align: start;
 
 		&:not(:empty) {
 			&:not(:first-child) {
@@ -155,6 +144,10 @@
 			&:not(:last-child) {
 				margin-block-end: $-margin-min;
 			}
+		}
+
+		@media (max-width: #{conf.$m - 1}) {
+			text-align: center;
 		}
 
 		@media (min-width: conf.$m) and (max-width: #{conf.$xl - 1}) {
@@ -237,6 +230,10 @@
 		font-size: 1rem;
 		line-height: math.div(22, 16) + em;
 
+		@media (max-width: #{conf.$m - 1}) {
+			text-align: center;
+		}
+
 		@media (min-width: conf.$m) {
 			overflow: hidden;
 			display: -webkit-box;
@@ -281,6 +278,10 @@
 		flex-wrap: wrap;
 		gap: math.div(conf.$grid-gutter-width, 2);
 
+		@media (max-width: #{conf.$m - 1}) {
+			justify-content: center;
+		}
+
 		&:not(:empty) {
 			&:not(:first-child) {
 				margin-block-start: math.div(30, 16) + rem;
@@ -290,18 +291,6 @@
 				margin-block-end: math.div(30, 16) + rem;
 			}
 		}
-
-		// @media (min-width: conf.$m) {
-		// 	&:not(:empty) {
-		// 		&:not(:first-child) {
-		// 			margin-block-start: math.div(30, 16) + rem;
-		// 		}
-
-		// 		&:not(:last-child) {
-		// 			margin-block-end: math.div(30, 16) + rem;
-		// 		}
-		// 	}
-		// }
 	}
 
 	&__action {
@@ -347,14 +336,15 @@
 			aspect-ratio: 4096 / 2734;
 		}
 
+		// @media (min-width: conf.$m) {
+		// 	aspect-ratio: 400 / 509;
+		// }
+
 		&-img {
 			object-fit: cover;
 			object-position: math.div(61, 4) * 1% center;
 			width: 100%;
 			height: 100%;
-			// @media (min-width: conf.$m) {
-
-			// }
 		}
 	}
 }
