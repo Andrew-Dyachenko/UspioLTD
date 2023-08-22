@@ -11,6 +11,7 @@ html(lang='ru' dir='ltr')
 		script(src='/node_modules/owl.carousel/dist/owl.carousel.min.js')
 		script(src='/node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js')
 		script(src='src/js/index.js' type='module')
+
 	body
 		// App
 		.app
@@ -542,8 +543,9 @@ html(lang='ru' dir='ltr')
 								.social__col
 									a.social__item(href='https://instagram.com' target='_blank' rel='noopener noreferrer' title='Instagram link') Instagram
 										.social__overflow
-											svg.icon.icon--instagram.social__icon(xmlns:xlink='http://www.w3.org/1999/xlink')
-												use(xlink:href='#instagram')
+											//- svg.icon.icon--instagram.social__icon(xmlns:xlink='http://www.w3.org/1999/xlink')
+											//- 	use(xlink:href='#instagram')
+											img(src='./src/img/icons/instagram_crutch.png' width='20' height='20' alt='Instagram base icon')
 
 				// Footer container
 				.container.footer__container
