@@ -133,11 +133,9 @@
 				}
 			}
 
-			&__picture {
+			&__picture-wrapper {
 				display: flex;
 				flex-direction: column;
-				align-items: center;
-				justify-content: center;
 				overflow: hidden;
 
 				@media (max-width: #{conf.$m - 1}) {
@@ -161,6 +159,16 @@
 						border-radius: math.div(20, 16) + rem 0 0 math.div(20, 16) + rem;
 					}
 				}
+			}
+
+			&__picture {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				overflow: hidden;
+				width: 100%;
+				height: 100%;
 
 				&-img {
 					width: 100%;

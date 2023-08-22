@@ -325,7 +325,7 @@
 		}
 	}
 
-	&__media {
+	&__media-wrapper {
 		grid-area: hero__media;
 		display: flex;
 		flex-direction: column;
@@ -339,6 +339,11 @@
 		// @media (min-width: conf.$m) {
 		// 	aspect-ratio: 400 / 509;
 		// }
+	}
+
+	&__media {
+		height: 100%;
+		width: 100%;
 
 		&-img {
 			object-fit: cover;

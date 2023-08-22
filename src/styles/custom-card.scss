@@ -13,6 +13,20 @@
 		background-color: conf.$athens-gray;
 		aspect-ratio: 370 / 180;
 		border-radius: 0.5rem 0.5rem 0 0;
+
+		&-wrapper {
+			display: block;
+
+			&:any-link,
+			&:hover,
+			&:visited {
+				color: conf.$body-color;
+			}
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
 	}
 
 	&___img {

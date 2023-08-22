@@ -1,5 +1,6 @@
-// import jquery from 'jquery';
+import * as $ from 'jquery';
 // import 'bootstrap';
+import 'bootstrap/js/dist/modal';
 
 // window.$ = window.jQuery = jquery;
 
@@ -40,8 +41,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		dots: false,
 		lazyLoad: true,
 		lazyLoadEager: 1,
-		autoplay: true,
-		loop: true,
+		// autoplay: true,
+		// loop: true,
 		autoplayHoverPause: true,
 		// center: true,
 		responsive: {
@@ -63,4 +64,25 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	});
 	// Owl carousel END
+
+	// Subscribe form START
+	$('#subscribe-form').on('submit', (event) => {
+		event.preventDefault();
+		const input = event.target.elements[0];
+		const submitBtn = event.target.elements[1];
+
+		input.value = '';
+
+		$.ajax({
+			url: 'https://raw.githubusercontent.com/Andrew-Dyachenko/UspioLTD/main/public/ajax.txt',
+			dataType: 'text',
+			success: function (res) {
+				$(submitBtn)
+					.text(res)
+					.removeClass('btn-atlantis')
+					.addClass('btn-black');
+			}
+		});
+	});
+	// Subscribe form END
 });

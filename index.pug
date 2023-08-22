@@ -5,9 +5,11 @@ html(lang='ru' dir='ltr')
 		meta(name='viewport' content='width=device-width, initial-scale=1.0')
 		title Uspio LTD
 		link(rel='stylesheet' href='/node_modules/owl.carousel/dist/assets/owl.carousel.min.css')
+		link(rel='stylesheet' href='node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.css')
 		link(rel='stylesheet' href='src/styles/index.scss')
 		script(src='/node_modules/jquery/dist/jquery.js')
 		script(src='/node_modules/owl.carousel/dist/owl.carousel.min.js')
+		script(src='/node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js')
 		script(src='src/js/index.js' type='module')
 	body
 		// App
@@ -25,6 +27,7 @@ html(lang='ru' dir='ltr')
 
 					// Delivery
 					.deliveryTo.header__deliveryTo
+
 						// Delivery title
 						//- Empty [test]
 						//- h5.deliveryTo__title(title='Город доставки: Москва')
@@ -96,7 +99,7 @@ html(lang='ru' dir='ltr')
 						span.btn__text.header__target-text
 							//- span.btn__text-overflow.header__target-overflow
 							//- span.btn__text-overflow.header__target-overflow Lorem, ipsum dolor sit amet consectetur adipisicing elit. A illum culpa sequi labore. Ea quibusdam corrupti id cum impedit? Dolores, earum quia facilis optio minus sunt error fugit at molestiae?
-							span.btn__text-overflow.header__target-overflow  Запишитесь на<br class='d-none d-xl-inline'> проверку
+							span.btn__text-overflow.header__target-overflow(data-toggle='modal' data-target='#book-eyesight-check-modal') Запишитесь на<br class='d-none d-xl-inline'> проверку
 
 					// Header hr
 					hr.header__hr(aria-orientation='vertical')
@@ -218,16 +221,17 @@ html(lang='ru' dir='ltr')
 
 							// Hero actions
 							.hero__actions
-								a.btn.btn-outline-atlantis.btn_custom.btn_custom_rounded.hero__action(href='javascript: void(0);')
+								button.btn.btn-outline-atlantis.btn_custom.btn_custom_rounded.hero__action(data-toggle='modal' data-target='#book-eyesight-check-modal')
 									//- span.hero__action-overflow
 									//- span.hero__action-overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque quidem expedita repellendus. Tempore, natus quibusdam quod odit ratione eaque, voluptates culpa fugiat iusto vel quaerat, fugit saepe voluptate ab sequi!
 									span.hero__action-overflow Записаться на проверку
 
 						// Hero media
-						picture.hero__media
-							source(srcset='./src/img/hero-doctor.avif' type='image/avif')
-							source(srcset='./src/img/hero-doctor.webp' type='image/webp')
-							img.hero__media-img(src='./src/img/hero-doctor.jpg' height='509' width='400' alt='Smiling women-doctor dentist with glasses in hands' loading='lazy')
+						a.hero__media-wrapper(href='./src/img/hero-doctor.jpg' data-fancybox='gallery')
+							picture.hero__media
+								source(srcset='./src/img/hero-doctor.avif' type='image/avif')
+								source(srcset='./src/img/hero-doctor.webp' type='image/webp')
+								img.hero__media-img(src='./src/img/hero-doctor.jpg' height='509' width='400' alt='Smiling women-doctor dentist with glasses in hands' loading='lazy')
 
 				// Features
 				section.features.main__features
@@ -315,116 +319,11 @@ html(lang='ru' dir='ltr')
 
 						// Features actions
 						.features__actions
-							button.btn.btn_custom.btn_custom_l.btn_custom_tag.btn_custom_rounded.btn-atlantis.features__action
+							button.btn.btn_custom.btn_custom_l.btn_custom_tag.btn_custom_rounded.btn-atlantis.features__action(data-toggle='modal' data-target='#book-eyesight-check-modal')
 								span.btn__tag-overflow.features__action-overflow ЗАПИСАТЬСЯ НА ПРОВЕРКУ
 								span.btn__tag-circle
 									svg.icon.icon--arrow-to-right-2.features__media__icon(xmlns:xlink='http://www.w3.org/1999/xlink')
 										use(xlink:href='#arrow-to-right-2')
-
-				// Carousel
-				.carousel.media__section
-					.container.carousel__container
-
-						// Carousel title
-						h4.carousel__title
-							span.carousel__title-overflow Lorem ipsum dolor sit amet.
-
-						// Owl carousel
-						.owl-carousel.owl-theme
-
-							//- #1 Carousel item
-							div.carousel__item
-								.custom-card.carousel__custom-card
-									picture.custom-card__picture
-										source(srcset='./src/img/carousel-image--1.avif' type='image/avif')
-										source(srcset='./src/img/carousel-image--1.webp' type='image/webp')
-										img.custom-card___img(src='./src/img/carousel-image--1.jpg' height='181' width='370' alt='Окулист надевает очки на пациента, вид от первого лица' loading='lazy')
-
-									.custom-card__infoblock
-										h6.custom-card__title
-											span.custom-card__title-overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum incidunt eaque, maxime soluta expedita enim fugit qui ut illum aut dolor tempore, voluptatem excepturi? Tempora consectetur odio qui cupiditate repudiandae.
-
-										p.custom-card__text
-											span.custom-card__text-overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ullam earum cupiditate. Officiis minima excepturi cupiditate perferendis reiciendis temporibus explicabo delectus exercitationem iste assumenda accusamus atque sed, eos obcaecati velit?
-
-							//- #2 Carousel item
-							div.carousel__item
-								.custom-card.carousel__custom-card
-									picture.custom-card__picture
-										source(srcset='./src/img/carousel-image--2.avif' type='image/avif')
-										source(srcset='./src/img/carousel-image--2.webp' type='image/webp')
-										img.custom-card___img(src='./src/img/carousel-image--2.jpg' height='181' width='370' alt='Окулист осматривает зрачки пациента через стационарный прибор' loading='lazy')
-
-									.custom-card__infoblock
-										h6.custom-card__title
-											span.custom-card__title-overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum incidunt eaque, maxime soluta expedita enim fugit qui ut illum aut dolor tempore, voluptatem excepturi? Tempora consectetur odio qui cupiditate repudiandae.
-
-										p.custom-card__text
-											span.custom-card__text-overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ullam earum cupiditate. Officiis minima excepturi cupiditate perferendis reiciendis temporibus explicabo delectus exercitationem iste assumenda accusamus atque sed, eos obcaecati velit?
-
-							//- #3 Carousel item
-							div.carousel__item
-								.custom-card.carousel__custom-card
-									picture.custom-card__picture
-										source(srcset='./src/img/carousel-image--3.avif' type='image/avif')
-										source(srcset='./src/img/carousel-image--3.webp' type='image/webp')
-										img.custom-card___img(src='./src/img/carousel-image--3.jpg' height='181' width='370' alt='Окулист надевает на пациента, специальный прибор для проверки зрения' loading='lazy')
-
-									.custom-card__infoblock
-										h6.custom-card__title
-											span.custom-card__title-overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum incidunt eaque, maxime soluta expedita enim fugit qui ut illum aut dolor tempore, voluptatem excepturi? Tempora consectetur odio qui cupiditate repudiandae.
-
-										p.custom-card__text
-											span.custom-card__text-overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ullam earum cupiditate. Officiis minima excepturi cupiditate perferendis reiciendis temporibus explicabo delectus exercitationem iste assumenda accusamus atque sed, eos obcaecati velit?
-
-							//- #4 Carousel item
-							div.carousel__item
-								.custom-card.carousel__custom-card
-									picture.custom-card__picture
-										source(srcset='./src/img/carousel-image--1.avif' type='image/avif')
-										source(srcset='./src/img/carousel-image--1.webp' type='image/webp')
-										img.custom-card___img(src='./src/img/carousel-image--1.jpg' height='181' width='370' alt='Окулист надевает очки на пациента, вид от первого лица' loading='lazy')
-
-									.custom-card__infoblock
-										h6.custom-card__title
-											span.custom-card__title-overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum incidunt eaque, maxime soluta expedita enim fugit qui ut illum aut dolor tempore, voluptatem excepturi? Tempora consectetur odio qui cupiditate repudiandae.
-
-										p.custom-card__text
-											span.custom-card__text-overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ullam earum cupiditate. Officiis minima excepturi cupiditate perferendis reiciendis temporibus explicabo delectus exercitationem iste assumenda accusamus atque sed, eos obcaecati velit?
-
-							//- #5 Carousel item
-							div.carousel__item
-								.custom-card.carousel__custom-card
-									picture.custom-card__picture
-										source(srcset='./src/img/carousel-image--2.avif' type='image/avif')
-										source(srcset='./src/img/carousel-image--2.webp' type='image/webp')
-										img.custom-card___img(src='./src/img/carousel-image--2.jpg' height='181' width='370' alt='Окулист осматривает зрачки пациента через стационарный прибор' loading='lazy')
-
-									.custom-card__infoblock
-										h6.custom-card__title
-											span.custom-card__title-overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum incidunt eaque, maxime soluta expedita enim fugit qui ut illum aut dolor tempore, voluptatem excepturi? Tempora consectetur odio qui cupiditate repudiandae.
-
-										p.custom-card__text
-											span.custom-card__text-overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ullam earum cupiditate. Officiis minima excepturi cupiditate perferendis reiciendis temporibus explicabo delectus exercitationem iste assumenda accusamus atque sed, eos obcaecati velit?
-
-							//- #6 Carousel item
-							div.carousel__item
-								.custom-card.carousel__custom-card
-									picture.custom-card__picture
-										source(srcset='./src/img/carousel-image--3.avif' type='image/avif')
-										source(srcset='./src/img/carousel-image--3.webp' type='image/webp')
-										img.custom-card___img(src='./src/img/carousel-image--3.jpg' height='181' width='370' alt='Окулист надевает на пациента, специальный прибор для проверки зрения' loading='lazy')
-
-									.custom-card__infoblock
-										h6.custom-card__title
-											span.custom-card__title-overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum incidunt eaque, maxime soluta expedita enim fugit qui ut illum aut dolor tempore, voluptatem excepturi? Tempora consectetur odio qui cupiditate repudiandae.
-
-										p.custom-card__text
-											span.custom-card__text-overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ullam earum cupiditate. Officiis minima excepturi cupiditate perferendis reiciendis temporibus explicabo delectus exercitationem iste assumenda accusamus atque sed, eos obcaecati velit?
-
-						// Carousel captions
-						h4.carousel__caption
-							span.carousel__caption-overflow *текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст.
 
 				// Custom media (eyesight check)
 				.custom-media.custom-media--eyesight-check.main__custom-media
@@ -444,10 +343,122 @@ html(lang='ru' dir='ltr')
 
 							// Custom media media
 							.custom-media__col.custom-media__col--media
-								picture.custom-media__picture
-									source(srcset='./src/img/eyesight-check.avif' type='image/avif')
-									source(srcset='./src/img/eyesight-check.webp' type='image/webp')
-									img.custom-media__picture-img(src='./src/img/eyesight-check.jpg' height='2734' width='4096' alt='Проверка зрения пацианта врачом окулистом на специальном приборе' loading='lazy')
+								a.custom-media__picture-wrapper(href='./src/img/eyesight-check.jpg' data-fancybox='gallery')
+									picture.custom-media__picture
+										source(srcset='./src/img/eyesight-check.avif' type='image/avif')
+										source(srcset='./src/img/eyesight-check.webp' type='image/webp')
+										img.custom-media__picture-img(src='./src/img/eyesight-check.jpg' height='2734' width='4096' alt='Проверка зрения пацианта врачом окулистом на специальном приборе' loading='lazy')
+
+				// Carousel
+				.carousel.media__section
+					.container.carousel__container
+
+						// Carousel title
+						h4.carousel__title
+							span.carousel__title-overflow Lorem ipsum dolor sit amet.
+
+						// Owl carousel
+						.owl-carousel.owl-theme
+
+							//- #1 Carousel item
+							.carousel__item
+								.custom-card.carousel__custom-card
+									a.custom-card__picture-wrapper(data-fancybox='gallery' href='./src/img/carousel-image--1.jpg')
+										picture.custom-card__picture
+											source(srcset='./src/img/carousel-image--1.avif' type='image/avif')
+											source(srcset='./src/img/carousel-image--1.webp' type='image/webp')
+											img.custom-card___img(src='./src/img/carousel-image--1.jpg' height='181' width='370' alt='Окулист надевает очки на пациента, вид от первого лица' loading='lazy')
+
+									.custom-card__infoblock
+										h6.custom-card__title
+											span.custom-card__title-overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum incidunt eaque, maxime soluta expedita enim fugit qui ut illum aut dolor tempore, voluptatem excepturi? Tempora consectetur odio qui cupiditate repudiandae.
+
+										p.custom-card__text
+											span.custom-card__text-overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ullam earum cupiditate. Officiis minima excepturi cupiditate perferendis reiciendis temporibus explicabo delectus exercitationem iste assumenda accusamus atque sed, eos obcaecati velit?
+
+							//- #2 Carousel item
+							div.carousel__item
+								.custom-card.carousel__custom-card
+									a.custom-card__picture-wrapper(data-fancybox='gallery' href='./src/img/carousel-image--2.jpg')
+										picture.custom-card__picture
+											source(srcset='./src/img/carousel-image--2.avif' type='image/avif')
+											source(srcset='./src/img/carousel-image--2.webp' type='image/webp')
+											img.custom-card___img(src='./src/img/carousel-image--2.jpg' height='181' width='370' alt='Окулист осматривает зрачки пациента через стационарный прибор' loading='lazy')
+
+									.custom-card__infoblock
+										h6.custom-card__title
+											span.custom-card__title-overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum incidunt eaque, maxime soluta expedita enim fugit qui ut illum aut dolor tempore, voluptatem excepturi? Tempora consectetur odio qui cupiditate repudiandae.
+
+										p.custom-card__text
+											span.custom-card__text-overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ullam earum cupiditate. Officiis minima excepturi cupiditate perferendis reiciendis temporibus explicabo delectus exercitationem iste assumenda accusamus atque sed, eos obcaecati velit?
+
+							//- #3 Carousel item
+							div.carousel__item
+								.custom-card.carousel__custom-card
+									a.custom-card__picture-wrapper(data-fancybox='gallery' href='./src/img/carousel-image--3.jpg')
+										picture.custom-card__picture
+											source(srcset='./src/img/carousel-image--3.avif' type='image/avif')
+											source(srcset='./src/img/carousel-image--3.webp' type='image/webp')
+											img.custom-card___img(src='./src/img/carousel-image--3.jpg' height='181' width='370' alt='Окулист надевает на пациента, специальный прибор для проверки зрения' loading='lazy')
+
+									.custom-card__infoblock
+										h6.custom-card__title
+											span.custom-card__title-overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum incidunt eaque, maxime soluta expedita enim fugit qui ut illum aut dolor tempore, voluptatem excepturi? Tempora consectetur odio qui cupiditate repudiandae.
+
+										p.custom-card__text
+											span.custom-card__text-overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ullam earum cupiditate. Officiis minima excepturi cupiditate perferendis reiciendis temporibus explicabo delectus exercitationem iste assumenda accusamus atque sed, eos obcaecati velit?
+
+							//- #4 Carousel item
+							div.carousel__item
+								.custom-card.carousel__custom-card
+									a.custom-card__picture-wrapper(data-fancybox='gallery' href='./src/img/carousel-image--1.jpg')
+										picture.custom-card__picture
+											source(srcset='./src/img/carousel-image--1.avif' type='image/avif')
+											source(srcset='./src/img/carousel-image--1.webp' type='image/webp')
+											img.custom-card___img(src='./src/img/carousel-image--1.jpg' height='181' width='370' alt='Окулист надевает очки на пациента, вид от первого лица' loading='lazy')
+
+									.custom-card__infoblock
+										h6.custom-card__title
+											span.custom-card__title-overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum incidunt eaque, maxime soluta expedita enim fugit qui ut illum aut dolor tempore, voluptatem excepturi? Tempora consectetur odio qui cupiditate repudiandae.
+
+										p.custom-card__text
+											span.custom-card__text-overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ullam earum cupiditate. Officiis minima excepturi cupiditate perferendis reiciendis temporibus explicabo delectus exercitationem iste assumenda accusamus atque sed, eos obcaecati velit?
+
+							//- #5 Carousel item
+							div.carousel__item
+								.custom-card.carousel__custom-card
+									a.custom-card__picture-wrapper(data-fancybox='gallery' href='./src/img/carousel-image--2.jpg')
+										picture.custom-card__picture
+											source(srcset='./src/img/carousel-image--2.avif' type='image/avif')
+											source(srcset='./src/img/carousel-image--2.webp' type='image/webp')
+											img.custom-card___img(src='./src/img/carousel-image--2.jpg' height='181' width='370' alt='Окулист осматривает зрачки пациента через стационарный прибор' loading='lazy')
+
+									.custom-card__infoblock
+										h6.custom-card__title
+											span.custom-card__title-overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum incidunt eaque, maxime soluta expedita enim fugit qui ut illum aut dolor tempore, voluptatem excepturi? Tempora consectetur odio qui cupiditate repudiandae.
+
+										p.custom-card__text
+											span.custom-card__text-overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ullam earum cupiditate. Officiis minima excepturi cupiditate perferendis reiciendis temporibus explicabo delectus exercitationem iste assumenda accusamus atque sed, eos obcaecati velit?
+
+							//- #6 Carousel item
+							div.carousel__item
+								.custom-card.carousel__custom-card
+									a.custom-card__picture-wrapper(data-fancybox='gallery' href='./src/img/carousel-image--3.jpg')
+										picture.custom-card__picture
+											source(srcset='./src/img/carousel-image--3.avif' type='image/avif')
+											source(srcset='./src/img/carousel-image--3.webp' type='image/webp')
+											img.custom-card___img(src='./src/img/carousel-image--3.jpg' height='181' width='370' alt='Окулист надевает на пациента, специальный прибор для проверки зрения' loading='lazy')
+
+									.custom-card__infoblock
+										h6.custom-card__title
+											span.custom-card__title-overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum incidunt eaque, maxime soluta expedita enim fugit qui ut illum aut dolor tempore, voluptatem excepturi? Tempora consectetur odio qui cupiditate repudiandae.
+
+										p.custom-card__text
+											span.custom-card__text-overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ullam earum cupiditate. Officiis minima excepturi cupiditate perferendis reiciendis temporibus explicabo delectus exercitationem iste assumenda accusamus atque sed, eos obcaecati velit?
+
+						// Carousel captions
+						h4.carousel__caption
+							span.carousel__caption-overflow *текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст.
 
 				// Custom media (eyesight check 2)
 				.custom-media.custom-media--eyesight-check-2.main__custom-media
@@ -467,14 +478,15 @@ html(lang='ru' dir='ltr')
 
 									p.custom-media__paragraph Текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст.
 
-							picture.custom-media__picture
-								source(srcset='./src/img/eyesight-check--2.avif' type='image/avif')
-								source(srcset='./src/img/eyesight-check--2.webp' type='image/webp')
-								img.custom-media__picture-img(src='./src/img/eyesight-check--2.jpg' height='2735' width='4096' alt='Проверка зрения пацианта врачом окулистом ручным прибором' loading='lazy')
+							a.custom-media__picture-wrapper(href='./src/img/eyesight-check--2.jpg' data-fancybox='gallery')
+								picture.custom-media__picture
+									source(srcset='./src/img/eyesight-check--2.avif' type='image/avif')
+									source(srcset='./src/img/eyesight-check--2.webp' type='image/webp')
+									img.custom-media__picture-img(src='./src/img/eyesight-check--2.jpg' height='2735' width='4096' alt='Проверка зрения пацианта врачом окулистом ручным прибором' loading='lazy')
 
 						// Features actions
 						.custom-media__actions
-							button.btn.btn_custom.btn_custom_l.btn_custom_tag.btn_custom_rounded.btn-atlantis.custom-media__action
+							button.btn.btn_custom.btn_custom_l.btn_custom_tag.btn_custom_rounded.btn-atlantis.custom-media__action(data-toggle='modal' data-target='#book-eyesight-check-modal')
 								span.btn__tag-overflow.custom-media__action-overflow ЗАПИСАТЬСЯ НА ПРОВЕРКУ
 								span.btn__tag-circle
 									svg.icon.icon--arrow-to-right-2.custom-media__media__icon(xmlns:xlink='http://www.w3.org/1999/xlink')
@@ -488,7 +500,7 @@ html(lang='ru' dir='ltr')
 					.container.belt__container
 
 						// Subscribe form
-						form.subscribe.belt__subscribe
+						form.subscribe.belt__subscribe(id='subscribe-form')
 							// Belt title
 							h4.subscribe__title
 								//- span.subscribe__title-overflow
@@ -717,6 +729,28 @@ html(lang='ru' dir='ltr')
 							//- .copyrights__note
 							//- .copyrights__note Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam doloremque neque laudantium nemo ex labore ducimus autem voluptate laborum corporis. Asperiores delectus consequuntur illum dolor officiis eius consequatur beatae aspernatur.
 							.copyrights__note © Все права защищены авторским правом
+
+			// Modal (Book eyesight check)
+			.modal(tabindex='-1' id='book-eyesight-check-modal')
+				.modal-dialog
+					.modal-content
+						.modal-header
+							h5.modal-title Запись на проверку зрения
+							button.close(type='button' data-dismiss='modal' aria-label='Close')
+								span(aria-hidden='true') ×
+						.modal-body
+							form
+								.form-group
+									label(for='record-email-input') Email
+									input#record-email-input.form-control(type='email' required)
+								.form-group
+									label(for='phone-input') Телефон
+									input#record-phone-input.form-control(type='tel' required)
+								.form-group.custom-control.custom-checkbox
+									input#newsletters-consent-checkbox.custom-control-input(type='checkbox')
+									label.custom-control-label(for='newsletters-consent-checkbox') Хочу получать информацию о новостях и акциях компании
+
+								button.btn.btn-atlantis.btn_custom.btn_custom_rounded(type='submit') Записаться
 
 		// SVG sprite
 		include ./src/pug/blocks/sprite-defs
