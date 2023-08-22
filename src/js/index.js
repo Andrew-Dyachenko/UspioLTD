@@ -1,4 +1,4 @@
-import * as $ from 'jquery';
+// import * as $ from 'jquery';
 // import 'bootstrap';
 import 'bootstrap/js/dist/modal';
 
@@ -36,15 +36,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	// Owl carousel START
 	jQuery('.owl-carousel').owlCarousel({
-		// autoWidth: true,
-		// margin: 20,
 		dots: false,
 		lazyLoad: true,
 		lazyLoadEager: 1,
-		// autoplay: true,
-		// loop: true,
+		autoplay: true,
+		loop: true,
 		autoplayHoverPause: true,
-		// center: true,
 		responsive: {
 			0: {
 				items: 1,
@@ -73,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		input.value = '';
 
-		$.ajax({
+		jQuery.ajax({
 			url: 'https://raw.githubusercontent.com/Andrew-Dyachenko/UspioLTD/main/public/ajax.txt',
 			dataType: 'text',
 			success: function (res) {
