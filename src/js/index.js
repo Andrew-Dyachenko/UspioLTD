@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	// Owl carousel END
 
 	// Subscribe form START
-	$('#subscribe-form').on('submit', (event) => {
+	jQuery('#subscribe-form').on('submit', (event) => {
 		event.preventDefault();
 		const input = event.target.elements[0];
 		const submitBtn = event.target.elements[1];
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			url: 'https://raw.githubusercontent.com/Andrew-Dyachenko/UspioLTD/main/public/ajax.txt',
 			dataType: 'text',
 			success: function (res) {
-				$(submitBtn)
+				jQuery(submitBtn)
 					.text(res)
 					.removeClass('btn-atlantis')
 					.addClass('btn-black');
