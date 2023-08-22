@@ -1,7 +1,7 @@
 {
 	"scripts": {
 		"start": "parcel index.pug",
-		"build": "parcel build index.pug --dist-dir build/ --public-url ./"
+		"build": "parcel build index.pug --dist-dir build/ --public-url ./ --no-scope-hoist --no-optimize"
 	},
 	"devDependencies": {
 		"@parcel/transformer-pug": "^2.9.3",
