@@ -8,25 +8,25 @@
 	padding-block: math.div(50, 16) + rem math.div(60, 16) + rem;
 
 	&__container {
-		padding-inline: 0;
-		max-width: calc(#{conf.$xl} + 16px);
+		padding-inline: math.div(conf.$container-padding-x, 2);
+		// max-width: calc(#{conf.$xl} + 16px);
 
-		@media (min-width: conf.$xl) {
-			padding-inline: math.div(conf.$container-padding-x, 2);
-		}
+		// @media (min-width: conf.$xl) {
+		// 	padding-inline: math.div(conf.$container-padding-x, 2);
+		// }
 
-		@media (min-width: #{conf.$xl + func.strip-unit(conf.$container-padding-x) * conf.$font-size-root}) and (max-width: #{conf.$xl + func.strip-unit(conf.$container-padding-x) * conf.$font-size-root * 2 - 1}) {
-			padding-inline: func.fluid(
-				func.strip-unit(math.div(conf.$container-padding-x, 2)) * conf.$font-size-root,
-				0px,
-				conf.$xl + func.strip-unit(conf.$container-padding-x) * conf.$font-size-root,
-				conf.$xl + func.strip-unit(conf.$container-padding-x) * conf.$font-size-root * 2
-			);
-		}
+		// @media (min-width: #{conf.$xl + func.strip-unit(conf.$container-padding-x) * conf.$font-size-root}) and (max-width: #{conf.$xl + func.strip-unit(conf.$container-padding-x) * conf.$font-size-root * 2 - 1}) {
+		// 	padding-inline: func.fluid(
+		// 		func.strip-unit(math.div(conf.$container-padding-x, 2)) * conf.$font-size-root,
+		// 		0px,
+		// 		conf.$xl + func.strip-unit(conf.$container-padding-x) * conf.$font-size-root,
+		// 		conf.$xl + func.strip-unit(conf.$container-padding-x) * conf.$font-size-root * 2
+		// 	);
+		// }
 
-		@media (min-width: #{conf.$xl + func.strip-unit(conf.$container-padding-x) * conf.$font-size-root * 2}) {
-			padding-inline: 0;
-		}
+		// @media (min-width: #{conf.$xl + func.strip-unit(conf.$container-padding-x) * conf.$font-size-root * 2}) {
+		// 	padding-inline: 0;
+		// }
 	}
 
 	&__custom-card {
@@ -34,12 +34,12 @@
 	}
 
 	&__item {
-		padding: 0.25rem 1rem 0.75rem;
+		padding: 0.25rem 0.5rem 0.75rem;
 		border-radius: 0.5rem;
 
-		@media (min-width: conf.$xl) {
-			padding-inline: 0.5rem;
-		}
+		// @media (min-width: conf.$xl) {
+		// 	padding-inline: 0.5rem;
+		// }
 	}
 
 	&__title {
@@ -47,7 +47,7 @@
 		font-weight: 700;
 		line-height: math.div(36, 28);
 		margin: 0;
-		padding-inline: 0.5rem;
+		padding-inline: math.div(conf.$container-padding-x, 2);
 
 		@media (max-width: #{conf.$m -  1}) {
 			text-align: center;
@@ -58,7 +58,7 @@
 		}
 
 		&:not(:last-child) {
-			margin-block-end: math.div(30, 28) + em;
+			margin-block-end: math.div(14, 28) + em;
 		}
 
 		&-overflow {
@@ -88,7 +88,7 @@
 		margin: 0;
 		line-height: math.div(22, 16);
 		color: conf.$oslo-gray-2;
-		padding-inline: 0.5rem;
+		padding-inline: math.div(conf.$container-padding-x, 2);
 
 		@media (max-width: #{conf.$m -  1}) {
 			text-align: center;
@@ -99,7 +99,7 @@
 		}
 
 		&:not(:first-child) {
-			margin-block-start: math.div(20, 16) + em;
+			margin-block-start: math.div(8, 16) + em;
 		}
 
 		&-overflow {

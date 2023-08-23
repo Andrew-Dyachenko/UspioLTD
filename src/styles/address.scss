@@ -10,12 +10,12 @@
 		padding: 0;
 
 		&:not(:empty) {
-			margin: math.div(5, -16) + rem; /* ~5px */
+			margin: math.div(3, -16) + rem; /* ~5px */
 		}
 	}
 
 	&__item {
-		padding: math.div(5, 16) + rem; /* ~5px */
+		padding: math.div(3, 16) + rem; /* ~5px */
 	}
 
 	&__link {

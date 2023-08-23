@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	// Owl carousel START
 	jQuery('.owl-carousel').owlCarousel({
+		margin: 4,
 		dots: false,
 		lazyLoad: true,
 		lazyLoadEager: 1,
@@ -44,19 +45,16 @@ document.addEventListener('DOMContentLoaded', () => {
 		autoplayHoverPause: true,
 		responsive: {
 			0: {
-				items: 1,
-				margin: 0
+				items: 1
 			},
 			576: {
-				items: 2,
-				margin: 0
+				items: 2
 			},
 			992: {
-				items: 3,
-				margin: 0
+				items: 3
 			},
 			1202: {
-				margin: 20
+				margin: 14
 			}
 		}
 	});
