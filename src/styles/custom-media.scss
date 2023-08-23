@@ -1,5 +1,6 @@
 @use 'sass:math';
 @use 'conf';
+@use 'func';
 
 .custom-media {
 	$media: &;
@@ -27,7 +28,18 @@
 
 					@media (min-width: conf.$xl) {
 						flex-grow: 1;
-						width: calc(68% - #{math.div(30, 16) + rem} / 2);
+						width: calc(
+							#{math.div(
+									func.strip-unit(conf.$xl - 350px),
+									func.strip-unit(
+										math.div(
+											conf.$xl - func.strip-unit(conf.$container-padding-x * 2) *
+												conf.$font-size-root,
+											100
+										)
+									)
+								) * 1%}
+						);
 					}
 				}
 
@@ -42,7 +54,18 @@
 
 					@media (min-width: conf.$xl) {
 						flex-shrink: 0;
-						width: calc(32% - #{math.div(30, 16) + rem} / 2);
+						width: calc(
+							#{math.div(
+									func.strip-unit(350px),
+									func.strip-unit(
+										math.div(
+											conf.$xl - func.strip-unit(conf.$container-padding-x * 2) *
+												conf.$font-size-root,
+											100
+										)
+									)
+								) * 1%}
+						);
 					}
 				}
 			}
