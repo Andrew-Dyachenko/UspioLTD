@@ -28,746 +28,750 @@ html(lang='ru' dir='ltr')
 		<!-- /Yandex.Metrika counter -->
 
 		body
-			// App
-			.app
-				// Header
-				header.header.app__header
-					.container.header__container
-						// Brand logo
-						a.brand.header__brand(href='/' title='На главную страницу')
-							svg.icon.icon--brand-logo.brand__icon(xmlns:xlink='http://www.w3.org/1999/xlink')
-								use(xlink:href='#brand-logo')
-
-						// Header hr
-						hr.header__hr(aria-orientation='vertical')
-
-						// Delivery
-						.deliveryTo.header__deliveryTo
-
-							// Delivery title
-							//- Empty [test]
-							//- h5.deliveryTo__title(title='Город доставки: Москва')
-
-							//- Layout [test]
-							//- h5.deliveryTo__title(title='Город доставки: Москва') ТЕКСТ ТЕКСТ
-
-							//- Overflowing [test]
-							//- h5.deliveryTo__title(title='Город доставки: Москва') Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur id nam nemo nesciunt eligendi suscipit earum officiis, facilis porro nisi sapiente reiciendis eius impedit deleniti nulla beatae ullam assumenda ratione.
-
-							//- Meaningful [test]
-							h5.deliveryTo__title(title='Город доставки: Москва') МОСКВА
-
-							// Delivery info
-							.deliveryTo__info
-								.deliveryTo__address
-									// Delivery icon
-									svg.icon.icon--map-pin.deliveryTo__address-icon(xmlns:xlink='http://www.w3.org/1999/xlink')
-										use(xlink:href='#map-pin')
-
-									// Delivery address
-									span.deliveryTo__address-text-wrapper(title='Адрес доставки: ул. Большой Козловский Переулок 10с1')
-										//- span.deliveryTo__address-text
-										//- span.deliveryTo__address-text Тексттт
-										//- span.deliveryTo__address-text Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero soluta distinctio velit! Numquam ex fugiat exercitationem quo sunt repellendus necessitatibus dicta consequatur officia minima. Rem praesentium quia accusamus deleniti dolorem!
-										span.deliveryTo__address-text ул. Большой Козловский Переулок 10с1
-
-									// Delivery quantity
-									abbr.deliveryTo__address-quantity(title='Общее количество ожидаемых доставок - (10шт.)')
-										span.deliveryTo__address-bracket (
-										span.deliveryTo__address-value-wrapper
-											//- span.deliveryTo__address-value
-											//- span.deliveryTo__address-value Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius illum voluptate, sed nemo harum nulla veritatis ratione molestiae quos quod totam quas a atque ullam, recusandae doloremque aliquam officiis temporibus.
-											span.deliveryTo__address-value 10
-										span.deliveryTo__address-bracket )
-
-								// Delivery hr
-								hr.deliveryTo__hr(aria-orientation='vertical')
-
-								// Delivery time and date: 14th of September 2023, at 18:00 Moscow time (UTC+3)
-								time.deliveryTo__time(datetime='2023-08-14T18:00:00+03:00')
-									span.deliveryTo__time-text-wrapper(title='Ориентироочная дата и время доставки: 14-го Сентября, 18:00 (МСК)')
-										//- span.span.deliveryTo__time-text
-										//- span.span.deliveryTo__time-text текст
-										//- span.span.deliveryTo__time-text Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias harum omnis animi eveniet mollitia. Praesentium qui dolorum quae repudiandae sit laboriosam dolores alias eligendi. Iusto blanditiis non beatae labore sint?
-										span.span.deliveryTo__time-text 14-го Сентября, 18:00 (МСК)
-									abbr.deliveryTo__time-quantity(title='Количество ближайших доставок - (10шт.)')
-										span.deliveryTo__time-bracket (
-										span.deliveryTo__time-value-wrapper
-											//- span.deliveryTo__time-value
-											//- span.deliveryTo__time-value Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos, magni? Vero voluptatibus quisquam aperiam commodi odit, magnam quam, eveniet est deserunt cumque ipsum ea eius blanditiis velit, officiis enim praesentium.
-											span.deliveryTo__time-value 10
-										span.deliveryTo__time-bracket )
-
-						// Fast header target
-						a.btn.btn-outline-atlantis.btn_custom.btn_custom_rounded.header__target(href='javascript: void(0);' role='button')
-							// Fast header target icon
-							.header__target-icon
-								// Sivcev table
-								table.sivcev(aria-description='Эта таблица представляет собой миниатюру таблицы Сивцева - таблицы, которая, в свою очередь представляет собой стандартный набор печатных знаков для определения остроты зрения человека')
-									tbody
-										tr
-											td.sivcev__char Ш
-											td.sivcev__char(colspan='2') Б
-										tr
-											td.sivcev__char Н
-											td.sivcev__char М
-											td.sivcev__char К
-							span.btn__text.header__target-text
-								//- span.btn__text-overflow.header__target-overflow
-								//- span.btn__text-overflow.header__target-overflow Lorem, ipsum dolor sit amet consectetur adipisicing elit. A illum culpa sequi labore. Ea quibusdam corrupti id cum impedit? Dolores, earum quia facilis optio minus sunt error fugit at molestiae?
-								span.btn__text-overflow.header__target-overflow(data-toggle='modal' data-target='#book-eyesight-check-modal') Запишитесь на<br class='d-none d-xl-inline'> проверку
-
-						// Header hr
-						hr.header__hr(aria-orientation='vertical')
-
-						// Address
-						address.header__address
-							//- a.header__address-phone(href='tel:+78001111111' title='Позвонить на номер: +78001111111')
-							//- a.header__address-phone(href='tel:+78001111111' title='Позвонить на номер: +78001111111') Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui sit voluptatem inventore ducimus, repellat cum. Laborum, perspiciatis veritatis officia praesentium, iste illo vitae eum nobis quibusdam fugit accusantium modi error.
-							a.header__address-phone(href='tel:+78001111111' title='Позвонить на номер: +78001111111') +7 (800) 111-111-1
-							button.btn.btn-link.header__address-callback(title='Откроет модальное окно с формой обратной связи')
-								//- span
-								//- span Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus magni dolores at quaerat quisquam? Voluptatibus officiis optio architecto repellat. Facilis, nam! Rem excepturi autem deleniti odio odit reprehenderit ullam distinctio.
-								span Перезвоните мне
-
-						// Header actions: Favorites & Basket buttons
-						.header__actions
-							.header__actions-row
-								.header__actions-col
-									a.header__action.header__action--heart(href='/favourites' title='Избранные товары') Избранные товары
-										svg.icon.icon--heart.header__action-icon(xmlns:xlink='http://www.w3.org/1999/xlink')
-											use(xlink:href='#heart')
-										span.badge.badge_custom.badge_custom_atlantis.badge_custom_circled.header__action-badge(title='В избранном: 99 товаров')
-											//- span.badge__overflow
-											//- span.badge__overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut optio ut dignissimos perferendis quidem et natus enim in ab vel ipsum, laudantium laborum temporibus placeat, eos aliquam odit autem quibusdam?
-											span.badge__overflow 99
-
-								.header__actions-col
-									a.header__action.header__action--shoping-cart(href='/favourites' title='Корзина') Корзина
-										svg.icon.icon--shoping-cart.header__action-icon(xmlns:xlink='http://www.w3.org/1999/xlink')
-											use(xlink:href='#shoping-cart')
-										span.badge.badge_custom.badge_custom_atlantis.badge_custom_circled.header__action-badge(title='В корзине: 3 товара')
-											//- span.badge__overflow
-											//- span.badge__overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut optio ut dignissimos perferendis quidem et natus enim in ab vel ipsum, laudantium laborum temporibus placeat, eos aliquam odit autem quibusdam?
-											span.badge__overflow 3
-
-				// Menu
-				.menu(role='menu')
-					.container.menu__container
-						// Nav
-						nav.menu__nav
-							ol.menu__list
-								li.menu__item
-									//- a.menu__link(href='javascript: void(0);')
-									//- a.menu__link(href='javascript: void(0);') Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum ad omnis error rem atque. Pariatur ullam eos unde fugit maiores, optio consequuntur expedita illum eius ab suscipit velit vitae temporibus.
-									a.menu__link(href='javascript: void(0);') Одежда и обувь
-
-								li.menu__item
-									//- a.menu__link(href='javascript: void(0);')
-									//- a.menu__link(href='javascript: void(0);') Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum ad omnis error rem atque. Pariatur ullam eos unde fugit maiores, optio consequuntur expedita illum eius ab suscipit velit vitae temporibus.
-									a.menu__link(href='javascript: void(0);') Электроника
-
-								li.menu__item
-									//- a.menu__link(href='javascript: void(0);')
-									//- a.menu__link(href='javascript: void(0);') Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum ad omnis error rem atque. Pariatur ullam eos unde fugit maiores, optio consequuntur expedita illum eius ab suscipit velit vitae temporibus.
-									a.menu__link(href='javascript: void(0);') Дом и сад
-
-								li.menu__item
-									//- a.menu__link(href='javascript: void(0);')
-									//- a.menu__link(href='javascript: void(0);') Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum ad omnis error rem atque. Pariatur ullam eos unde fugit maiores, optio consequuntur expedita illum eius ab suscipit velit vitae temporibus.
-									a.menu__link(href='javascript: void(0);') Детские товары
-
-								li.menu__item
-									//- a.menu__link(href='javascript: void(0);')
-									//- a.menu__link(href='javascript: void(0);') Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum ad omnis error rem atque. Pariatur ullam eos unde fugit maiores, optio consequuntur expedita illum eius ab suscipit velit vitae temporibus.
-									a.menu__link(href='javascript: void(0);') Бренды
-
-								li.menu__item
-									//- a.menu__link(href='javascript: void(0);')
-									//- a.menu__link(href='javascript: void(0);') Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum ad omnis error rem atque. Pariatur ullam eos unde fugit maiores, optio consequuntur expedita illum eius ab suscipit velit vitae temporibus.
-									a.menu__link(href='javascript: void(0);') Продукты питания
-
-						// Search
-						form.menu__search
-							input.form-control.form-control-outline-apple.form-control-outline-apple--inset.menu__search-control(type='search' id='search' minlength='1' required)
-							label.menu__search-label(for='search')
-								svg.icon.icon--magnifer.menu__search-icon(xmlns:xlink='http://www.w3.org/1999/xlink')
-									use(xlink:href='#magnifer')
-
-				// Main
-				main.main.app__main
-
-					// Hero
-					section.hero.main__hero
-
-						// Hero container
-						.container.hero__container
-							// Breadcrumbs wrapper
-							nav.breadcrumbs-wrapper.hero__breadcrumbs(aria-label='breadcrumbs')
-								// Breadcrumbs
-								ol.breadcrumbs
-									li.breadcrumbs__item
-										a.breadcrumbs__link(href='/')
-											svg.icon.icon--home.breadcrumbs__icon(xmlns:xlink='http://www.w3.org/1999/xlink')
-												use(xlink:href='#home')
-											.breadcrumbs__text Домой
-									//- li.breadcrumbs__item
-									//- 	a.breadcrumbs__link(href='javascript: void(0);')
-									//- 		.breadcrumbs__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia dolorum laborum nobis culpa harum quasi illo laudantium, voluptate, vitae aperiam voluptatibus itaque iusto sed mollitia possimus consequuntur tempore excepturi illum!
-									//- li.breadcrumbs__item
-									//- 	a.breadcrumbs__link(href='javascript: void(0);')
-									//- 		.breadcrumbs__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia dolorum laborum nobis culpa harum quasi illo laudantium, voluptate, vitae aperiam voluptatibus itaque iusto sed mollitia possimus consequuntur tempore excepturi illum!
-									li.breadcrumbs__item.breadcrumbs__item--active(aria-current='page' title='Вы находитесь на: Главная страница')
-										span.breadcrumbs__text Главная страница
-
-							// Hero infoblock
-							.hero__infoblock
-
-								// Hero title
-								h2.hero__title
-									span.hero__title-overflow Центр <mark class='hero__title-mark'>эстетической</mark> стоматологии на Чистых Прудах
-
-								// Hero text
-								.hero__text
-									// Hero secondary text
-									p.hero__paragraph Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias nobis magnam rem neque a qui? Cum, iste provident repudiandae similique quos animi suscipit excepturi qui hic iusto omnis eaque magnam sequi debitis
-
-									// Hero lead text
-									blockquote.hero__blockquote "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae aperiam sed dolores ad quaerat corrupti repudiandae laudantium facere nobis deserunt?"
-
-								// Hero actions
-								.hero__actions
-									button.btn.btn-outline-atlantis.btn_custom.btn_custom_rounded.hero__action(data-toggle='modal' data-target='#book-eyesight-check-modal')
-										//- span.hero__action-overflow
-										//- span.hero__action-overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque quidem expedita repellendus. Tempore, natus quibusdam quod odit ratione eaque, voluptates culpa fugiat iusto vel quaerat, fugit saepe voluptate ab sequi!
-										span.hero__action-overflow Записаться на проверку
-
-							// Hero media
-							a.hero__media-wrapper(href='./src/img/hero-doctor.jpg' data-fancybox='gallery')
-								picture.hero__media
-									source(srcset='./src/img/hero-doctor.avif' type='image/avif')
-									source(srcset='./src/img/hero-doctor.webp' type='image/webp')
-									img.hero__media-img(src='./src/img/hero-doctor.jpg' height='509' width='400' alt='Smiling women-doctor dentist with glasses in hands' loading='lazy')
-
-					// Features
-					section.features.main__features
-
-						// Features container
-						.container.features__container
-
-							// Features title
-							h2.features__title
-								span.features__title-overflow Заголовок заголовок заголовок
-
-							// Features row + bootstrap grid style
-							.row.justify-content-center.features__row
-								// #1 Feature
-								.col-m-6.col-xl-4.d-flex.justify-content-center.justify-content-m-end.justify-content-xl-center.features__col
-									.d-flex.flex-grow-1.align-items-center.flex-column.justify-content-center.features__item.features__item--toy
-										// Feature media
-										.features__media
-											svg.icon.icon--toy.features__media__icon(xmlns:xlink='http://www.w3.org/1999/xlink')
-												use(xlink:href='#toy')
-
-										// Feature subtitle
-										h3.features__subtitle
-											span.features__subtitle-overflow LOREM <mark class='features__mark'>IPSUM DOLOR</mark> SIT AMET CONSECTETUR.
-
-								// #2 Feature
-								.col-m-6.col-xl-4.d-flex.justify-content-center.justify-content-m-start.justify-content-xl-center.features__col
-									.d-flex.flex-grow-1.align-items-center.flex-column.justify-content-center.features__item.features__item--shucks
-										// Feature media
-										.features__media
-											svg.icon.icon--shucks.features__media__icon(xmlns:xlink='http://www.w3.org/1999/xlink')
-												use(xlink:href='#shucks')
-
-										// Feature subtitle
-										h3.features__subtitle
-											span.features__subtitle-overflow LOREM IPSUM DOLOR SIT AMET CONSECTETUR ADIPISICING ELIT. ARCHITECTO ASPERNATUR
-
-								// #3 Feature
-								.col-m-6.col-xl-4.d-flex.justify-content-center.justify-content-m-end.justify-content-xl-center.features__col
-									.d-flex.flex-grow-1.align-items-center.flex-column.justify-content-center.justify-content-center.features__item.features__item--eye
-										// Feature media
-										.features__media
-											svg.icon.icon--eye.features__media__icon(xmlns:xlink='http://www.w3.org/1999/xlink')
-												use(xlink:href='#eye')
-
-										// Feature subtitle
-										h3.features__subtitle
-											span.features__subtitle-overflow LOREM IPSUM DOLOR<br> SIT
-
-								// #4 Feature
-								.col-m-6.col-xl-4.d-flex.justify-content-center.justify-content-m-start.justify-content-xl-center.features__col
-									.d-flex.flex-grow-1.align-items-center.flex-column.justify-content-center.features__item.features__item--human-with-glasses
-										// Feature media
-										.features__media
-											svg.icon.icon--human-with-glasses.features__media__icon(xmlns:xlink='http://www.w3.org/1999/xlink')
-												use(xlink:href='#human-with-glasses')
-
-										// Feature subtitle
-										h3.features__subtitle
-											span.features__subtitle-overflow LOREM IPSUM DOLOR SIT<br> AMET CONSECTETUR ADIPISICING ELIT
-
-								// #5 Feature
-								.col-m-6.col-xl-4.d-flex.justify-content-center.justify-content-m-end.justify-content-xl-center.features__col
-									.d-flex.flex-grow-1.align-items-center.flex-column.justify-content-center.features__item.features__item--glasses
-										// Feature media
-										.features__media
-											svg.icon.icon--glasses.features__media__icon(xmlns:xlink='http://www.w3.org/1999/xlink')
-												use(xlink:href='#glasses')
-
-										// Feature subtitle
-										h3.features__subtitle
-											span.features__subtitle-overflow <mark class='features__mark'>LOREM IPSUM DOLOR</mark><br> SIT AMET CONSECTETUR ADIPISICING ELIT.
-
-								// #6 Feature
-								.col-m-6.col-xl-4.d-flex.justify-content-center.justify-content-m-start.justify-content-xl-center.features__col
-									.d-flex.flex-grow-1.align-items-center.flex-column.justify-content-center.justify-content-center.features__item.features__item--doctor
-										// Feature media
-										.features__media
-											svg.icon.icon--doctor.features__media__icon(xmlns:xlink='http://www.w3.org/1999/xlink')
-												use(xlink:href='#doctor')
-
-										// Feature subtitle
-										h3.features__subtitle
-											span.features__subtitle-overflow LOREM<br> IPSUM DOLOR SIT AMET CONSECTETUR
-
-							// Features actions
-							.features__actions
-								button.btn.btn_custom.btn_custom_l.btn_custom_tag.btn_custom_rounded.btn-atlantis.features__action(data-toggle='modal' data-target='#book-eyesight-check-modal')
-									span.btn__tag-overflow.features__action-overflow ЗАПИСАТЬСЯ НА ПРОВЕРКУ
-									span.btn__tag-circle
-										svg.icon.icon--arrow-to-right-2.features__media__icon(xmlns:xlink='http://www.w3.org/1999/xlink')
-											use(xlink:href='#arrow-to-right-2')
-
-					// Custom media (eyesight check)
-					.custom-media.custom-media--eyesight-check.main__custom-media
-						.container.custom-media__container
-							.custom-media__row
-
-								// Custom media infoblock
-								.custom-media__col.custom-media__col--infoblock
-									h3.custom-media__title Текст текст:
-									ul.custom-media__list
-										li.custom-media__list-item текст текст
-										li.custom-media__list-item текст текст текст текст
-										li.custom-media__list-item текст
-										li.custom-media__list-item текст текст текст текст текст текст текст текст текст текст текст текст
-										li.custom-media__list-item текст текст текст текст текст текст текст текст текст текст
-										li.custom-media__list-item текст текст текст текст текст текст текст текст текст текст текст текст текст текст
-
-								// Custom media media
-								.custom-media__col.custom-media__col--media
-									a.custom-media__picture-wrapper(href='./src/img/eyesight-check.jpg' data-fancybox='gallery')
-										picture.custom-media__picture
-											source(srcset='./src/img/eyesight-check.avif' type='image/avif')
-											source(srcset='./src/img/eyesight-check.webp' type='image/webp')
-											img.custom-media__picture-img(src='./src/img/eyesight-check.jpg' height='2734' width='4096' alt='Проверка зрения пацианта врачом окулистом на специальном приборе' loading='lazy')
-
-					// Carousel
-					.carousel.media__section
-						.container.carousel__container
-
-							// Carousel title
-							h4.carousel__title
-								span.carousel__title-overflow Lorem ipsum dolor sit amet.
-
-							// Owl carousel
-							.owl-carousel.owl-theme
-
-								//- #1 Carousel item
-								.carousel__item
-									.custom-card.carousel__custom-card
-										a.custom-card__picture-wrapper(data-fancybox='gallery' href='./src/img/carousel-image--1.jpg')
-											picture.custom-card__picture
-												source(srcset='./src/img/carousel-image--1.avif' type='image/avif')
-												source(srcset='./src/img/carousel-image--1.webp' type='image/webp')
-												img.custom-card___img(src='./src/img/carousel-image--1.jpg' height='181' width='370' alt='Окулист надевает очки на пациента, вид от первого лица' loading='lazy')
-
-										.custom-card__infoblock
-											h6.custom-card__title
-												span.custom-card__title-overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum incidunt eaque, maxime soluta expedita enim fugit qui ut illum aut dolor tempore, voluptatem excepturi? Tempora consectetur odio qui cupiditate repudiandae.
-
-											p.custom-card__text
-												span.custom-card__text-overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ullam earum cupiditate. Officiis minima excepturi cupiditate perferendis reiciendis temporibus explicabo delectus exercitationem iste assumenda accusamus atque sed, eos obcaecati velit?
-
-								//- #2 Carousel item
-								div.carousel__item
-									.custom-card.carousel__custom-card
-										a.custom-card__picture-wrapper(data-fancybox='gallery' href='./src/img/carousel-image--2.jpg')
-											picture.custom-card__picture
-												source(srcset='./src/img/carousel-image--2.avif' type='image/avif')
-												source(srcset='./src/img/carousel-image--2.webp' type='image/webp')
-												img.custom-card___img(src='./src/img/carousel-image--2.jpg' height='181' width='370' alt='Окулист осматривает зрачки пациента через стационарный прибор' loading='lazy')
-
-										.custom-card__infoblock
-											h6.custom-card__title
-												span.custom-card__title-overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum incidunt eaque, maxime soluta expedita enim fugit qui ut illum aut dolor tempore, voluptatem excepturi? Tempora consectetur odio qui cupiditate repudiandae.
-
-											p.custom-card__text
-												span.custom-card__text-overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ullam earum cupiditate. Officiis minima excepturi cupiditate perferendis reiciendis temporibus explicabo delectus exercitationem iste assumenda accusamus atque sed, eos obcaecati velit?
-
-								//- #3 Carousel item
-								div.carousel__item
-									.custom-card.carousel__custom-card
-										a.custom-card__picture-wrapper(data-fancybox='gallery' href='./src/img/carousel-image--3.jpg')
-											picture.custom-card__picture
-												source(srcset='./src/img/carousel-image--3.avif' type='image/avif')
-												source(srcset='./src/img/carousel-image--3.webp' type='image/webp')
-												img.custom-card___img(src='./src/img/carousel-image--3.jpg' height='181' width='370' alt='Окулист надевает на пациента, специальный прибор для проверки зрения' loading='lazy')
-
-										.custom-card__infoblock
-											h6.custom-card__title
-												span.custom-card__title-overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum incidunt eaque, maxime soluta expedita enim fugit qui ut illum aut dolor tempore, voluptatem excepturi? Tempora consectetur odio qui cupiditate repudiandae.
-
-											p.custom-card__text
-												span.custom-card__text-overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ullam earum cupiditate. Officiis minima excepturi cupiditate perferendis reiciendis temporibus explicabo delectus exercitationem iste assumenda accusamus atque sed, eos obcaecati velit?
-
-								//- #4 Carousel item
-								div.carousel__item
-									.custom-card.carousel__custom-card
-										a.custom-card__picture-wrapper(data-fancybox='gallery' href='./src/img/carousel-image--1.jpg')
-											picture.custom-card__picture
-												source(srcset='./src/img/carousel-image--1.avif' type='image/avif')
-												source(srcset='./src/img/carousel-image--1.webp' type='image/webp')
-												img.custom-card___img(src='./src/img/carousel-image--1.jpg' height='181' width='370' alt='Окулист надевает очки на пациента, вид от первого лица' loading='lazy')
-
-										.custom-card__infoblock
-											h6.custom-card__title
-												span.custom-card__title-overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum incidunt eaque, maxime soluta expedita enim fugit qui ut illum aut dolor tempore, voluptatem excepturi? Tempora consectetur odio qui cupiditate repudiandae.
-
-											p.custom-card__text
-												span.custom-card__text-overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ullam earum cupiditate. Officiis minima excepturi cupiditate perferendis reiciendis temporibus explicabo delectus exercitationem iste assumenda accusamus atque sed, eos obcaecati velit?
-
-								//- #5 Carousel item
-								div.carousel__item
-									.custom-card.carousel__custom-card
-										a.custom-card__picture-wrapper(data-fancybox='gallery' href='./src/img/carousel-image--2.jpg')
-											picture.custom-card__picture
-												source(srcset='./src/img/carousel-image--2.avif' type='image/avif')
-												source(srcset='./src/img/carousel-image--2.webp' type='image/webp')
-												img.custom-card___img(src='./src/img/carousel-image--2.jpg' height='181' width='370' alt='Окулист осматривает зрачки пациента через стационарный прибор' loading='lazy')
-
-										.custom-card__infoblock
-											h6.custom-card__title
-												span.custom-card__title-overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum incidunt eaque, maxime soluta expedita enim fugit qui ut illum aut dolor tempore, voluptatem excepturi? Tempora consectetur odio qui cupiditate repudiandae.
-
-											p.custom-card__text
-												span.custom-card__text-overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ullam earum cupiditate. Officiis minima excepturi cupiditate perferendis reiciendis temporibus explicabo delectus exercitationem iste assumenda accusamus atque sed, eos obcaecati velit?
-
-								//- #6 Carousel item
-								div.carousel__item
-									.custom-card.carousel__custom-card
-										a.custom-card__picture-wrapper(data-fancybox='gallery' href='./src/img/carousel-image--3.jpg')
-											picture.custom-card__picture
-												source(srcset='./src/img/carousel-image--3.avif' type='image/avif')
-												source(srcset='./src/img/carousel-image--3.webp' type='image/webp')
-												img.custom-card___img(src='./src/img/carousel-image--3.jpg' height='181' width='370' alt='Окулист надевает на пациента, специальный прибор для проверки зрения' loading='lazy')
-
-										.custom-card__infoblock
-											h6.custom-card__title
-												span.custom-card__title-overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum incidunt eaque, maxime soluta expedita enim fugit qui ut illum aut dolor tempore, voluptatem excepturi? Tempora consectetur odio qui cupiditate repudiandae.
-
-											p.custom-card__text
-												span.custom-card__text-overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ullam earum cupiditate. Officiis minima excepturi cupiditate perferendis reiciendis temporibus explicabo delectus exercitationem iste assumenda accusamus atque sed, eos obcaecati velit?
-
-							// Carousel captions
-							h4.carousel__caption
-								span.carousel__caption-overflow *текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст.
-
-					// Custom media (eyesight check 2)
-					.custom-media.custom-media--eyesight-check-2.main__custom-media
-						.container.custom-media__container
-							.custom-media__tile
-								.custom-media__infoblock
-									h2.custom-media__title
-										span.custom-media__title-overflow Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus earum ipsa quam exercitationem facere magni dolor a suscipit, repellat, voluptas cupiditate atque quidem, alias et? Alias adipisci magni mollitia similique?
-
-									.custom-media__text
-										ol.custom-media__list
-											li.custom-media__list-item Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст
-											li.custom-media__list-item Текст Текст Текст Текст Текст Текст Текст
-											li.custom-media__list-item Текст Текст Текст Текст Текст Текст Текст Текст
-											li.custom-media__list-item Текст Текст Текст Текст Текст Текст Текст Текст Текст
-											li.custom-media__list-item Текст Текст Текст Текст Текст Текст
-
-										p.custom-media__paragraph Текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст.
-
-								a.custom-media__picture-wrapper(href='./src/img/eyesight-check--2.jpg' data-fancybox='gallery')
+			noscript
+				| You need to enable JavaScript to run this app.
+				div
+					img(src='https://mc.yandex.ru/watch/95848170', style='position: absolute; left: -9999px;', alt='yandex metrika noscript watcher')
+		// App
+		.app
+			// Header
+			header.header.app__header
+				.container.header__container
+					// Brand logo
+					a.brand.header__brand(href='/' title='На главную страницу')
+						svg.icon.icon--brand-logo.brand__icon(xmlns:xlink='http://www.w3.org/1999/xlink')
+							use(xlink:href='#brand-logo')
+
+					// Header hr
+					hr.header__hr(aria-orientation='vertical')
+
+					// Delivery
+					.deliveryTo.header__deliveryTo
+
+						// Delivery title
+						//- Empty [test]
+						//- h5.deliveryTo__title(title='Город доставки: Москва')
+
+						//- Layout [test]
+						//- h5.deliveryTo__title(title='Город доставки: Москва') ТЕКСТ ТЕКСТ
+
+						//- Overflowing [test]
+						//- h5.deliveryTo__title(title='Город доставки: Москва') Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur id nam nemo nesciunt eligendi suscipit earum officiis, facilis porro nisi sapiente reiciendis eius impedit deleniti nulla beatae ullam assumenda ratione.
+
+						//- Meaningful [test]
+						h5.deliveryTo__title(title='Город доставки: Москва') МОСКВА
+
+						// Delivery info
+						.deliveryTo__info
+							.deliveryTo__address
+								// Delivery icon
+								svg.icon.icon--map-pin.deliveryTo__address-icon(xmlns:xlink='http://www.w3.org/1999/xlink')
+									use(xlink:href='#map-pin')
+
+								// Delivery address
+								span.deliveryTo__address-text-wrapper(title='Адрес доставки: ул. Большой Козловский Переулок 10с1')
+									//- span.deliveryTo__address-text
+									//- span.deliveryTo__address-text Тексттт
+									//- span.deliveryTo__address-text Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero soluta distinctio velit! Numquam ex fugiat exercitationem quo sunt repellendus necessitatibus dicta consequatur officia minima. Rem praesentium quia accusamus deleniti dolorem!
+									span.deliveryTo__address-text ул. Большой Козловский Переулок 10с1
+
+								// Delivery quantity
+								abbr.deliveryTo__address-quantity(title='Общее количество ожидаемых доставок - (10шт.)')
+									span.deliveryTo__address-bracket (
+									span.deliveryTo__address-value-wrapper
+										//- span.deliveryTo__address-value
+										//- span.deliveryTo__address-value Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius illum voluptate, sed nemo harum nulla veritatis ratione molestiae quos quod totam quas a atque ullam, recusandae doloremque aliquam officiis temporibus.
+										span.deliveryTo__address-value 10
+									span.deliveryTo__address-bracket )
+
+							// Delivery hr
+							hr.deliveryTo__hr(aria-orientation='vertical')
+
+							// Delivery time and date: 14th of September 2023, at 18:00 Moscow time (UTC+3)
+							time.deliveryTo__time(datetime='2023-08-14T18:00:00+03:00')
+								span.deliveryTo__time-text-wrapper(title='Ориентироочная дата и время доставки: 14-го Сентября, 18:00 (МСК)')
+									//- span.span.deliveryTo__time-text
+									//- span.span.deliveryTo__time-text текст
+									//- span.span.deliveryTo__time-text Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias harum omnis animi eveniet mollitia. Praesentium qui dolorum quae repudiandae sit laboriosam dolores alias eligendi. Iusto blanditiis non beatae labore sint?
+									span.span.deliveryTo__time-text 14-го Сентября, 18:00 (МСК)
+								abbr.deliveryTo__time-quantity(title='Количество ближайших доставок - (10шт.)')
+									span.deliveryTo__time-bracket (
+									span.deliveryTo__time-value-wrapper
+										//- span.deliveryTo__time-value
+										//- span.deliveryTo__time-value Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos, magni? Vero voluptatibus quisquam aperiam commodi odit, magnam quam, eveniet est deserunt cumque ipsum ea eius blanditiis velit, officiis enim praesentium.
+										span.deliveryTo__time-value 10
+									span.deliveryTo__time-bracket )
+
+					// Fast header target
+					a.btn.btn-outline-atlantis.btn_custom.btn_custom_rounded.header__target(href='javascript: void(0);' role='button')
+						// Fast header target icon
+						.header__target-icon
+							// Sivcev table
+							table.sivcev(aria-description='Эта таблица представляет собой миниатюру таблицы Сивцева - таблицы, которая, в свою очередь представляет собой стандартный набор печатных знаков для определения остроты зрения человека')
+								tbody
+									tr
+										td.sivcev__char Ш
+										td.sivcev__char(colspan='2') Б
+									tr
+										td.sivcev__char Н
+										td.sivcev__char М
+										td.sivcev__char К
+						span.btn__text.header__target-text
+							//- span.btn__text-overflow.header__target-overflow
+							//- span.btn__text-overflow.header__target-overflow Lorem, ipsum dolor sit amet consectetur adipisicing elit. A illum culpa sequi labore. Ea quibusdam corrupti id cum impedit? Dolores, earum quia facilis optio minus sunt error fugit at molestiae?
+							span.btn__text-overflow.header__target-overflow(data-toggle='modal' data-target='#book-eyesight-check-modal') Запишитесь на<br class='d-none d-xl-inline'> проверку
+
+					// Header hr
+					hr.header__hr(aria-orientation='vertical')
+
+					// Address
+					address.header__address
+						//- a.header__address-phone(href='tel:+78001111111' title='Позвонить на номер: +78001111111')
+						//- a.header__address-phone(href='tel:+78001111111' title='Позвонить на номер: +78001111111') Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui sit voluptatem inventore ducimus, repellat cum. Laborum, perspiciatis veritatis officia praesentium, iste illo vitae eum nobis quibusdam fugit accusantium modi error.
+						a.header__address-phone(href='tel:+78001111111' title='Позвонить на номер: +78001111111') +7 (800) 111-111-1
+						button.btn.btn-link.header__address-callback(title='Откроет модальное окно с формой обратной связи')
+							//- span
+							//- span Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus magni dolores at quaerat quisquam? Voluptatibus officiis optio architecto repellat. Facilis, nam! Rem excepturi autem deleniti odio odit reprehenderit ullam distinctio.
+							span Перезвоните мне
+
+					// Header actions: Favorites & Basket buttons
+					.header__actions
+						.header__actions-row
+							.header__actions-col
+								a.header__action.header__action--heart(href='/favourites' title='Избранные товары') Избранные товары
+									svg.icon.icon--heart.header__action-icon(xmlns:xlink='http://www.w3.org/1999/xlink')
+										use(xlink:href='#heart')
+									span.badge.badge_custom.badge_custom_atlantis.badge_custom_circled.header__action-badge(title='В избранном: 99 товаров')
+										//- span.badge__overflow
+										//- span.badge__overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut optio ut dignissimos perferendis quidem et natus enim in ab vel ipsum, laudantium laborum temporibus placeat, eos aliquam odit autem quibusdam?
+										span.badge__overflow 99
+
+							.header__actions-col
+								a.header__action.header__action--shoping-cart(href='/favourites' title='Корзина') Корзина
+									svg.icon.icon--shoping-cart.header__action-icon(xmlns:xlink='http://www.w3.org/1999/xlink')
+										use(xlink:href='#shoping-cart')
+									span.badge.badge_custom.badge_custom_atlantis.badge_custom_circled.header__action-badge(title='В корзине: 3 товара')
+										//- span.badge__overflow
+										//- span.badge__overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut optio ut dignissimos perferendis quidem et natus enim in ab vel ipsum, laudantium laborum temporibus placeat, eos aliquam odit autem quibusdam?
+										span.badge__overflow 3
+
+			// Menu
+			.menu(role='menu')
+				.container.menu__container
+					// Nav
+					nav.menu__nav
+						ol.menu__list
+							li.menu__item
+								//- a.menu__link(href='javascript: void(0);')
+								//- a.menu__link(href='javascript: void(0);') Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum ad omnis error rem atque. Pariatur ullam eos unde fugit maiores, optio consequuntur expedita illum eius ab suscipit velit vitae temporibus.
+								a.menu__link(href='javascript: void(0);') Одежда и обувь
+
+							li.menu__item
+								//- a.menu__link(href='javascript: void(0);')
+								//- a.menu__link(href='javascript: void(0);') Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum ad omnis error rem atque. Pariatur ullam eos unde fugit maiores, optio consequuntur expedita illum eius ab suscipit velit vitae temporibus.
+								a.menu__link(href='javascript: void(0);') Электроника
+
+							li.menu__item
+								//- a.menu__link(href='javascript: void(0);')
+								//- a.menu__link(href='javascript: void(0);') Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum ad omnis error rem atque. Pariatur ullam eos unde fugit maiores, optio consequuntur expedita illum eius ab suscipit velit vitae temporibus.
+								a.menu__link(href='javascript: void(0);') Дом и сад
+
+							li.menu__item
+								//- a.menu__link(href='javascript: void(0);')
+								//- a.menu__link(href='javascript: void(0);') Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum ad omnis error rem atque. Pariatur ullam eos unde fugit maiores, optio consequuntur expedita illum eius ab suscipit velit vitae temporibus.
+								a.menu__link(href='javascript: void(0);') Детские товары
+
+							li.menu__item
+								//- a.menu__link(href='javascript: void(0);')
+								//- a.menu__link(href='javascript: void(0);') Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum ad omnis error rem atque. Pariatur ullam eos unde fugit maiores, optio consequuntur expedita illum eius ab suscipit velit vitae temporibus.
+								a.menu__link(href='javascript: void(0);') Бренды
+
+							li.menu__item
+								//- a.menu__link(href='javascript: void(0);')
+								//- a.menu__link(href='javascript: void(0);') Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum ad omnis error rem atque. Pariatur ullam eos unde fugit maiores, optio consequuntur expedita illum eius ab suscipit velit vitae temporibus.
+								a.menu__link(href='javascript: void(0);') Продукты питания
+
+					// Search
+					form.menu__search
+						input.form-control.form-control-outline-apple.form-control-outline-apple--inset.menu__search-control(type='search' id='search' minlength='1' required)
+						label.menu__search-label(for='search')
+							svg.icon.icon--magnifer.menu__search-icon(xmlns:xlink='http://www.w3.org/1999/xlink')
+								use(xlink:href='#magnifer')
+
+			// Main
+			main.main.app__main
+
+				// Hero
+				section.hero.main__hero
+
+					// Hero container
+					.container.hero__container
+						// Breadcrumbs wrapper
+						nav.breadcrumbs-wrapper.hero__breadcrumbs(aria-label='breadcrumbs')
+							// Breadcrumbs
+							ol.breadcrumbs
+								li.breadcrumbs__item
+									a.breadcrumbs__link(href='/')
+										svg.icon.icon--home.breadcrumbs__icon(xmlns:xlink='http://www.w3.org/1999/xlink')
+											use(xlink:href='#home')
+										.breadcrumbs__text Домой
+								//- li.breadcrumbs__item
+								//- 	a.breadcrumbs__link(href='javascript: void(0);')
+								//- 		.breadcrumbs__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia dolorum laborum nobis culpa harum quasi illo laudantium, voluptate, vitae aperiam voluptatibus itaque iusto sed mollitia possimus consequuntur tempore excepturi illum!
+								//- li.breadcrumbs__item
+								//- 	a.breadcrumbs__link(href='javascript: void(0);')
+								//- 		.breadcrumbs__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia dolorum laborum nobis culpa harum quasi illo laudantium, voluptate, vitae aperiam voluptatibus itaque iusto sed mollitia possimus consequuntur tempore excepturi illum!
+								li.breadcrumbs__item.breadcrumbs__item--active(aria-current='page' title='Вы находитесь на: Главная страница')
+									span.breadcrumbs__text Главная страница
+
+						// Hero infoblock
+						.hero__infoblock
+
+							// Hero title
+							h2.hero__title
+								span.hero__title-overflow Центр <mark class='hero__title-mark'>эстетической</mark> стоматологии на Чистых Прудах
+
+							// Hero text
+							.hero__text
+								// Hero secondary text
+								p.hero__paragraph Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias nobis magnam rem neque a qui? Cum, iste provident repudiandae similique quos animi suscipit excepturi qui hic iusto omnis eaque magnam sequi debitis
+
+								// Hero lead text
+								blockquote.hero__blockquote "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae aperiam sed dolores ad quaerat corrupti repudiandae laudantium facere nobis deserunt?"
+
+							// Hero actions
+							.hero__actions
+								button.btn.btn-outline-atlantis.btn_custom.btn_custom_rounded.hero__action(data-toggle='modal' data-target='#book-eyesight-check-modal')
+									//- span.hero__action-overflow
+									//- span.hero__action-overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque quidem expedita repellendus. Tempore, natus quibusdam quod odit ratione eaque, voluptates culpa fugiat iusto vel quaerat, fugit saepe voluptate ab sequi!
+									span.hero__action-overflow Записаться на проверку
+
+						// Hero media
+						a.hero__media-wrapper(href='./src/img/hero-doctor.jpg' data-fancybox='gallery')
+							picture.hero__media
+								source(srcset='./src/img/hero-doctor.avif' type='image/avif')
+								source(srcset='./src/img/hero-doctor.webp' type='image/webp')
+								img.hero__media-img(src='./src/img/hero-doctor.jpg' height='509' width='400' alt='Smiling women-doctor dentist with glasses in hands' loading='lazy')
+
+				// Features
+				section.features.main__features
+
+					// Features container
+					.container.features__container
+
+						// Features title
+						h2.features__title
+							span.features__title-overflow Заголовок заголовок заголовок
+
+						// Features row + bootstrap grid style
+						.row.justify-content-center.features__row
+							// #1 Feature
+							.col-m-6.col-xl-4.d-flex.justify-content-center.justify-content-m-end.justify-content-xl-center.features__col
+								.d-flex.flex-grow-1.align-items-center.flex-column.justify-content-center.features__item.features__item--toy
+									// Feature media
+									.features__media
+										svg.icon.icon--toy.features__media__icon(xmlns:xlink='http://www.w3.org/1999/xlink')
+											use(xlink:href='#toy')
+
+									// Feature subtitle
+									h3.features__subtitle
+										span.features__subtitle-overflow LOREM <mark class='features__mark'>IPSUM DOLOR</mark> SIT AMET CONSECTETUR.
+
+							// #2 Feature
+							.col-m-6.col-xl-4.d-flex.justify-content-center.justify-content-m-start.justify-content-xl-center.features__col
+								.d-flex.flex-grow-1.align-items-center.flex-column.justify-content-center.features__item.features__item--shucks
+									// Feature media
+									.features__media
+										svg.icon.icon--shucks.features__media__icon(xmlns:xlink='http://www.w3.org/1999/xlink')
+											use(xlink:href='#shucks')
+
+									// Feature subtitle
+									h3.features__subtitle
+										span.features__subtitle-overflow LOREM IPSUM DOLOR SIT AMET CONSECTETUR ADIPISICING ELIT. ARCHITECTO ASPERNATUR
+
+							// #3 Feature
+							.col-m-6.col-xl-4.d-flex.justify-content-center.justify-content-m-end.justify-content-xl-center.features__col
+								.d-flex.flex-grow-1.align-items-center.flex-column.justify-content-center.justify-content-center.features__item.features__item--eye
+									// Feature media
+									.features__media
+										svg.icon.icon--eye.features__media__icon(xmlns:xlink='http://www.w3.org/1999/xlink')
+											use(xlink:href='#eye')
+
+									// Feature subtitle
+									h3.features__subtitle
+										span.features__subtitle-overflow LOREM IPSUM DOLOR<br> SIT
+
+							// #4 Feature
+							.col-m-6.col-xl-4.d-flex.justify-content-center.justify-content-m-start.justify-content-xl-center.features__col
+								.d-flex.flex-grow-1.align-items-center.flex-column.justify-content-center.features__item.features__item--human-with-glasses
+									// Feature media
+									.features__media
+										svg.icon.icon--human-with-glasses.features__media__icon(xmlns:xlink='http://www.w3.org/1999/xlink')
+											use(xlink:href='#human-with-glasses')
+
+									// Feature subtitle
+									h3.features__subtitle
+										span.features__subtitle-overflow LOREM IPSUM DOLOR SIT<br> AMET CONSECTETUR ADIPISICING ELIT
+
+							// #5 Feature
+							.col-m-6.col-xl-4.d-flex.justify-content-center.justify-content-m-end.justify-content-xl-center.features__col
+								.d-flex.flex-grow-1.align-items-center.flex-column.justify-content-center.features__item.features__item--glasses
+									// Feature media
+									.features__media
+										svg.icon.icon--glasses.features__media__icon(xmlns:xlink='http://www.w3.org/1999/xlink')
+											use(xlink:href='#glasses')
+
+									// Feature subtitle
+									h3.features__subtitle
+										span.features__subtitle-overflow <mark class='features__mark'>LOREM IPSUM DOLOR</mark><br> SIT AMET CONSECTETUR ADIPISICING ELIT.
+
+							// #6 Feature
+							.col-m-6.col-xl-4.d-flex.justify-content-center.justify-content-m-start.justify-content-xl-center.features__col
+								.d-flex.flex-grow-1.align-items-center.flex-column.justify-content-center.justify-content-center.features__item.features__item--doctor
+									// Feature media
+									.features__media
+										svg.icon.icon--doctor.features__media__icon(xmlns:xlink='http://www.w3.org/1999/xlink')
+											use(xlink:href='#doctor')
+
+									// Feature subtitle
+									h3.features__subtitle
+										span.features__subtitle-overflow LOREM<br> IPSUM DOLOR SIT AMET CONSECTETUR
+
+						// Features actions
+						.features__actions
+							button.btn.btn_custom.btn_custom_l.btn_custom_tag.btn_custom_rounded.btn-atlantis.features__action(data-toggle='modal' data-target='#book-eyesight-check-modal')
+								span.btn__tag-overflow.features__action-overflow ЗАПИСАТЬСЯ НА ПРОВЕРКУ
+								span.btn__tag-circle
+									svg.icon.icon--arrow-to-right-2.features__media__icon(xmlns:xlink='http://www.w3.org/1999/xlink')
+										use(xlink:href='#arrow-to-right-2')
+
+				// Custom media (eyesight check)
+				.custom-media.custom-media--eyesight-check.main__custom-media
+					.container.custom-media__container
+						.custom-media__row
+
+							// Custom media infoblock
+							.custom-media__col.custom-media__col--infoblock
+								h3.custom-media__title Текст текст:
+								ul.custom-media__list
+									li.custom-media__list-item текст текст
+									li.custom-media__list-item текст текст текст текст
+									li.custom-media__list-item текст
+									li.custom-media__list-item текст текст текст текст текст текст текст текст текст текст текст текст
+									li.custom-media__list-item текст текст текст текст текст текст текст текст текст текст
+									li.custom-media__list-item текст текст текст текст текст текст текст текст текст текст текст текст текст текст
+
+							// Custom media media
+							.custom-media__col.custom-media__col--media
+								a.custom-media__picture-wrapper(href='./src/img/eyesight-check.jpg' data-fancybox='gallery')
 									picture.custom-media__picture
-										source(srcset='./src/img/eyesight-check--2.avif' type='image/avif')
-										source(srcset='./src/img/eyesight-check--2.webp' type='image/webp')
-										img.custom-media__picture-img(src='./src/img/eyesight-check--2.jpg' height='2735' width='4096' alt='Проверка зрения пацианта врачом окулистом ручным прибором' loading='lazy')
+										source(srcset='./src/img/eyesight-check.avif' type='image/avif')
+										source(srcset='./src/img/eyesight-check.webp' type='image/webp')
+										img.custom-media__picture-img(src='./src/img/eyesight-check.jpg' height='2734' width='4096' alt='Проверка зрения пацианта врачом окулистом на специальном приборе' loading='lazy')
 
-							// Features actions
-							.custom-media__actions
-								button.btn.btn_custom.btn_custom_l.btn_custom_tag.btn_custom_rounded.btn-atlantis.custom-media__action(data-toggle='modal' data-target='#book-eyesight-check-modal')
-									span.btn__tag-overflow.custom-media__action-overflow ЗАПИСАТЬСЯ НА ПРОВЕРКУ
-									span.btn__tag-circle
-										svg.icon.icon--arrow-to-right-2.custom-media__media__icon(xmlns:xlink='http://www.w3.org/1999/xlink')
-											use(xlink:href='#arrow-to-right-2')
+				// Carousel
+				.carousel.media__section
+					.container.carousel__container
 
-				// Footer
-				footer.footer.app__footer
+						// Carousel title
+						h4.carousel__title
+							span.carousel__title-overflow Lorem ipsum dolor sit amet.
 
-					// Footer belt
-					.belt.footer__belt
-						.container.belt__container
+						// Owl carousel
+						.owl-carousel.owl-theme
 
-							// Subscribe form
-							form.subscribe.belt__subscribe(id='subscribe-form')
-								// Belt title
-								h4.subscribe__title
-									//- span.subscribe__title-overflow
-									//- span.subscribe__title-overflow Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis, rerum culpa nam corrupti et officiis odit adipisci id dolor temporibus nesciunt sed alias illum! Doloribus accusantium odio quisquam id voluptates.
-									span.subscribe__title-overflow Подпишитесь на нашу<br class='d-none d-xl-inline'> рассылку
-								input.form-control.form-control_custom.form-control_custom_rounded.form-control-atlantis.subscribe__email(type='email' placeholder='Введите свой e-mail' required)
-								button.btn.btn-atlantis.btn_custom.btn_custom_rounded.subscribe__submit(type='submit')
-									//- span.subscribe__submit-overflow
-									//- span.subscribe__submit-overflow Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae quasi natus quae, soluta in laboriosam labore fugit numquam. Neque consequuntur quasi hic dolorem quibusdam repellendus. Nihil perferendis ipsam saepe quod!
-									span.subscribe__submit-overflow Подписаться
+							//- #1 Carousel item
+							.carousel__item
+								.custom-card.carousel__custom-card
+									a.custom-card__picture-wrapper(data-fancybox='gallery' href='./src/img/carousel-image--1.jpg')
+										picture.custom-card__picture
+											source(srcset='./src/img/carousel-image--1.avif' type='image/avif')
+											source(srcset='./src/img/carousel-image--1.webp' type='image/webp')
+											img.custom-card___img(src='./src/img/carousel-image--1.jpg' height='181' width='370' alt='Окулист надевает очки на пациента, вид от первого лица' loading='lazy')
 
-							// Belt hr
-							hr.belt__hr(aria-orientation='vertical')
+									.custom-card__infoblock
+										h6.custom-card__title
+											span.custom-card__title-overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum incidunt eaque, maxime soluta expedita enim fugit qui ut illum aut dolor tempore, voluptatem excepturi? Tempora consectetur odio qui cupiditate repudiandae.
 
-							// social block
-							section.social.belt__social
-								h5.social__title
-									//- span.social__title-overflow
-									//- span.social__title-overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi optio, maiores a repudiandae ipsum autem asperiores ullam repellat reiciendis. Mollitia minus ad provident explicabo accusamus officiis inventore non cupiditate minima?
-									span.social__title-overflow МЫ В СОЦ.<br class='d-none d-xl-inline'> СЕТЯХ:
+										p.custom-card__text
+											span.custom-card__text-overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ullam earum cupiditate. Officiis minima excepturi cupiditate perferendis reiciendis temporibus explicabo delectus exercitationem iste assumenda accusamus atque sed, eos obcaecati velit?
 
-								.social__row
+							//- #2 Carousel item
+							div.carousel__item
+								.custom-card.carousel__custom-card
+									a.custom-card__picture-wrapper(data-fancybox='gallery' href='./src/img/carousel-image--2.jpg')
+										picture.custom-card__picture
+											source(srcset='./src/img/carousel-image--2.avif' type='image/avif')
+											source(srcset='./src/img/carousel-image--2.webp' type='image/webp')
+											img.custom-card___img(src='./src/img/carousel-image--2.jpg' height='181' width='370' alt='Окулист осматривает зрачки пациента через стационарный прибор' loading='lazy')
 
-									// Vkontakte
-									.social__col
-										a.social__item(href='https://vk.com' target='_blank' rel='noopener noreferrer' title='VKontakte link') VKontakte
-											.social__overflow
-												svg.icon.icon--vk.social__icon(xmlns:xlink='http://www.w3.org/1999/xlink')
-													use(xlink:href='#vk')
+									.custom-card__infoblock
+										h6.custom-card__title
+											span.custom-card__title-overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum incidunt eaque, maxime soluta expedita enim fugit qui ut illum aut dolor tempore, voluptatem excepturi? Tempora consectetur odio qui cupiditate repudiandae.
 
-									// Facebook
-									.social__col
-										a.social__item(href='https://facebook.com' target='_blank' rel='noopener noreferrer' title='Facebook link') Facebook
-											.social__overflow
-												svg.icon.icon--facebook.social__icon(xmlns:xlink='http://www.w3.org/1999/xlink')
-													use(xlink:href='#facebook')
+										p.custom-card__text
+											span.custom-card__text-overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ullam earum cupiditate. Officiis minima excepturi cupiditate perferendis reiciendis temporibus explicabo delectus exercitationem iste assumenda accusamus atque sed, eos obcaecati velit?
 
-									// Instagram
-									.social__col
-										a.social__item(href='https://instagram.com' target='_blank' rel='noopener noreferrer' title='Instagram link') Instagram
-											.social__overflow
-												//- svg.icon.icon--instagram.social__icon(xmlns:xlink='http://www.w3.org/1999/xlink')
-												//- 	use(xlink:href='#instagram')
-												img(src='./src/img/icons/instagram_crutch.png' width='20' height='20' alt='Instagram base icon')
+							//- #3 Carousel item
+							div.carousel__item
+								.custom-card.carousel__custom-card
+									a.custom-card__picture-wrapper(data-fancybox='gallery' href='./src/img/carousel-image--3.jpg')
+										picture.custom-card__picture
+											source(srcset='./src/img/carousel-image--3.avif' type='image/avif')
+											source(srcset='./src/img/carousel-image--3.webp' type='image/webp')
+											img.custom-card___img(src='./src/img/carousel-image--3.jpg' height='181' width='370' alt='Окулист надевает на пациента, специальный прибор для проверки зрения' loading='lazy')
 
-					// Footer container
-					.container.footer__container
-						// Brand logo
-						a.brand.footer__brand(href='/' title='На главную страницу')
-							svg.icon.icon--brand-logo.brand__icon(xmlns:xlink='http://www.w3.org/1999/xlink')
-								use(xlink:href='#brand-logo')
+									.custom-card__infoblock
+										h6.custom-card__title
+											span.custom-card__title-overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum incidunt eaque, maxime soluta expedita enim fugit qui ut illum aut dolor tempore, voluptatem excepturi? Tempora consectetur odio qui cupiditate repudiandae.
 
-						// Footer address
-						address.address.footer__address
-							ul.address__row
-								// Phone
-								li.address__col
-									.address__item
-										a.address__link.address__link--phone(href='tel:+78001111111' title='Позвонить на номер: +78001111111')
-											svg.icon.icon--phone-call.address__icon(xmlns:xlink='http://www.w3.org/1999/xlink')
-												use(xlink:href='#phone-call')
-											//- span.address__link-overflow
-											//- span.address__link-overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque beatae sit ducimus cum ullam porro rem architecto consequatur distinctio tempore, labore nobis, commodi minima suscipit? Vero soluta minima modi praesentium.
-											span.address__link-overflow +7 (800) 111-111-1
+										p.custom-card__text
+											span.custom-card__text-overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ullam earum cupiditate. Officiis minima excepturi cupiditate perferendis reiciendis temporibus explicabo delectus exercitationem iste assumenda accusamus atque sed, eos obcaecati velit?
 
-								// Email
-								li.address__col
-									.address__item
-										a.address__link.address__link--email(href='mailto:info@vimeo.ru' title='Написать письмо на адрес: info@vimeo.ru')
-											svg.icon.icon--at.address__icon(xmlns:xlink='http://www.w3.org/1999/xlink')
-												use(xlink:href='#at')
-											//- span.address__link-overflow
-											//- span.address__link-overflow Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat quod ea repudiandae, facilis cum rem perspiciatis aperiam ratione provident voluptatum rerum libero, aliquam assumenda quas quaerat! Quae, aliquam sed. Amet.
-											span.address__link-overflow info@vimeo.ru
+							//- #4 Carousel item
+							div.carousel__item
+								.custom-card.carousel__custom-card
+									a.custom-card__picture-wrapper(data-fancybox='gallery' href='./src/img/carousel-image--1.jpg')
+										picture.custom-card__picture
+											source(srcset='./src/img/carousel-image--1.avif' type='image/avif')
+											source(srcset='./src/img/carousel-image--1.webp' type='image/webp')
+											img.custom-card___img(src='./src/img/carousel-image--1.jpg' height='181' width='370' alt='Окулист надевает очки на пациента, вид от первого лица' loading='lazy')
 
-								// Question
-								li.address__col
-									.address__item
-										a.address__link.address__link--question(href='javascript: void(0);')
-											svg.icon.icon--circled-question.address__icon(xmlns:xlink='http://www.w3.org/1999/xlink')
-												use(xlink:href='#circled-question')
-											//- span.address__link-overflow
-											//- span.address__link-overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic iusto voluptates laudantium quibusdam corrupti, at aliquam iure facere fuga totam eveniet fugiat neque quis libero inventore assumenda quia quas incidunt?
-											span.address__link-overflow Задать вопрос
+									.custom-card__infoblock
+										h6.custom-card__title
+											span.custom-card__title-overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum incidunt eaque, maxime soluta expedita enim fugit qui ut illum aut dolor tempore, voluptatem excepturi? Tempora consectetur odio qui cupiditate repudiandae.
 
-								// Feedback
-								li.address__col
-									.address__item
-										a.address__link.address__link--feedback(href='javascript: void(0);')
-											svg.icon.icon--speech-bubble.address__icon(xmlns:xlink='http://www.w3.org/1999/xlink')
-												use(xlink:href='#speech-bubble')
-											//- span.address__link-overflow
-											//- span.address__link-overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo nemo ipsum sequi dicta impedit dolorum ratione tenetur, temporibus porro asperiores. Odit officiis dolores voluptate, officia provident est ducimus alias voluptatum?
-											span.address__link-overflow Оставить отзыв
+										p.custom-card__text
+											span.custom-card__text-overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ullam earum cupiditate. Officiis minima excepturi cupiditate perferendis reiciendis temporibus explicabo delectus exercitationem iste assumenda accusamus atque sed, eos obcaecati velit?
 
-						// Footer hr (first)
-						hr.footer__hr.footer__hr--first(aria-orientation='horizontal')
+							//- #5 Carousel item
+							div.carousel__item
+								.custom-card.carousel__custom-card
+									a.custom-card__picture-wrapper(data-fancybox='gallery' href='./src/img/carousel-image--2.jpg')
+										picture.custom-card__picture
+											source(srcset='./src/img/carousel-image--2.avif' type='image/avif')
+											source(srcset='./src/img/carousel-image--2.webp' type='image/webp')
+											img.custom-card___img(src='./src/img/carousel-image--2.jpg' height='181' width='370' alt='Окулист осматривает зрачки пациента через стационарный прибор' loading='lazy')
 
-						// Footer title
-						h5.footer__title
-							span.footer__title-overflow Не стесняйтесь задавать интересующие вас вопросы, мы будем рады вас слышать!
+									.custom-card__infoblock
+										h6.custom-card__title
+											span.custom-card__title-overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum incidunt eaque, maxime soluta expedita enim fugit qui ut illum aut dolor tempore, voluptatem excepturi? Tempora consectetur odio qui cupiditate repudiandae.
 
-						// Footer hr (last)
-						hr.footer__hr.footer__hr--last(aria-orientation='vertical')
+										p.custom-card__text
+											span.custom-card__text-overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ullam earum cupiditate. Officiis minima excepturi cupiditate perferendis reiciendis temporibus explicabo delectus exercitationem iste assumenda accusamus atque sed, eos obcaecati velit?
 
-						// Links
-						.links.footer__links
-							// First links column
-							.links__group
-								h6.links__title
-									//- span.links__overflow
-									//- span.links__overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, quisquam quod itaque repellendus reprehenderit est laudantium fuga facilis exercitationem voluptatum necessitatibus incidunt natus, culpa minima debitis delectus nam. In, magnam.
-									span.links__overflow Покупателям
-								ul.links__row
-									li.links__item
-										a.links__link(href='javascript: void(0);')
-											//- span.links__overflow
-											//- span.links__overflow Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo amet non quaerat nobis, libero enim dolor molestias provident sint est, repudiandae corrupti reiciendis illo ea maiores ipsum itaque sequi dignissimos?
-											span.links__overflow Как сделать заказ
-									li.links__item
-										a.links__link(href='javascript: void(0);')
-											span.links__overflow Способы оплаты
-									li.links__item
-										a.links__link(href='javascript: void(0);')
-											span.links__overflow Доставка
-									li.links__item
-										a.links__link(href='javascript: void(0);')
-											span.links__overflow Возврат товара
-									li.links__item
-										a.links__link(href='javascript: void(0);')
-											span.links__overflow Возврат денежных средств
-									li.links__item
-										a.links__link(href='javascript: void(0);')
-											span.links__overflow Правила продажи
-									li.links__item
-										a.links__link(href='javascript: void(0);')
-											span.links__overflow Правила пользования торговой площадкой
-									li.links__item
-										a.links__link(href='javascript: void(0);')
-											span.links__overflow Вопросы и ответы
+							//- #6 Carousel item
+							div.carousel__item
+								.custom-card.carousel__custom-card
+									a.custom-card__picture-wrapper(data-fancybox='gallery' href='./src/img/carousel-image--3.jpg')
+										picture.custom-card__picture
+											source(srcset='./src/img/carousel-image--3.avif' type='image/avif')
+											source(srcset='./src/img/carousel-image--3.webp' type='image/webp')
+											img.custom-card___img(src='./src/img/carousel-image--3.jpg' height='181' width='370' alt='Окулист надевает на пациента, специальный прибор для проверки зрения' loading='lazy')
 
-							// Second links column
-							.links__group
-								h6.links__title
-									span.links__overflow Партнерам
-								ul.links__row
-									li.links__item
-										a.links__link(href='javascript: void(0);')
-											span.links__overflow Продавайте на Vimeo
-									li.links__item
-										a.links__link(href='javascript: void(0);')
-											span.links__overflow Курьерам
-									li.links__item
-										a.links__link(href='javascript: void(0);')
-											span.links__overflow Перевозчикам
-									li.links__item
-										a.links__link(href='javascript: void(0);')
-											span.links__overflow Партнерский пункт выдачи
-									li.links__item
-										a.links__link(href='javascript: void(0);')
-											span.links__overflow Франшизный пункт выдачи
+									.custom-card__infoblock
+										h6.custom-card__title
+											span.custom-card__title-overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum incidunt eaque, maxime soluta expedita enim fugit qui ut illum aut dolor tempore, voluptatem excepturi? Tempora consectetur odio qui cupiditate repudiandae.
 
-							// Third links column
-							.links__group
-								h6.links__title
-									span.links__overflow Компания
-								ul.links__row
-									li.links__item
-										a.links__link(href='javascript: void(0);')
-											span.links__overflow О нас
-									li.links__item
-										a.links__link(href='javascript: void(0);')
-											span.links__overflow Реквизиты
-									li.links__item
-										a.links__link(href='javascript: void(0);')
-											span.links__overflow Пресс-центр
-									li.links__item
-										a.links__link(href='javascript: void(0);')
-											span.links__overflow Контакты
-									li.links__item
-										a.links__link(href='javascript: void(0);')
-											span.links__overflow Bug Bounty
-									li.links__item
-										a.links__link(href='javascript: void(0);')
-											span.links__overflow Vimeo.Tech
+										p.custom-card__text
+											span.custom-card__text-overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ullam earum cupiditate. Officiis minima excepturi cupiditate perferendis reiciendis temporibus explicabo delectus exercitationem iste assumenda accusamus atque sed, eos obcaecati velit?
 
-							// Fourth links column
-							//- .links__group
-							//- 	h6.links__title
-							//- 		span.links__overflow Мы в соцсетях
-							//- 	ul.links__row
-							//- 		li.links__item
-							//- 			a.links__link(href='javascript: void(0);')
-							//- 				span.links__overflow ВКонтакте
-							//- 		li.links__item
-							//- 			a.links__link(href='javascript: void(0);')
-							//- 				span.links__overflow Одноклассники
-							//- 		li.links__item
-							//- 			a.links__link(href='javascript: void(0);')
-							//- 				span.links__overflow YouTube
-							//- 		li.links__item
-							//- 			a.links__link(href='javascript: void(0);')
-							//- 				span.links__overflow Телеграм
+						// Carousel captions
+						h4.carousel__caption
+							span.carousel__caption-overflow *текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст.
 
-							// Fifth links column
-							.links__group
-								h6.links__title
-									span.links__overflow Наши проекты
-								ul.links__row
-									li.links__item
-										a.links__link(href='javascript: void(0);')
-											span.links__overflow Vimeo Guru
-									li.links__item
-										a.links__link(href='javascript: void(0);')
-											span.links__overflow Трудоустройство
-									li.links__item
-										a.links__link(href='javascript: void(0);')
-											span.links__overflow Цифровые товары
+				// Custom media (eyesight check 2)
+				.custom-media.custom-media--eyesight-check-2.main__custom-media
+					.container.custom-media__container
+						.custom-media__tile
+							.custom-media__infoblock
+								h2.custom-media__title
+									span.custom-media__title-overflow Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus earum ipsa quam exercitationem facere magni dolor a suscipit, repellat, voluptas cupiditate atque quidem, alias et? Alias adipisci magni mollitia similique?
 
-					// Footer boot
-					.boot.footer__boot
-						.container.boot__container
-							.copyrights
-								//- a.copyrights__link(href='javascript: void(0);')
-								//- a.copyrights__link(href='javascript: void(0);') Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, sit doloremque non qui, magni ex cum iure reiciendis aut repudiandae, nihil sunt? Totam odit, aut at ducimus numquam amet officiis?
-								a.copyrights__link(href='javascript: void(0);') Политика конфиденциальности
-								//- .copyrights__note
-								//- .copyrights__note Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam doloremque neque laudantium nemo ex labore ducimus autem voluptate laborum corporis. Asperiores delectus consequuntur illum dolor officiis eius consequatur beatae aspernatur.
-								.copyrights__note © Все права защищены авторским правом
+								.custom-media__text
+									ol.custom-media__list
+										li.custom-media__list-item Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст
+										li.custom-media__list-item Текст Текст Текст Текст Текст Текст Текст
+										li.custom-media__list-item Текст Текст Текст Текст Текст Текст Текст Текст
+										li.custom-media__list-item Текст Текст Текст Текст Текст Текст Текст Текст Текст
+										li.custom-media__list-item Текст Текст Текст Текст Текст Текст
 
-				// Modal (Book eyesight check)
-				.modal(tabindex='-1' id='book-eyesight-check-modal')
-					.modal-dialog
-						.modal-content
-							.modal-header
-								h5.modal-title Запись на проверку зрения
-								button.close(type='button' data-dismiss='modal' aria-label='Close')
-									span(aria-hidden='true') ×
-							.modal-body
-								form
-									.form-group
-										label(for='record-email-input') Email
-										input#record-email-input.form-control(type='email' required)
-									.form-group
-										label(for='record-phone-input') Телефон
-										input#record-phone-input.form-control(type='tel' required)
-									.form-group.custom-control.custom-checkbox
-										input#newsletters-consent-checkbox.custom-control-input(type='checkbox')
-										label.custom-control-label(for='newsletters-consent-checkbox') Хочу получать информацию о новостях и акциях компании
+									p.custom-media__paragraph Текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст.
 
-									button.btn.btn-atlantis.btn_custom.btn_custom_rounded(type='submit') Записаться
+							a.custom-media__picture-wrapper(href='./src/img/eyesight-check--2.jpg' data-fancybox='gallery')
+								picture.custom-media__picture
+									source(srcset='./src/img/eyesight-check--2.avif' type='image/avif')
+									source(srcset='./src/img/eyesight-check--2.webp' type='image/webp')
+									img.custom-media__picture-img(src='./src/img/eyesight-check--2.jpg' height='2735' width='4096' alt='Проверка зрения пацианта врачом окулистом ручным прибором' loading='lazy')
 
-			// SVG sprite
-			include ./src/pug/blocks/sprite-defs
+						// Features actions
+						.custom-media__actions
+							button.btn.btn_custom.btn_custom_l.btn_custom_tag.btn_custom_rounded.btn-atlantis.custom-media__action(data-toggle='modal' data-target='#book-eyesight-check-modal')
+								span.btn__tag-overflow.custom-media__action-overflow ЗАПИСАТЬСЯ НА ПРОВЕРКУ
+								span.btn__tag-circle
+									svg.icon.icon--arrow-to-right-2.custom-media__media__icon(xmlns:xlink='http://www.w3.org/1999/xlink')
+										use(xlink:href='#arrow-to-right-2')
+
+			// Footer
+			footer.footer.app__footer
+
+				// Footer belt
+				.belt.footer__belt
+					.container.belt__container
+
+						// Subscribe form
+						form.subscribe.belt__subscribe(id='subscribe-form')
+							// Belt title
+							h4.subscribe__title
+								//- span.subscribe__title-overflow
+								//- span.subscribe__title-overflow Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis, rerum culpa nam corrupti et officiis odit adipisci id dolor temporibus nesciunt sed alias illum! Doloribus accusantium odio quisquam id voluptates.
+								span.subscribe__title-overflow Подпишитесь на нашу<br class='d-none d-xl-inline'> рассылку
+							input.form-control.form-control_custom.form-control_custom_rounded.form-control-atlantis.subscribe__email(type='email' placeholder='Введите свой e-mail' required)
+							button.btn.btn-atlantis.btn_custom.btn_custom_rounded.subscribe__submit(type='submit')
+								//- span.subscribe__submit-overflow
+								//- span.subscribe__submit-overflow Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae quasi natus quae, soluta in laboriosam labore fugit numquam. Neque consequuntur quasi hic dolorem quibusdam repellendus. Nihil perferendis ipsam saepe quod!
+								span.subscribe__submit-overflow Подписаться
+
+						// Belt hr
+						hr.belt__hr(aria-orientation='vertical')
+
+						// social block
+						section.social.belt__social
+							h5.social__title
+								//- span.social__title-overflow
+								//- span.social__title-overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi optio, maiores a repudiandae ipsum autem asperiores ullam repellat reiciendis. Mollitia minus ad provident explicabo accusamus officiis inventore non cupiditate minima?
+								span.social__title-overflow МЫ В СОЦ.<br class='d-none d-xl-inline'> СЕТЯХ:
+
+							.social__row
+
+								// Vkontakte
+								.social__col
+									a.social__item(href='https://vk.com' target='_blank' rel='noopener noreferrer' title='VKontakte link') VKontakte
+										.social__overflow
+											svg.icon.icon--vk.social__icon(xmlns:xlink='http://www.w3.org/1999/xlink')
+												use(xlink:href='#vk')
+
+								// Facebook
+								.social__col
+									a.social__item(href='https://facebook.com' target='_blank' rel='noopener noreferrer' title='Facebook link') Facebook
+										.social__overflow
+											svg.icon.icon--facebook.social__icon(xmlns:xlink='http://www.w3.org/1999/xlink')
+												use(xlink:href='#facebook')
+
+								// Instagram
+								.social__col
+									a.social__item(href='https://instagram.com' target='_blank' rel='noopener noreferrer' title='Instagram link') Instagram
+										.social__overflow
+											//- svg.icon.icon--instagram.social__icon(xmlns:xlink='http://www.w3.org/1999/xlink')
+											//- 	use(xlink:href='#instagram')
+											img(src='./src/img/icons/instagram_crutch.png' width='20' height='20' alt='Instagram base icon')
+
+				// Footer container
+				.container.footer__container
+					// Brand logo
+					a.brand.footer__brand(href='/' title='На главную страницу')
+						svg.icon.icon--brand-logo.brand__icon(xmlns:xlink='http://www.w3.org/1999/xlink')
+							use(xlink:href='#brand-logo')
+
+					// Footer address
+					address.address.footer__address
+						ul.address__row
+							// Phone
+							li.address__col
+								.address__item
+									a.address__link.address__link--phone(href='tel:+78001111111' title='Позвонить на номер: +78001111111')
+										svg.icon.icon--phone-call.address__icon(xmlns:xlink='http://www.w3.org/1999/xlink')
+											use(xlink:href='#phone-call')
+										//- span.address__link-overflow
+										//- span.address__link-overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque beatae sit ducimus cum ullam porro rem architecto consequatur distinctio tempore, labore nobis, commodi minima suscipit? Vero soluta minima modi praesentium.
+										span.address__link-overflow +7 (800) 111-111-1
+
+							// Email
+							li.address__col
+								.address__item
+									a.address__link.address__link--email(href='mailto:info@vimeo.ru' title='Написать письмо на адрес: info@vimeo.ru')
+										svg.icon.icon--at.address__icon(xmlns:xlink='http://www.w3.org/1999/xlink')
+											use(xlink:href='#at')
+										//- span.address__link-overflow
+										//- span.address__link-overflow Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat quod ea repudiandae, facilis cum rem perspiciatis aperiam ratione provident voluptatum rerum libero, aliquam assumenda quas quaerat! Quae, aliquam sed. Amet.
+										span.address__link-overflow info@vimeo.ru
+
+							// Question
+							li.address__col
+								.address__item
+									a.address__link.address__link--question(href='javascript: void(0);')
+										svg.icon.icon--circled-question.address__icon(xmlns:xlink='http://www.w3.org/1999/xlink')
+											use(xlink:href='#circled-question')
+										//- span.address__link-overflow
+										//- span.address__link-overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic iusto voluptates laudantium quibusdam corrupti, at aliquam iure facere fuga totam eveniet fugiat neque quis libero inventore assumenda quia quas incidunt?
+										span.address__link-overflow Задать вопрос
+
+							// Feedback
+							li.address__col
+								.address__item
+									a.address__link.address__link--feedback(href='javascript: void(0);')
+										svg.icon.icon--speech-bubble.address__icon(xmlns:xlink='http://www.w3.org/1999/xlink')
+											use(xlink:href='#speech-bubble')
+										//- span.address__link-overflow
+										//- span.address__link-overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo nemo ipsum sequi dicta impedit dolorum ratione tenetur, temporibus porro asperiores. Odit officiis dolores voluptate, officia provident est ducimus alias voluptatum?
+										span.address__link-overflow Оставить отзыв
+
+					// Footer hr (first)
+					hr.footer__hr.footer__hr--first(aria-orientation='horizontal')
+
+					// Footer title
+					h5.footer__title
+						span.footer__title-overflow Не стесняйтесь задавать интересующие вас вопросы, мы будем рады вас слышать!
+
+					// Footer hr (last)
+					hr.footer__hr.footer__hr--last(aria-orientation='vertical')
+
+					// Links
+					.links.footer__links
+						// First links column
+						.links__group
+							h6.links__title
+								//- span.links__overflow
+								//- span.links__overflow Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, quisquam quod itaque repellendus reprehenderit est laudantium fuga facilis exercitationem voluptatum necessitatibus incidunt natus, culpa minima debitis delectus nam. In, magnam.
+								span.links__overflow Покупателям
+							ul.links__row
+								li.links__item
+									a.links__link(href='javascript: void(0);')
+										//- span.links__overflow
+										//- span.links__overflow Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo amet non quaerat nobis, libero enim dolor molestias provident sint est, repudiandae corrupti reiciendis illo ea maiores ipsum itaque sequi dignissimos?
+										span.links__overflow Как сделать заказ
+								li.links__item
+									a.links__link(href='javascript: void(0);')
+										span.links__overflow Способы оплаты
+								li.links__item
+									a.links__link(href='javascript: void(0);')
+										span.links__overflow Доставка
+								li.links__item
+									a.links__link(href='javascript: void(0);')
+										span.links__overflow Возврат товара
+								li.links__item
+									a.links__link(href='javascript: void(0);')
+										span.links__overflow Возврат денежных средств
+								li.links__item
+									a.links__link(href='javascript: void(0);')
+										span.links__overflow Правила продажи
+								li.links__item
+									a.links__link(href='javascript: void(0);')
+										span.links__overflow Правила пользования торговой площадкой
+								li.links__item
+									a.links__link(href='javascript: void(0);')
+										span.links__overflow Вопросы и ответы
+
+						// Second links column
+						.links__group
+							h6.links__title
+								span.links__overflow Партнерам
+							ul.links__row
+								li.links__item
+									a.links__link(href='javascript: void(0);')
+										span.links__overflow Продавайте на Vimeo
+								li.links__item
+									a.links__link(href='javascript: void(0);')
+										span.links__overflow Курьерам
+								li.links__item
+									a.links__link(href='javascript: void(0);')
+										span.links__overflow Перевозчикам
+								li.links__item
+									a.links__link(href='javascript: void(0);')
+										span.links__overflow Партнерский пункт выдачи
+								li.links__item
+									a.links__link(href='javascript: void(0);')
+										span.links__overflow Франшизный пункт выдачи
+
+						// Third links column
+						.links__group
+							h6.links__title
+								span.links__overflow Компания
+							ul.links__row
+								li.links__item
+									a.links__link(href='javascript: void(0);')
+										span.links__overflow О нас
+								li.links__item
+									a.links__link(href='javascript: void(0);')
+										span.links__overflow Реквизиты
+								li.links__item
+									a.links__link(href='javascript: void(0);')
+										span.links__overflow Пресс-центр
+								li.links__item
+									a.links__link(href='javascript: void(0);')
+										span.links__overflow Контакты
+								li.links__item
+									a.links__link(href='javascript: void(0);')
+										span.links__overflow Bug Bounty
+								li.links__item
+									a.links__link(href='javascript: void(0);')
+										span.links__overflow Vimeo.Tech
+
+						// Fourth links column
+						//- .links__group
+						//- 	h6.links__title
+						//- 		span.links__overflow Мы в соцсетях
+						//- 	ul.links__row
+						//- 		li.links__item
+						//- 			a.links__link(href='javascript: void(0);')
+						//- 				span.links__overflow ВКонтакте
+						//- 		li.links__item
+						//- 			a.links__link(href='javascript: void(0);')
+						//- 				span.links__overflow Одноклассники
+						//- 		li.links__item
+						//- 			a.links__link(href='javascript: void(0);')
+						//- 				span.links__overflow YouTube
+						//- 		li.links__item
+						//- 			a.links__link(href='javascript: void(0);')
+						//- 				span.links__overflow Телеграм
+
+						// Fifth links column
+						.links__group
+							h6.links__title
+								span.links__overflow Наши проекты
+							ul.links__row
+								li.links__item
+									a.links__link(href='javascript: void(0);')
+										span.links__overflow Vimeo Guru
+								li.links__item
+									a.links__link(href='javascript: void(0);')
+										span.links__overflow Трудоустройство
+								li.links__item
+									a.links__link(href='javascript: void(0);')
+										span.links__overflow Цифровые товары
+
+				// Footer boot
+				.boot.footer__boot
+					.container.boot__container
+						.copyrights
+							//- a.copyrights__link(href='javascript: void(0);')
+							//- a.copyrights__link(href='javascript: void(0);') Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, sit doloremque non qui, magni ex cum iure reiciendis aut repudiandae, nihil sunt? Totam odit, aut at ducimus numquam amet officiis?
+							a.copyrights__link(href='javascript: void(0);') Политика конфиденциальности
+							//- .copyrights__note
+							//- .copyrights__note Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam doloremque neque laudantium nemo ex labore ducimus autem voluptate laborum corporis. Asperiores delectus consequuntur illum dolor officiis eius consequatur beatae aspernatur.
+							.copyrights__note © Все права защищены авторским правом
+
+			// Modal (Book eyesight check)
+			.modal(tabindex='-1' id='book-eyesight-check-modal')
+				.modal-dialog
+					.modal-content
+						.modal-header
+							h5.modal-title Запись на проверку зрения
+							button.close(type='button' data-dismiss='modal' aria-label='Close')
+								span(aria-hidden='true') ×
+						.modal-body
+							form
+								.form-group
+									label(for='record-email-input') Email
+									input#record-email-input.form-control(type='email' required)
+								.form-group
+									label(for='record-phone-input') Телефон
+									input#record-phone-input.form-control(type='tel' required)
+								.form-group.custom-control.custom-checkbox
+									input#newsletters-consent-checkbox.custom-control-input(type='checkbox')
+									label.custom-control-label(for='newsletters-consent-checkbox') Хочу получать информацию о новостях и акциях компании
+
+								button.btn.btn-atlantis.btn_custom.btn_custom_rounded(type='submit') Записаться
+
+		// SVG sprite
+		include ./src/pug/blocks/sprite-defs
